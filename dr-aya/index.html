@@ -190,37 +190,6 @@
             كطبيبة ممارسة وميديا باير متخصصة في الإعلانات الطبية الممولة (Meta, TikTok)، أساعد المراكز والعيادات التخصصية في مصر والخليج على جذب الحالات الجادة، تأهيل المرضى، وسد فجوة التحويل عند الاستقبال.
           </p>
 
-          <!-- النصيحة الصوتية التفاعلية -->
-          <div class="audio-consult-box" id="audioBox">
-            <button class="audio-play-btn" id="audioPlayBtn" aria-label="تشغيل صوت النصيحة الطبية" onclick="toggleAudioPreview()">
-              <svg id="playIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-              <svg id="pauseIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-            </button>
-            <div class="audio-info">
-              <div class="audio-title">
-                <span>رسالة دقيقة من د. آية لأصحاب العيادات</span>
-                <span class="tag">استمع الآن</span>
-              </div>
-              <div class="audio-track-wrap">
-                <div class="audio-waves-container">
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                </div>
-                <div class="audio-time" id="audioTime">00:54</div>
-              </div>
-            </div>
-          </div>
-
           <div class="hero-actions">
             <a href="#contact" class="btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
@@ -1176,41 +1145,7 @@
       if (dock) dock.classList.add("hidden-dock");
     }
 
-    // --- 3. تشغيل النصيحة الصوتية التفاعلية (Audio Wave Preview) ---
-    let isAudioPlaying = false;
-    let audioTimer = null;
-    let audioSecs = 54;
-
-    function toggleAudioPreview() {
-      const box = document.getElementById("audioBox");
-      const playIcon = document.getElementById("playIcon");
-      const pauseIcon = document.getElementById("pauseIcon");
-      const timeElem = document.getElementById("audioTime");
-
-      isAudioPlaying = !isAudioPlaying;
-      if (isAudioPlaying) {
-        box.classList.add("audio-playing");
-        playIcon.style.display = "none";
-        pauseIcon.style.display = "block";
-        audioTimer = setInterval(() => {
-          if (audioSecs > 0) {
-            audioSecs--;
-            const mins = Math.floor(audioSecs / 60);
-            const secs = audioSecs % 60;
-            timeElem.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-          } else {
-            toggleAudioPreview();
-          }
-        }, 1000);
-      } else {
-        box.classList.remove("audio-playing");
-        playIcon.style.display = "block";
-        pauseIcon.style.display = "none";
-        clearInterval(audioTimer);
-      }
-    }
-
-    // --- 4. محرك مسار تدفق العيادات (Clinic Flow Blueprint) ---
+    // --- 3. محرك مسار تدفق العيادات (Clinic Flow Blueprint) ---
     const flowStepsData = [
       {
         badge: "المرحلة الأولى • التوعية وبناء الثقة",
