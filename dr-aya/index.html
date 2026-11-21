@@ -1165,6 +1165,17 @@
       if (dock) dock.classList.add("hidden-dock");
     }
 
+    // إظهار الشريط العائم بسلاسة بعد السكرول لتخفيف زحمة الهيرو على الموبايل
+    window.addEventListener("scroll", () => {
+      const dock = document.getElementById("floatingDock");
+      if (!dock || dock.classList.contains("hidden-dock")) return;
+      if (window.scrollY > 320) {
+        dock.classList.add("dock-visible");
+      } else {
+        dock.classList.remove("dock-visible");
+      }
+    }, { passive: true });
+
     // --- 3. محرك مسار تدفق العيادات (Clinic Flow Blueprint) ---
     const flowStepsData = [
       {

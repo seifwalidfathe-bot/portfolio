@@ -1165,6 +1165,17 @@
       if (dock) dock.classList.add("hidden-dock");
     }
 
+    // Smoothly show floating dock only after scrolling past hero
+    window.addEventListener("scroll", () => {
+      const dock = document.getElementById("floatingDock");
+      if (!dock || dock.classList.contains("hidden-dock")) return;
+      if (window.scrollY > 320) {
+        dock.classList.add("dock-visible");
+      } else {
+        dock.classList.remove("dock-visible");
+      }
+    }, { passive: true });
+
     // --- 3. Clinic Flow Blueprint Engine ---
     const flowStepsData = [
       {

@@ -1957,32 +1957,166 @@ html[lang="en"] .case-stat-item .val {
   transform: translateY(0);
 }
 
-/* ----------------- استجابة العناصر الفائقة للموبايل والتابلت ----------------- */
+/* ===========================================================================
+   نظام العرض فائق النقاء للموبايل (Mobile Zen & Uncluttered Architecture)
+   =========================================================================== */
+
 @media (max-width: 900px) {
   .flow-panel-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
   .calc-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
   .reel-modal-grid {
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 20px;
+    gap: 18px;
   }
 }
 
 @media (max-width: 768px) {
-  /* شريط خطوات مسار المريض: شريط أفقي انسيابي وسلس مع سكرول Snap فائق الجودة */
+  /* 1. تقليل المسافات والفواصل المفرطة بين الأقسام */
+  .hero {
+    padding-block: 16px 20px;
+  }
+  .clinic-flow-section,
+  .marketing-pillars,
+  .case-studies-section,
+  .media-content-section,
+  .niches-section,
+  .packages-section,
+  .faq-section,
+  .contact-section,
+  .pain-points-section {
+    padding-block: 26px 22px;
+  }
+  .media-content-section,
+  .roi-calculator-section {
+    margin-block: 20px;
+    border-block-width: 1px;
+  }
+
+  /* 2. عناوين مدمجة ومريحة للعين بدون ضخامة */
+  .section-header {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .section-header h2 {
+    font-size: clamp(1.3rem, 4.8vw, 1.5rem);
+    line-height: 1.35;
+    margin-block: 4px 6px;
+  }
+  .section-header p {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    max-width: 95%;
+    margin-inline: auto;
+  }
+  .section-header .pill {
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    margin-bottom: 4px;
+  }
+
+  /* 3. تخفيف ازدحام الهيرو بالكامل: إلغاء التكرار */
+  .hero-content h1 {
+    font-size: 1.5rem;
+    line-height: 1.35;
+    margin-block: 6px 10px;
+  }
+  .hero-desc {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .hero-actions {
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+  .hero-actions .btn {
+    padding: 10px 16px;
+    font-size: 0.88rem;
+  }
+  /* إخفاء البادجات الثلاث المكررة أسفل أزرار الهيرو على الموبايل */
+  .hero-badges {
+    display: none !important;
+  }
+
+  /* كارت البروفايل في الهيرو: تحويله إلى شريط إحصائي أنيق فائق الخفة */
+  .hero-card-col {
+    margin-top: 10px;
+  }
+  .profile-card {
+    padding: 14px 12px;
+    margin-top: 6px;
+    background: var(--paper-deep);
+    border: 1.5px solid var(--hairline-strong);
+    border-radius: var(--radius-sm);
+    box-shadow: none;
+    max-width: 100%;
+  }
+  .profile-img-wrap {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 6px;
+  }
+  .profile-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+  }
+  .profile-role {
+    font-size: 0.78rem;
+    margin-bottom: 8px;
+  }
+  /* إخفاء النص الطويل المكرر وروابط السوشيال من كارت البروفايل على الموبايل لمنع التكدس */
+  .profile-bio-text,
+  .profile-socials {
+    display: none !important;
+  }
+  .profile-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 8px 4px;
+    background: var(--surface-card);
+    border-radius: 8px;
+  }
+  .p-stat-val {
+    font-size: 1.1rem;
+  }
+  .p-stat-lbl {
+    font-size: 0.68rem;
+  }
+
+  /* 4. تحديات العيادات (Pain Points): كروت مدمجة غير ثقيلة */
+  .pain-grid {
+    gap: 10px;
+  }
+  .pain-card {
+    padding: 14px 12px;
+    border-radius: 10px;
+    border-inline-start-width: 4px;
+    box-shadow: none;
+  }
+  .pain-card h4 {
+    font-size: 0.98rem;
+    margin-bottom: 4px;
+  }
+  .pain-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  /* 5. مسار تدفق المرضى (Clinic Flow): سكرول انسيابي مع تصميم مريح */
   .flow-stepper-nav {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    gap: 10px;
-    padding-bottom: 12px;
+    gap: 8px;
+    padding-bottom: 10px;
     margin-inline: -14px;
     padding-inline: 14px;
     scrollbar-width: none;
@@ -1991,129 +2125,329 @@ html[lang="en"] .case-stat-item .val {
     display: none;
   }
   .flow-nav-btn {
-    flex: 0 0 145px;
+    flex: 0 0 135px;
     scroll-snap-align: start;
-    padding: 12px 10px;
+    padding: 10px 8px;
   }
   .flow-nav-btn.active::after {
-    display: none; /* إخفاء المثلث في السكرول الأفقي لمنع التشويه */
+    display: none;
   }
   .flow-card-panel {
-    padding: 20px 16px;
+    padding: 16px 12px;
+    border-radius: 12px;
   }
   .flow-panel-title {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+  .flow-panel-desc {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .flow-points-list {
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .flow-points-list li {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+  .flow-panel-metric-box {
+    padding: 12px;
   }
   .flow-metric-val {
-    font-size: 1.85rem;
+    font-size: 1.6rem;
+  }
+  .flow-metric-label {
+    font-size: 0.78rem;
+  }
+  .flow-script-preview {
+    padding: 10px;
+    font-size: 0.78rem;
   }
 
-  /* مودال استراتيجيات الفيديو للهواتف */
-  .reel-modal-container {
-    width: 95vw;
-    max-height: 90vh;
-    padding: 24px 16px 20px;
+  /* 6. أركان نمو العيادات: شبكة مدمجة 2×3 بدلاً من 6 كروت عملاقة رأسية */
+  .pillars-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
-  .phone-mockup {
-    max-width: 170px;
-    border-radius: 20px;
+  .pillar-card {
+    padding: 12px 10px;
+    border: 1.5px solid var(--hairline-strong);
+    box-shadow: none;
+    border-radius: 10px;
   }
-  .reel-strategy-body h3 {
-    font-size: 1.15rem;
-    text-align: center;
-  }
-  .modal-close-btn {
-    top: 10px;
-    inset-inline-end: 10px;
+  .pillar-icon {
     width: 32px;
     height: 32px;
-    font-size: 14px;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
   }
-}
+  .pillar-card h3 {
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+  }
+  .pillar-card p {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
 
-@media (max-width: 640px) {
-  /* حاسبة العائد والـ ROAS: بطاقات مربعة 2x2 على الموبايل */
-  .calc-wrapper {
-    padding: 18px 14px;
+  /* 7. التخصصات الطبية: شبكة مدمجة 2×3 */
+  .niches-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
-  .calc-results-panel {
+  .niche-card {
+    padding: 12px 10px;
+    border: 1.5px solid var(--hairline-strong);
+    box-shadow: none;
+    border-radius: 10px;
+  }
+  .niche-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 6px;
+  }
+  .niche-card h4 {
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+  }
+  .niche-card p {
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+
+  /* 8. فيديوهات واستراتيجيات تيك توك: شبكة ريلز 2 عمود مثل إنستجرام */
+  .media-posts-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .media-card {
+    border: 1.5px solid var(--hairline-strong);
+    box-shadow: none;
+    border-radius: 10px;
+  }
+  .media-card-body {
+    padding: 10px 8px;
+  }
+  .media-card-title {
+    font-size: 0.84rem;
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+  .media-card-meta {
+    font-size: 0.72rem;
+  }
+  .media-badge-tag {
+    font-size: 0.68rem;
+    padding: 2px 6px;
+  }
+
+  /* 9. دراسات الحالة: كروت مدمجة ومريحة */
+  .case-cards-grid {
+    gap: 14px;
+  }
+  .case-card {
+    padding: 16px 14px;
+    border: 1.5px solid var(--hairline-strong);
+    box-shadow: var(--shadow-sm);
+    border-radius: 12px;
+  }
+  .case-title {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+  .case-challenge-box {
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .case-stats-strip {
+    padding: 8px 4px;
+    margin-bottom: 10px;
+  }
+  .case-stat-item .val {
+    font-size: 1.05rem;
+  }
+  .case-stat-item .lbl {
+    font-size: 0.68rem;
+  }
+  .case-solution-text {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .case-quote {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    padding-inline-start: 8px;
+  }
+
+  /* 10. حاسبة العائد على الموبايل */
+  .calc-wrapper {
     padding: 16px 12px;
+    border-radius: 12px;
   }
   .calc-metrics-grid {
     grid-template-columns: 1fr 1fr;
     gap: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
   .calc-metric-card {
-    padding: 12px 8px;
+    padding: 10px 6px;
   }
   .calc-metric-title {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
   }
   .calc-metric-number {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+  }
+  .calc-control-group {
+    margin-bottom: 14px;
+  }
+  .calc-label {
+    font-size: 0.86rem;
+    margin-bottom: 6px;
+  }
+  .calc-label-val {
+    font-size: 1.05rem;
+  }
+  .calc-results-panel {
+    padding: 14px 10px;
+    border-radius: 10px;
+  }
+  .calc-disclaimer {
+    font-size: 0.74rem;
+    margin-bottom: 10px;
   }
 
-  /* شريط الاتصال العائم (Smart Floating Dock) مخصص ومثالي على الموبايل */
+  /* 11. باقات النمو على الموبايل */
+  .packages-grid {
+    gap: 14px;
+  }
+  .package-card {
+    padding: 18px 14px;
+    border: 1.5px solid var(--hairline-strong);
+    box-shadow: var(--shadow-sm);
+    border-radius: 12px;
+  }
+  .package-card.featured {
+    border: 2px solid var(--ink);
+  }
+  .package-name {
+    font-size: 1.15rem;
+  }
+  .package-features {
+    gap: 6px;
+    margin-block: 12px;
+  }
+  .package-features li {
+    font-size: 0.85rem;
+  }
+
+  /* 12. مودال استراتيجيات الفيديو على الموبايل */
+  .reel-modal-container {
+    width: 95vw;
+    max-height: 90vh;
+    padding: 18px 14px 14px;
+    border-radius: 14px;
+  }
+  .phone-mockup {
+    max-width: 140px;
+    border-radius: 18px;
+  }
+  .reel-strategy-body h3 {
+    font-size: 1.05rem;
+    text-align: center;
+  }
+  .modal-close-btn {
+    top: 8px;
+    inset-inline-end: 8px;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  /* 13. فورم التدقيق على الموبايل */
+  .contact-card {
+    padding: 18px 14px;
+    border-radius: 12px;
+  }
+  .form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+  .field {
+    padding: 10px 12px;
+    font-size: 0.88rem;
+  }
+  .form-trust-note {
+    font-size: 0.78rem;
+  }
+}
+
+/* 14. شريط الاتصال العائم (Smart Floating Dock) فائق الخفة والهدوء */
+@media (max-width: 640px) {
   .floating-dock {
-    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-    width: calc(100% - 24px);
-    max-width: 440px;
-    padding: 6px 10px;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    width: auto;
+    max-width: 90vw;
+    padding: 4px 6px 4px 10px;
     gap: 8px;
-    justify-content: space-between;
+    box-shadow: 0 6px 20px rgba(52, 48, 42, 0.2);
+    /* مخفي مبدئياً على الموبايل لمنع زحمة الهيرو، يظهر بعد السكرول */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(80px);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  }
+  .floating-dock.dock-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .floating-dock.hidden-dock {
+    display: none !important;
   }
   .dock-status-indicator {
-    font-size: 0.76rem;
-    gap: 6px;
+    display: none; /* إخفاء النص المزدحم */
   }
-  .dock-status-indicator span {
-    display: inline-block;
-    max-width: 90px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .dock-btn-primary {
+    display: none; /* إخفاء الزر الثانوي لتخفيف العرض */
+  }
+  .dock-btn-whatsapp {
+    padding: 6px 12px;
+    font-size: 0.82rem;
   }
   .dock-actions {
     gap: 6px;
-    flex: 1;
-    justify-content: flex-end;
-  }
-  .dock-btn {
-    padding: 6px 10px;
-    font-size: 0.78rem;
-    gap: 4px;
-  }
-  .dock-btn svg {
-    width: 13px;
-    height: 13px;
   }
   .dock-close-btn {
-    padding: 2px;
+    padding: 2px 4px;
     font-size: 12px;
   }
 }
 
 @media (max-width: 400px) {
-  .hero-title {
-    font-size: 1.65rem;
-  }
-  .section-title {
+  .hero-content h1 {
     font-size: 1.4rem;
   }
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
   .calc-pills-row {
-    gap: 5px;
+    gap: 4px;
   }
   .calc-pill-btn {
-    padding: 6px 10px;
-    font-size: 0.76rem;
-  }
-  .dock-status-indicator span {
-    display: none;
+    padding: 5px 8px;
+    font-size: 0.74rem;
   }
   .flow-nav-btn {
-    flex: 0 0 130px;
-    padding: 10px 8px;
+    flex: 0 0 125px;
+    padding: 8px 6px;
   }
 }
 
