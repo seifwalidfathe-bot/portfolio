@@ -126,6 +126,7 @@
           <li><a href="#roi-calculator">ROI Calculator</a></li>
           <li><a href="#case-studies">Case Studies</a></li>
           <li><a href="#videos">Videos</a></li>
+          <li><a href="#comparison">Why Dr. Aya?</a></li>
           <li><a href="#packages">Packages</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
@@ -175,6 +176,7 @@
       <li><a href="#roi-calculator" onclick="toggleNavDrawer(false)">ROI & Growth Calculator</a></li>
       <li><a href="#case-studies" onclick="toggleNavDrawer(false)">Clinical Case Studies</a></li>
       <li><a href="#videos" onclick="toggleNavDrawer(false)">Videos & Strategy</a></li>
+      <li><a href="#comparison" onclick="toggleNavDrawer(false)">Why Dr. Aya?</a></li>
       <li><a href="#niches" onclick="toggleNavDrawer(false)">Medical Specialties</a></li>
       <li><a href="#packages" onclick="toggleNavDrawer(false)">Growth Packages</a></li>
       <li><a href="#faq" onclick="toggleNavDrawer(false)">FAQ</a></li>
@@ -280,6 +282,42 @@
       </div>
     </section>
 
+    <!-- ==================== Compliance & Clinical Trust Strip ==================== -->
+    <div class="compliance-trust-strip">
+      <div class="container">
+        <div class="compliance-strip-inner">
+          <div class="compliance-item">
+            <div class="compliance-icon-wrap">🛡️</div>
+            <div class="compliance-text">
+              <strong>100% Health Ministry Compliant</strong>
+              <span>Egypt (MOH) • Saudi (SFDA) • UAE (DHA) Guidelines</span>
+            </div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-icon-wrap">⚖️</div>
+            <div class="compliance-text">
+              <strong>Healthcare Ad Policy Standards</strong>
+              <span>Meta & Google Health strict compliance with zero ban risk</span>
+            </div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-icon-wrap">📊</div>
+            <div class="compliance-text">
+              <strong>True Show-Up Rate Attribution</strong>
+              <span>Measured by confirmed clinic visits, not vanity clicks</span>
+            </div>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-icon-wrap">🔒</div>
+            <div class="compliance-text">
+              <strong>Patient Privacy & Ethics</strong>
+              <span>HIPAA-inspired confidentiality & physician authority</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ==================== Pain Points ==================== -->
     <section class="container pain-points-section reveal" id="pain-points">
       <div class="section-header">
@@ -317,6 +355,65 @@
             "Catastrophic patient leakage at the reception desk"
           </h4>
           <p>No matter how well ads perform, if your front desk delays responding beyond 10 minutes or lacks training on addressing patient anxiety, up to 75% of your ad budget is wasted.</p>
+        </div>
+      </div>
+
+      <!-- 60-Second Clinic Health Check Quiz -->
+      <div class="clinic-audit-quiz-card">
+        <div class="audit-quiz-header">
+          <span class="pill pill-medical">60-Second Clinical Assessment</span>
+          <h3>Is Your Clinic Suffering from Patient Leakage & Budget Drain?</h3>
+          <p>Answer 4 quick diagnostic questions to evaluate your marketing health and uncover why appointment slots remain unfilled:</p>
+        </div>
+
+        <div class="audit-quiz-questions">
+          <!-- Question 1 -->
+          <div class="quiz-question-box" data-q="0">
+            <div class="quiz-q-text">1. Are your monthly ad costs rising without a proportional increase in confirmed clinic appointments?</div>
+            <div class="quiz-q-btns">
+              <button class="quiz-opt-btn" onclick="selectQuizAnswer(0, true)">Yes (Experiencing this)</button>
+              <button class="quiz-opt-btn selected-no" onclick="selectQuizAnswer(0, false)">No (Steady ROI)</button>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="quiz-question-box" data-q="1">
+            <div class="quiz-q-text">2. Does your clinic experience a patient no-show or last-minute cancellation rate exceeding 20%?</div>
+            <div class="quiz-q-btns">
+              <button class="quiz-opt-btn" onclick="selectQuizAnswer(1, true)">Yes (Frequent no-shows)</button>
+              <button class="quiz-opt-btn selected-no" onclick="selectQuizAnswer(1, false)">No (High attendance)</button>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="quiz-question-box" data-q="2">
+            <div class="quiz-q-text">3. Does your reception team struggle to convert high-ticket inquiries on WhatsApp and phone calls?</div>
+            <div class="quiz-q-btns">
+              <button class="quiz-opt-btn" onclick="selectQuizAnswer(2, true)">Yes (They ask price & disappear)</button>
+              <button class="quiz-opt-btn selected-no" onclick="selectQuizAnswer(2, false)">No (Smooth conversion)</button>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="quiz-question-box" data-q="3">
+            <div class="quiz-q-text">4. Have your ad accounts faced restrictions, or does your content feel generic and below your academic stature?</div>
+            <div class="quiz-q-btns">
+              <button class="quiz-opt-btn" onclick="selectQuizAnswer(3, true)">Yes (Policy friction or bland)</button>
+              <button class="quiz-opt-btn selected-no" onclick="selectQuizAnswer(3, false)">No (Strong authority)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="audit-quiz-result" id="auditQuizResult">
+          <div class="audit-badge-wrap">
+            <div class="audit-score-num" id="auditScoreNum">0 / 4</div>
+            <div class="audit-score-lbl" id="auditScoreLbl">Symptom Index</div>
+          </div>
+          <div class="audit-diag-body">
+            <h4 id="auditDiagTitle">Your Clinic Operations Are Relatively Stable</h4>
+            <p class="audit-diag-desc" id="auditDiagDesc">Select your answers above for an instant clinical diagnosis of your patient acquisition pipeline.</p>
+          </div>
+          <a href="#contact" class="btn btn-primary audit-action-btn" id="auditCtaBtn">Request Free Clinical Audit ←</a>
         </div>
       </div>
     </section>
@@ -870,6 +967,94 @@
           </div>
           <h4>Polyclinics & Diagnostics</h4>
           <span>Labs, Radiology, Checkups</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== The Medical Advantage Comparison ==================== -->
+    <section class="container comparison-section reveal" id="comparison">
+      <div class="section-header">
+        <div class="pill pill-gold">Fair Professional Benchmark</div>
+        <h2>Why Partner with a Medical Strategist Over Generic Ad Agencies?</h2>
+        <p>A practical comparison demonstrating the fundamental difference between a doctor who understands clinical reality and patient anxieties versus commodity agencies treating clinics like online stores.</p>
+      </div>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="comp-feature-col">Operational Dimension</th>
+              <th class="comp-agency-col">Generic Marketing Agencies</th>
+              <th class="comp-aya-col">
+                Dr. Aya Dorgham (Dentist & Media Buyer)
+                <span class="comp-aya-badge">Recommended Choice</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="comp-feature-col">1. Clinical Nuance & Terminology</td>
+              <td class="comp-agency-col">
+                <span class="comp-cross">✕</span>
+                Generalist marketers confusing restorative veneers with implants, writing embarrassing ad copy that loses educated patients in the first 3 seconds.
+              </td>
+              <td class="comp-aya-col">
+                <span class="comp-check">✓</span>
+                Practicing dental surgeon & certified healthcare media buyer; deep grasp of treatment protocols, sterilization standards, and genuine patient fears.
+              </td>
+            </tr>
+            <tr>
+              <td class="comp-feature-col">2. Health Ministry (MOH) & Ad Policy Compliance</td>
+              <td class="comp-agency-col">
+                <span class="comp-cross">✕</span>
+                False promises ("guaranteed cures, #1 doctor") and non-compliant before/after photos that trigger health ministry fines and permanent Meta ad bans.
+              </td>
+              <td class="comp-aya-col">
+                <span class="comp-check">✓</span>
+                100% compliant with MOH (Egypt, Saudi, UAE) regulations and strict Meta/Google Healthcare policies; zero risk to ad accounts or medical license.
+              </td>
+            </tr>
+            <tr>
+              <td class="comp-feature-col">3. Success Metric & Financial Accountability</td>
+              <td class="comp-agency-col">
+                <span class="comp-cross">✕</span>
+                Bragging about vanity metrics ("1M impressions, random WhatsApp clicks") with zero accountability for patients who actually attend and pay.
+              </td>
+              <td class="comp-aya-col">
+                <span class="comp-check">✓</span>
+                Rigorous tracking of Cost Per Acquired Patient (CPA), Clinic Show-Up Rate, Patient Lifetime Value (LTV), and real revenue ROAS.
+              </td>
+            </tr>
+            <tr>
+              <td class="comp-feature-col">4. Front-Desk & Reception Scripting</td>
+              <td class="comp-agency-col">
+                <span class="comp-cross">✕</span>
+                Dumping unvetted leads on WhatsApp and blaming clinic staff when 70% fail to convert due to poor response scripts.
+              </td>
+              <td class="comp-aya-col">
+                <span class="comp-check">✓</span>
+                Tailored medical objection scripts for receptionists, automated appointment priming, and protocol to slash clinic no-shows below 15%.
+              </td>
+            </tr>
+            <tr>
+              <td class="comp-feature-col">5. Physician Authority & Prestige</td>
+              <td class="comp-agency-col">
+                <span class="comp-cross">✕</span>
+                Cheap social media memes and aggressive discount wars that degrade doctor prestige and attract non-compliant price shoppers.
+              </td>
+              <td class="comp-aya-col">
+                <span class="comp-check">✓</span>
+                Authority positioning through scientific clarity; elevating the doctor's stature so patients seek them out by name and pay premium fees.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="comp-bottom-cta">
+          <div>
+            <strong>Ready to move your clinic from the generic agency trap to engineered clinical growth?</strong>
+            <div style="font-size:0.86rem; color:var(--ink-muted); margin-top:2px;">Get a comprehensive complimentary audit of your previous ad accounts and plug patient leaks.</div>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="white-space:nowrap;">Book Your Clinic Audit Session ←</a>
         </div>
       </div>
     </section>
@@ -1544,6 +1729,58 @@
 
     const statsElem = document.querySelector(".profile-stats");
     if (statsElem) statsObserver.observe(statsElem);
+
+    // --- 11. 60-Second Clinic Diagnostic Quiz ---
+    const quizState = [false, false, false, false];
+
+    function selectQuizAnswer(index, isYes) {
+      quizState[index] = isYes;
+      const box = document.querySelector(`.quiz-question-box[data-q="${index}"]`);
+      if (!box) return;
+      const btns = box.querySelectorAll(".quiz-opt-btn");
+      if (btns.length === 2) {
+        if (isYes) {
+          btns[0].className = "quiz-opt-btn selected-yes";
+          btns[1].className = "quiz-opt-btn";
+        } else {
+          btns[0].className = "quiz-opt-btn";
+          btns[1].className = "quiz-opt-btn selected-no";
+        }
+      }
+      updateQuizResult();
+    }
+
+    function updateQuizResult() {
+      const yesCount = quizState.filter(Boolean).length;
+      const scoreNum = document.getElementById("auditScoreNum");
+      const scoreLbl = document.getElementById("auditScoreLbl");
+      const title = document.getElementById("auditDiagTitle");
+      const desc = document.getElementById("auditDiagDesc");
+      const cta = document.getElementById("auditCtaBtn");
+
+      if (!scoreNum || !title) return;
+      scoreNum.textContent = `${yesCount} / 4`;
+
+      if (yesCount === 0) {
+        scoreNum.style.color = "var(--brand-deep)";
+        scoreLbl.textContent = "Optimal Health";
+        title.textContent = "Your Clinic Acquisition Engine is Relatively Healthy";
+        desc.textContent = "You possess sound fundamentals. The next step is scaling higher-margin specialized procedures and maximizing return on ad spend (Scale ROAS).";
+        cta.textContent = "Discuss Scaling & Multi-Branch Plan ←";
+      } else if (yesCount <= 2) {
+        scoreNum.style.color = "var(--gold-deep)";
+        scoreLbl.textContent = "Moderate Leakage";
+        title.textContent = "Clinical Diagnosis: Conversion Funnel Leak & Low Patient Priming";
+        desc.textContent = "You are losing 30% to 50% of ad spend between the initial click and the front-desk response. You need to re-engineer your Clinic Flow Blueprint.";
+        cta.textContent = "Request Funnel Leak Fix Plan ←";
+      } else {
+        scoreNum.style.color = "var(--medical-deep)";
+        scoreLbl.textContent = "Critical Leakage";
+        title.textContent = "Critical Diagnosis: Rapid Budget Drain & Growth Paralysis";
+        desc.textContent = "Your clinic is spending budget on unqualified inquiries with zero receptionist scripts and high risk of ad policy friction. Immediate clinical intervention is required.";
+        cta.textContent = "Book Urgent Clinic Intervention Session ←";
+      }
+    }
   </script>
 </body>
 </html>

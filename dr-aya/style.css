@@ -1862,6 +1862,273 @@ html[lang="en"] .case-stat-item .val {
   transform: translateY(0);
 }
 
+/* ----------------- 9. شريط الاعتمادية والامتثال الطبي (Compliance Trust Strip) ----------------- */
+.compliance-trust-strip {
+  background: var(--surface-card);
+  border-block: 1.5px solid var(--hairline-strong);
+  padding-block: 16px;
+  margin-bottom: 20px;
+}
+.compliance-strip-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+.compliance-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.compliance-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--brand-wash);
+  border: 1.5px solid var(--hairline-strong);
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+.compliance-text strong {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.35;
+}
+.compliance-text span {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+  line-height: 1.35;
+  margin-top: 2px;
+}
+
+/* ----------------- 10. اختبار الجاهزية الإكلينيكية (Clinic Health Diagnostic Quiz) ----------------- */
+.clinic-audit-quiz-card {
+  margin-top: 32px;
+  background: var(--surface-card);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: clamp(20px, 4vw, 32px);
+  box-shadow: var(--shadow-md);
+}
+.audit-quiz-header {
+  text-align: center;
+  max-width: 680px;
+  margin-inline: auto;
+  margin-bottom: 24px;
+}
+.audit-quiz-header h3 {
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-weight: 800;
+  margin: 10px 0 6px 0;
+  color: var(--ink);
+}
+.audit-quiz-header p {
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+.audit-quiz-questions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.quiz-question-box {
+  background: var(--surface-raised);
+  border: 1.5px solid var(--hairline-strong);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  transition: all var(--dur-fast);
+}
+.quiz-question-box:hover {
+  border-color: var(--ink);
+}
+.quiz-q-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.quiz-q-btns {
+  display: flex;
+  gap: 8px;
+}
+.quiz-opt-btn {
+  flex: 1;
+  padding: 7px 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--hairline-strong);
+  background: var(--paper);
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all var(--dur-fast);
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.quiz-opt-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.quiz-opt-btn.selected-yes {
+  background: var(--medical-wash);
+  border-color: var(--medical);
+  color: var(--medical-deep);
+}
+.quiz-opt-btn.selected-no {
+  background: var(--brand-wash);
+  border-color: var(--brand);
+  color: var(--brand-deep);
+}
+
+.audit-quiz-result {
+  background: var(--paper-deep);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+.audit-badge-wrap {
+  text-align: center;
+}
+.audit-score-num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink);
+}
+.audit-score-lbl {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.audit-diag-body h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 4px 0;
+}
+.audit-diag-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin: 0;
+}
+.audit-action-btn {
+  white-space: nowrap;
+}
+
+/* ----------------- 11. قسم المقارنة التفصيلية (The Medical Advantage Comparison) ----------------- */
+.comparison-section {
+  padding-block: clamp(48px, 6vw, 76px);
+}
+.comparison-table-wrapper {
+  background: var(--surface-card);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-top: 24px;
+}
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: start;
+}
+.comparison-table th,
+.comparison-table td {
+  padding: 16px 20px;
+  border-bottom: 1.5px solid var(--hairline-strong);
+  vertical-align: top;
+}
+.comparison-table th {
+  background: var(--paper-deep);
+  font-weight: 800;
+  font-size: 0.96rem;
+  color: var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+.comp-feature-col {
+  width: 24%;
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: var(--ink);
+  background: var(--paper);
+  border-inline-end: 1.5px solid var(--hairline-strong);
+}
+.comp-agency-col {
+  width: 38%;
+  background: var(--surface-card);
+  color: var(--ink-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  border-inline-end: 1.5px solid var(--hairline-strong);
+}
+.comp-aya-col {
+  width: 38%;
+  background: var(--brand-wash);
+  color: var(--ink);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  position: relative;
+}
+.comp-aya-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: var(--brand);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  margin-inline-start: 8px;
+}
+.comp-cross {
+  color: var(--medical);
+  font-weight: 800;
+  margin-inline-end: 6px;
+  display: inline-block;
+}
+.comp-check {
+  color: var(--brand-deep);
+  font-weight: 800;
+  margin-inline-end: 6px;
+  display: inline-block;
+}
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+.comp-bottom-cta {
+  background: var(--surface-raised);
+  padding: 18px 22px;
+  text-align: center;
+  border-top: 1.5px solid var(--hairline-strong);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
 /* ===========================================================================
    نظام التناسق والتناغم الفائق لكافة المقاسات (Master Mobile Harmony System)
    =========================================================================== */
@@ -2582,6 +2849,83 @@ html[lang="en"] .case-stat-item .val {
   .drawer-header {
     margin-bottom: 14px;
     padding-bottom: 12px;
+  }
+
+  /* ف. شريط الاعتمادية والامتثال على الموبايل */
+  .compliance-strip-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .compliance-item {
+    gap: 8px;
+  }
+  .compliance-icon-wrap {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+  .compliance-text strong {
+    font-size: 0.78rem;
+    line-height: 1.3;
+  }
+  .compliance-text span {
+    font-size: 0.66rem;
+    line-height: 1.3;
+  }
+
+  /* ق. اختبار الجاهزية الإكلينيكية على الموبايل */
+  .audit-quiz-questions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .quiz-question-box {
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+  .quiz-q-text {
+    font-size: 0.84rem;
+  }
+  .audit-quiz-result {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 14px;
+    padding: 16px 14px;
+    border-radius: 12px;
+  }
+  .audit-action-btn {
+    width: 100%;
+  }
+
+  /* ر. جدول المقارنة على الموبايل */
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+  }
+  .comparison-table th,
+  .comparison-table td {
+    padding: 12px 10px;
+    font-size: 0.82rem;
+  }
+  .comp-feature-col {
+    min-width: 110px;
+    font-size: 0.82rem;
+  }
+  .comp-agency-col {
+    min-width: 170px;
+  }
+  .comp-aya-col {
+    min-width: 190px;
+  }
+  .comp-bottom-cta {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 16px 14px;
+  }
+  .comp-bottom-cta .btn {
+    width: 100%;
   }
 }
 
