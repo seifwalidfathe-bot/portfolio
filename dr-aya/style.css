@@ -477,12 +477,16 @@ html[dir="rtl"] .nav-drawer {
 .logo-icon svg {
   display: block;
 }
-.logo-text h3 {
+.logo-text h3,
+.logo-title {
   font-size: 1.25rem;
   margin: 0;
   line-height: 1.2;
+  font-weight: 700;
+  display: block;
 }
-.logo-text span {
+.logo-text span,
+.logo-subtitle {
   font-size: 0.8rem;
   color: var(--marketing);
   font-weight: 700;
@@ -1182,7 +1186,8 @@ html[lang="en"] .footer-logo {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
-  .logo-text span {
+  .logo-text span,
+  .logo-subtitle {
     display: none;
   }
 }

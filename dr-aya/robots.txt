@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seifwalidfathe-bot.github.io/dr-aya-portfolio/sitemap.xml
