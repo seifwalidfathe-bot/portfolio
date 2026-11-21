@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سيف وليد · مهندس أتمتة وبناء أنظمة خلفية</title>
+  <meta name="description" content="البورتفوليو الرسمي لسيف وليد. متخصص في بناء مسارات أتمتة n8n موثوقة، كواشط بيانات متخفية، وجسور ذكاء اصطناعي مربوطة بقواعد البيانات الإنتاجية.">
+  <meta name="author" content="سيف وليد">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%2232%22%20height=%2232%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23010102%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 font-weight=%22700%22 fill=%22%235e6ad2%22>SW</text></svg>">
+
+  <!-- IBM Plex Sans Arabic & JetBrains Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"IBM Plex Sans Arabic"', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          },
+          colors: {
+            canvas: '#010102',
+            surface: {
+              1: '#08090a',
+              2: '#0f1011',
+              3: '#141516',
+              4: '#18191a',
+            },
+            hairline: {
+              DEFAULT: '#23252a',
+              strong: '#34343a',
+              subtle: '#1a1b20',
+            },
+            linear: {
+              DEFAULT: '#5e6ad2',
+              hover: '#828fff',
+              subtle: 'rgba(94, 106, 210, 0.12)',
+              glow: 'rgba(94, 106, 210, 0.25)',
+            },
+            ink: {
+              DEFAULT: '#f7f8f8',
+              muted: '#d0d6e0',
+              subtle: '#8a8f98',
+              tertiary: '#62666d',
+            },
+            status: {
+              online: '#27a644',
+              warning: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --canvas: #010102;
+      --surface-1: #08090a;
+      --surface-2: #0f1011;
+      --hairline: #23252a;
+      --hairline-strong: #34343a;
+      --linear: #5e6ad2;
+      --ink: #f7f8f8;
+      --ink-muted: #d0d6e0;
+      --ink-subtle: #8a8f98;
+    }
+
+    body {
+      background-color: var(--canvas);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .linear-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    }
+
+    @keyframes heroFadeUp {
+      0% { opacity: 0; transform: translateY(18px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-animate-1 { animation: heroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .hero-animate-2 { animation: heroFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards; opacity: 0; }
+    .hero-animate-3 { animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; opacity: 0; }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #010102; }
+    ::-webkit-scrollbar-thumb { background: #23252a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #34343a; }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--linear);
+      outline-offset: 2px;
+    }
+
+    .craft-card {
+      background: #08090a;
+      border: 1px solid #23252a;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .craft-card:hover {
+      border-color: #34343a;
+      box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+
+<body class="selection:bg-linear/30 selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- COMMAND PALETTE MODAL (Cmd+K) -->
+  <div id="cmdPalette" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="w-full max-w-lg bg-surface-2 border border-hairline-strong rounded-xl shadow-2xl overflow-hidden">
+      <div class="flex items-center px-4 py-3 border-b border-hairline">
+        <svg class="w-4 h-4 text-ink-subtle ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <input id="cmdInput" type="text" placeholder="اكتب أمراً أو انتقل مباشرة لقسم..." class="w-full bg-transparent text-sm text-ink outline-none placeholder:text-ink-tertiary">
+        <span class="text-xs font-mono text-ink-tertiary border border-hairline px-1.5 py-0.5 rounded">ESC</span>
+      </div>
+      <div class="py-2 max-h-72 overflow-y-auto" id="cmdResults">
+        <button onclick="navigateTo('#projects')" class="w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">01. الانتقال للمشاريع الإنتاجية</span>
+          <span class="text-ink-tertiary">#projects</span>
+        </button>
+        <button onclick="navigateTo('#simulator')" class="w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">02. محاكي الأتمتة المباشر</span>
+          <span class="text-ink-tertiary">#simulator</span>
+        </button>
+        <button onclick="navigateTo('#terminal')" class="w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">03. شاشة سطر الأوامر التفاعلية</span>
+          <span class="text-ink-tertiary">#terminal</span>
+        </button>
+        <button onclick="navigateTo('#architecture')" class="w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">04. فلسفة وهندسة الأنظمة</span>
+          <span class="text-ink-tertiary">#architecture</span>
+        </button>
+        <button onclick="copyEmail()" class="w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">05. نسخ البريد الإلكتروني</span>
+          <span class="text-ink-tertiary">seif.walid.fathe@gmail.com</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 w-full border-b border-hairline/80 bg-canvas/90 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3 space-x-reverse group">
+        <img src="seif_avatar.jpg" alt="سيف وليد" class="w-8 h-8 rounded-full object-cover border border-hairline group-hover:border-linear transition shadow-sm">
+        <div class="flex flex-col">
+          <span class="text-xs font-semibold text-ink">سيف وليد</span>
+          <span class="text-[10px] font-mono text-ink-subtle">أنظمة خلفية وأتمتة</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-6 space-x-reverse text-xs text-ink-subtle font-medium">
+        <a href="#projects" class="hover:text-ink transition">المشاريع</a>
+        <a href="#simulator" class="hover:text-ink transition">محاكي الأتمتة</a>
+        <a href="#terminal" class="hover:text-ink transition">سطر الأوامر</a>
+        <a href="#architecture" class="hover:text-ink transition">الهندسة المعمارية</a>
+        <a href="#contact" class="hover:text-ink transition">تواصل</a>
+      </nav>
+
+      <div class="flex items-center space-x-3 space-x-reverse">
+        <!-- Language Switcher: English -->
+        <a href="index.html" class="text-xs font-mono px-2.5 py-1.5 rounded border border-hairline bg-surface-1 text-ink-muted hover:border-linear hover:text-white transition flex items-center space-x-1 space-x-reverse" title="Switch to English version">
+          <span class="text-linear font-bold">EN</span>
+          <span>English</span>
+        </a>
+
+        <button onclick="toggleCmdPalette()" class="hidden sm:flex items-center space-x-1.5 space-x-reverse px-2.5 py-1 rounded border border-hairline bg-surface-1 text-[11px] font-mono text-ink-subtle hover:border-hairline-strong hover:text-ink transition" title="اضغط Cmd+K">
+          <span class="text-[10px]">⌘</span><span>K</span>
+        </button>
+
+        <a href="https://github.com/seifwalidfathe-bot" target="_blank" rel="noopener noreferrer" class="text-xs font-mono px-3 py-1.5 rounded border border-hairline bg-surface-1 text-ink-muted hover:border-linear hover:text-white transition flex items-center space-x-1.5 space-x-reverse">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-16 sm:pt-20 pb-16 px-4 sm:px-6 linear-grid border-b border-hairline overflow-hidden">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Right Column: Copy & Actions (8 cols in RTL) -->
+        <div class="lg:col-span-8">
+          
+          <!-- Live Status Badge -->
+          <div class="hero-animate-1 inline-flex items-center space-x-2 space-x-reverse px-3 py-1 rounded-full border border-hairline bg-surface-1/80 text-[11px] font-mono text-ink-subtle mb-6">
+            <span class="w-2 h-2 rounded-full bg-status-online animate-pulse"></span>
+            <span class="text-ink">متصل ومتاح للعمل</span>
+            <span class="text-hairline-strong">·</span>
+            <span>القاهرة (UTC+2)</span>
+            <span class="text-hairline-strong">·</span>
+            <span class="text-linear">جاهز للمشاريع والتعاقدات التقنية</span>
+          </div>
+
+          <!-- Humanized Pitch -->
+          <h1 class="hero-animate-2 text-3xl sm:text-5xl font-semibold tracking-tight text-ink leading-[1.25] mb-6">
+            أبني مسارات أتمتة وأنظمة خلفية تعمل بدون أعطال مفاجئة.
+          </h1>
+
+          <p class="hero-animate-3 text-base text-ink-muted leading-relaxed max-w-2xl mb-8 font-normal">
+            أغلب مسارات العمل تنهار حين يُرجع الـ API كوداً غير متوقع أو يتغير كود صفحة الويب فجأة. أبني حلولاً دفاعية باستخدام n8n، كتل متصفحات خفية بـ Python، وتكاملات ذكاء اصطناعي مخصصة ومصممة لتحمل أسوأ السيناريوهات والتعامل مع الأخطاء بدون توقف العمليات.
+          </p>
+
+          <!-- Primary CTA Bar -->
+          <div class="hero-animate-3 flex flex-wrap items-center gap-3 font-mono text-xs">
+            <a href="#projects" class="px-4 py-2.5 rounded bg-linear hover:bg-linear-hover text-white font-medium transition shadow-lg shadow-linear/15">
+              استعراض الأنظمة المختارة ←
+            </a>
+            <a href="#simulator" class="px-4 py-2.5 rounded bg-surface-2 hover:bg-surface-3 border border-hairline text-ink-muted transition">
+              تجربة محاكي الأتمتة المباشر
+            </a>
+            <button onclick="copyEmail()" class="px-4 py-2.5 rounded bg-surface-1 hover:bg-surface-2 border border-hairline text-ink-subtle hover:text-ink transition flex items-center space-x-2 space-x-reverse">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              <span id="copyBtnText">نسخ البريد الإلكتروني</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Left Column: Seif's Portrait Card (4 cols in RTL) -->
+        <div class="lg:col-span-4 hero-animate-2 flex justify-center lg:justify-start">
+          <div class="craft-card rounded-2xl overflow-hidden border border-hairline-strong max-w-[280px] sm:max-w-[320px] shadow-2xl relative group">
+            <div class="relative overflow-hidden aspect-[4/5] bg-surface-2">
+              <img src="seif_portrait.jpg" alt="سيف وليد" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/10 to-transparent"></div>
+              
+              <!-- Subtle badge on photo -->
+              <div class="absolute bottom-3 left-3 right-3 p-2.5 rounded-lg bg-surface-1/90 backdrop-blur-md border border-hairline text-[11px] font-mono">
+                <div class="flex items-center space-x-1.5 space-x-reverse text-ink font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-status-online"></span>
+                  <span>سيف وليد</span>
+                </div>
+                <div class="text-[10px] text-ink-subtle mt-0.5">مهندس أنظمة وأتمتة سحابية</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Core Technical Focus -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 pt-8 border-t border-hairline text-xs">
+        <div class="p-3.5 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-semibold">كشط بيانات متقدم (Resilient Scraping)</div>
+          <div class="text-ink-subtle mt-1 text-[11px] leading-relaxed">كتل Playwright خفية، تدوير بروكسيات سكنية لمنع الحظر ومقاومة القيود.</div>
+        </div>
+        <div class="p-3.5 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-semibold">مسارات n8n وأنظمة خلفية</div>
+          <div class="text-ink-subtle mt-1 text-[11px] leading-relaxed">خطوط عمل موجهة بالأحداث، تحقق صارم من الـ Webhooks وقواعد PostgreSQL.</div>
+        </div>
+        <div class="p-3.5 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-semibold">جسور أدوات الذكاء الاصطناعي</div>
+          <div class="text-ink-subtle mt-1 text-[11px] leading-relaxed">روبوتات WhatsApp و Telegram متصلة بقواعد بيانات الشركات ومحمية بصمامات أمان.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MOMENT 1: INTERACTIVE AUTOMATION PIPELINE SIMULATOR -->
+  <section id="simulator" class="py-16 px-4 sm:px-6 border-b border-hairline bg-surface-1/40">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="text-[11px] font-mono text-linear font-medium uppercase tracking-wider mb-1">المحاكاة اللحظية</div>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">محاكي خطوط الأتمتة المباشر</h2>
+          <p class="text-xs text-ink-subtle mt-1">اختر معمارية لمعاينة خطوات التنفيذ، تحويل البيانات، وزمن الاستجابة بدقة.</p>
+        </div>
+        <div class="flex items-center space-x-2 space-x-reverse">
+          <button id="runSimBtn" onclick="runSimulation()" class="px-3.5 py-1.5 rounded bg-linear hover:bg-linear-hover text-white text-xs font-mono font-medium transition flex items-center space-x-2 space-x-reverse">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <span>بدء المحاكاة</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pipeline Selector Tabs -->
+      <div class="flex flex-wrap gap-2 border-b border-hairline pb-2 mb-6 font-mono text-xs">
+        <button onclick="setSimWorkflow('scraper')" id="tab-scraper" class="px-3 py-1.5 rounded border border-hairline bg-surface-2 text-ink font-medium transition">
+          01. كاشط بيانات B2B الخفي
+        </button>
+        <button onclick="setSimWorkflow('bot')" id="tab-bot" class="px-3 py-1.5 rounded border border-transparent text-ink-subtle hover:text-ink transition">
+          02. جسر واتساب وتيليجرام الذكي
+        </button>
+        <button onclick="setSimWorkflow('subpulse')" id="tab-subpulse" class="px-3 py-1.5 rounded border border-transparent text-ink-subtle hover:text-ink transition">
+          03. منبه اشتراكات SubPulse
+        </button>
+      </div>
+
+      <!-- Simulator Visual Stage -->
+      <div class="craft-card rounded-xl p-5 sm:p-6 overflow-hidden">
+        
+        <!-- Workflow Nodes Graph -->
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-6 relative">
+          
+          <div id="node-1" class="p-3 rounded-lg border border-hairline bg-surface-2 transition duration-300">
+            <div class="flex items-center justify-between text-[10px] font-mono text-ink-subtle mb-1">
+              <span>الخطوة 1</span>
+              <span id="node-1-status" class="w-1.5 h-1.5 rounded-full bg-ink-tertiary"></span>
+            </div>
+            <div id="node-1-title" class="text-xs font-semibold text-ink">تهيئة البروكسيات</div>
+            <div id="node-1-desc" class="text-[11px] text-ink-subtle mt-1 font-mono">تدوير 4 عقد سكنية</div>
+          </div>
+
+          <div id="node-2" class="p-3 rounded-lg border border-hairline bg-surface-2 transition duration-300">
+            <div class="flex items-center justify-between text-[10px] font-mono text-ink-subtle mb-1">
+              <span>الخطوة 2</span>
+              <span id="node-2-status" class="w-1.5 h-1.5 rounded-full bg-ink-tertiary"></span>
+            </div>
+            <div id="node-2-title" class="text-xs font-semibold text-ink">كتلة Playwright</div>
+            <div id="node-2-desc" class="text-[11px] text-ink-subtle mt-1 font-mono">استخراج خفي بدون واجهة</div>
+          </div>
+
+          <div id="node-3" class="p-3 rounded-lg border border-hairline bg-surface-2 transition duration-300">
+            <div class="flex items-center justify-between text-[10px] font-mono text-ink-subtle mb-1">
+              <span>الخطوة 3</span>
+              <span id="node-3-status" class="w-1.5 h-1.5 rounded-full bg-ink-tertiary"></span>
+            </div>
+            <div id="node-3-title" class="text-xs font-semibold text-ink">التحليل والمطابقة</div>
+            <div id="node-3-desc" class="text-[11px] text-ink-subtle mt-1 font-mono">تحقق بمخطط Pydantic</div>
+          </div>
+
+          <div id="node-4" class="p-3 rounded-lg border border-hairline bg-surface-2 transition duration-300">
+            <div class="flex items-center justify-between text-[10px] font-mono text-ink-subtle mb-1">
+              <span>الخطوة 4</span>
+              <span id="node-4-status" class="w-1.5 h-1.5 rounded-full bg-ink-tertiary"></span>
+            </div>
+            <div id="node-4-title" class="text-xs font-semibold text-ink">الحفظ في Postgres</div>
+            <div id="node-4-desc" class="text-[11px] text-ink-subtle mt-1 font-mono">إدراج مفهرس وإرسال Webhook</div>
+          </div>
+
+        </div>
+
+        <!-- Telemetry Log Terminal Output -->
+        <div class="bg-canvas border border-hairline rounded-lg p-3 sm:p-4 font-mono text-xs text-left" dir="ltr">
+          <div class="flex items-center justify-between pb-2 mb-2 border-b border-hairline text-[11px] text-ink-tertiary">
+            <span class="flex items-center space-x-2">
+              <span class="w-2 h-2 rounded-full bg-status-online"></span>
+              <span>ENGINE STREAM // RUNNER v2.4 (AR)</span>
+            </span>
+            <span id="simExecutionTime">Idle (Ready)</span>
+          </div>
+          <div id="simLogConsole" class="space-y-1 text-ink-muted min-h-[90px]">
+            <p class="text-ink-subtle">// Click "بدء المحاكاة" to execute this simulated workflow.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRODUCTION PROJECTS SECTION -->
+  <section id="projects" class="py-16 px-4 sm:px-6 border-b border-hairline">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="text-[11px] font-mono text-linear font-medium uppercase tracking-wider mb-1">الأعمال الإنتاجية</div>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">الأنظمة والمشاريع المنشورة</h2>
+          <p class="text-xs text-ink-subtle mt-1">تطبيقات وأنظمة حقيقية مبنية بمعماريات دفاعية ونتائج أعمال ملموسة.</p>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+          <button onclick="filterProjects('all')" class="filter-btn px-2.5 py-1 rounded border border-hairline bg-surface-2 text-ink" data-filter="all">الكل</button>
+          <button onclick="filterProjects('automation')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="automation">أتمتة</button>
+          <button onclick="filterProjects('scraping')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="scraping">كشط بيانات</button>
+          <button onclick="filterProjects('saas')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="saas">SaaS</button>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="space-y-8" id="projectsList">
+        
+        <!-- Project 1: Google Maps Lead Scraper Kit -->
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="scraping automation">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
+            <div class="md:col-span-7 p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 space-x-reverse font-mono text-[11px] text-ink-subtle mb-2">
+                  <span class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-linear">حزمة مفتوحة المصدر</span>
+                  <span>Playwright · Python · Postgres</span>
+                </div>
+                <h3 class="text-xl font-semibold text-ink tracking-tight mb-2">أداة كشط عملاء Google Maps المتقدمة</h3>
+                <p class="text-sm text-ink-muted leading-relaxed mb-4">
+                  مبنية لتجاوز تقنيات الحظر وكشف البوتات بدون الحاجة لاشتراكات واجهات برمجة طرف ثالث مكلفة. تعتمد على تدوير بروكسيات سكنية، محاكاة حركة الماوس البشرية، والتحقق الآلي من الهياكل لاستخراج أكثر من 10,000 عميل محلي موثق لكل دورة وتخزينها في PostgreSQL أو CSV.
+                </p>
+                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-subtle">
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">10k+ سجل / تشغيلة</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">تدوير بروكسي مانع للحظر</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">صفر حظر IP</span>
+                </div>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 space-x-reverse font-mono text-xs">
+                <a href="https://github.com/seifwalidfathe-bot/google-maps-scraper-kit" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse">
+                  <span>معاينة المستودع على GitHub</span>
+                  <span>←</span>
+                </a>
+                <button onclick="openProjectModal('scraper')" class="text-ink-subtle hover:text-ink">المخطط المعماري</button>
+              </div>
+            </div>
+            <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
+              <img src="project1_scraping_automation.png" alt="أداة كشط عملاء Google Maps" class="w-full h-full object-cover rounded-md opacity-90 hover:opacity-100 transition duration-300" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: SubPulse SaaS Tracker -->
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="saas">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
+            <div class="md:col-span-7 p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 space-x-reverse font-mono text-[11px] text-ink-subtle mb-2">
+                  <span class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-linear">منصة SaaS إنتاجية</span>
+                  <span>Next.js · Supabase · Tailwind</span>
+                </div>
+                <h3 class="text-xl font-semibold text-ink tracking-tight mb-2">SubPulse: منصة تتبع الاشتراكات ومصاريف الـ SaaS</h3>
+                <p class="text-sm text-ink-muted leading-relaxed mb-4">
+                  مركز بيانات مالي متكامل لتتبع اشتراكات البرمجيات المتكررة عبر فرق العمل. يتضمن رسوماً بيانية تنبؤية لمعدل حرق السيولة السنوي، تحويل العملات اللحظي، وإرسال تنبيهات تلقائية عبر الـ Webhook قبل 3 أيام من خصم البطاقات الائتمانية.
+                </p>
+                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-subtle">
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Row Level Security</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Webhook Dispatcher</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">SSR &lt;150ms</span>
+                </div>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 space-x-reverse font-mono text-xs">
+                <button onclick="openProjectModal('subpulse')" class="text-linear hover:text-linear-hover font-medium">ملاحظات المعمارية ←</button>
+              </div>
+            </div>
+            <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
+              <img src="project2_nextjs_saas_dashboard.png" alt="لوحة تحكم SubPulse SaaS" class="w-full h-full object-cover rounded-md opacity-90 hover:opacity-100 transition duration-300" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Dr. Aya Dergham Medical Platform -->
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="automation saas">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
+            <div class="md:col-span-7 p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 space-x-reverse font-mono text-[11px] text-ink-subtle mb-2">
+                  <span class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-linear">عميل مباشر حقيقي</span>
+                  <span>جلدية وتجميل · مزامنة CRM</span>
+                </div>
+                <h3 class="text-xl font-semibold text-ink tracking-tight mb-2">منصة د. آية درغام: المركز الطبي التسويقي</h3>
+                <p class="text-sm text-ink-muted leading-relaxed mb-4">
+                  واجهة طبية عالية التحويل مخصصة لحجز استشارات الجلدية والتجميل. تدمج نظام توجيه ديناميكي للمرضى، معارض سريرية للحالات، وتوجيه مباشر للعملاء إلى واتساب مع ربط بنظام إدارة العيادة بدون أي فقدان لبيانات المصدر.
+                </p>
+                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-subtle">
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">ربط مباشر بـ CRM</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">متجاوب مع الهواتف</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">أعلى درجة أداء Core Web Vitals</span>
+                </div>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 space-x-reverse font-mono text-xs">
+                <a href="https://seifwalidfathe-bot.github.io/dr-aya-portfolio/" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse">
+                  <span>زيارة الموقع المباشر</span>
+                  <span>↖</span>
+                </a>
+                <button onclick="openProjectModal('draya')" class="text-ink-subtle hover:text-ink">تفاصيل الحالة</button>
+              </div>
+            </div>
+            <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
+              <img src="project_dr_aya.jpg" alt="منصة د. آية درغام الطبية" class="w-full h-full object-cover rounded-md opacity-90 hover:opacity-100 transition duration-300" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: AETHER 3D Storefront -->
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="saas">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
+            <div class="md:col-span-7 p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 space-x-reverse font-mono text-[11px] text-ink-subtle mb-2">
+                  <span class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-linear">تجربة ويب ثلاثية الأبعاد</span>
+                  <span>Three.js · WebGL · E-Commerce</span>
+                </div>
+                <h3 class="text-xl font-semibold text-ink tracking-tight mb-2">AETHER™: متجر إلكتروني فاخر تفاعلي</h3>
+                <p class="text-sm text-ink-muted leading-relaxed mb-4">
+                  تجربة تجارة إلكترونية تفاعلية تتيح فحص المنتجات ثلاثية الأبعاد بزاوية 360 درجة مع تحكم سلس بمعدل 60 إطار في الثانية، تظليل إضاءة استوديو متقدم، وإدارة سريعة لحالة سلة الشراء.
+                </p>
+                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-subtle">
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Three.js Canvas</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">حركة كاميرا 60fps</span>
+                </div>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 space-x-reverse font-mono text-xs">
+                <button onclick="openProjectModal('aether')" class="text-linear hover:text-linear-hover font-medium">معاينة المواصفات ←</button>
+              </div>
+            </div>
+            <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
+              <img src="project3_shopify_ecommerce_store.png" alt="متجر AETHER 3D التجاري" class="w-full h-full object-cover rounded-md opacity-90 hover:opacity-100 transition duration-300" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Virtual Fitting Room AI -->
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="automation">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
+            <div class="md:col-span-7 p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 space-x-reverse font-mono text-[11px] text-ink-subtle mb-2">
+                  <span class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-linear">خط ذكاء اصطناعي مخصص</span>
+                  <span>Diffusion · Pose Estimation · FastAPI</span>
+                </div>
+                <h3 class="text-xl font-semibold text-ink tracking-tight mb-2">غرفة القياس الافتراضية ومطابقة الأزياء</h3>
+                <p class="text-sm text-ink-muted leading-relaxed mb-4">
+                  محرك معالجة وتوليد صور يطابق قطع الملابس مع معالم وضعية الجسد للمستخدمين بدقة. يعالج صور العملاء عبر طوابير عمال غير متزامنة ويقدم معاينة واقعية لتجربة الملابس في أقل من 4 ثوانٍ.
+                </p>
+                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-subtle">
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">طابور مهام Celery و Redis</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">زمن استجابة أقل من 4 ثوانٍ</span>
+                </div>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 space-x-reverse font-mono text-xs">
+                <button onclick="openProjectModal('fitting')" class="text-linear hover:text-linear-hover font-medium">ملاحظات المسار ←</button>
+              </div>
+            </div>
+            <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
+              <img src="project_fitting_room.webp" alt="غرفة القياس الافتراضية بالذكاء الاصطناعي" class="w-full h-full object-cover rounded-md opacity-90 hover:opacity-100 transition duration-300" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MOMENT 2: INTERACTIVE SHELL TERMINAL -->
+  <section id="terminal" class="py-16 px-4 sm:px-6 border-b border-hairline bg-surface-1/60">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="text-[11px] font-mono text-linear font-medium uppercase tracking-wider mb-1">واجهة المطور</div>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">سطر الأوامر التفاعلي (Interactive Shell)</h2>
+          <p class="text-xs text-ink-subtle mt-1">وصول مباشر لبيئة النظام. شغل الأوامر لمعاينة المكدس التقني، الحالة، وبيانات التواصل.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-1.5 font-mono text-xs text-ink-tertiary">
+          <span>أوامر سريعة:</span>
+          <button onclick="runCommand('projects')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">projects</button>
+          <button onclick="runCommand('stack')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">stack</button>
+          <button onclick="runCommand('status')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">status</button>
+          <button onclick="runCommand('contact')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">contact</button>
+        </div>
+      </div>
+
+      <div class="bg-surface-1 border border-hairline rounded-xl overflow-hidden shadow-2xl font-mono text-xs">
+        
+        <!-- Terminal Titlebar -->
+        <div class="px-4 py-2.5 bg-surface-2 border-b border-hairline flex items-center justify-between text-ink-subtle text-[11px]" dir="ltr">
+          <div class="flex items-center space-x-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-hairline-strong"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-hairline-strong"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-hairline-strong"></span>
+            <span class="ml-2 text-ink">seif@workstation:~ (zsh)</span>
+          </div>
+          <span class="text-ink-tertiary">Type 'help' or 'مساعدة'</span>
+        </div>
+
+        <!-- Terminal Body -->
+        <div id="termOutput" class="p-4 sm:p-5 space-y-2 min-h-[200px] max-h-[380px] overflow-y-auto text-ink-muted text-left" dir="ltr">
+          <p class="text-ink-tertiary">Seif Walid Systems Terminal · v2.4.0 (Arabic Engine)</p>
+          <p class="text-ink-subtle">اكتب <span class="text-linear">help</span> أو <span class="text-linear">مشاريع</span> للاستعراض، أو استخدم الأزرار أعلاه.</p>
+        </div>
+
+        <!-- Terminal Input Line -->
+        <div class="px-4 py-3 bg-canvas border-t border-hairline flex items-center" dir="ltr">
+          <span class="text-linear mr-2 font-bold">➜</span>
+          <span class="text-ink-subtle mr-2 font-medium">~</span>
+          <input id="termInput" type="text" autocomplete="off" spellcheck="false" placeholder="help" class="w-full bg-transparent text-ink font-mono text-xs outline-none focus:ring-0">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ENGINEERING PHILOSOPHY & ARCHITECTURE -->
+  <section id="architecture" class="py-16 px-4 sm:px-6 border-b border-hairline">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="mb-10">
+        <div class="text-[11px] font-mono text-linear font-medium uppercase tracking-wider mb-1">المنهجية البرمجية</div>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">كيف أبني أنظمة محصنة ضد الأعطال</h2>
+        <p class="text-xs text-ink-subtle mt-1">أربع قواعد تشغيلية صارمة وغير قابلة للمساومة تُطبق على كل مسار أتمتة ونظام خلفي.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <div class="craft-card p-5 rounded-xl">
+          <div class="font-mono text-xs text-linear font-semibold mb-2">01 // محاولات ذكية مع تأخير متدرج</div>
+          <h3 class="text-base font-semibold text-ink tracking-tight mb-2">توقع انقطاع الخدمات وقيود التردد</h3>
+          <p class="text-xs text-ink-muted leading-relaxed">
+            كل طلب HTTP خارجي أو مهمة كشط تتضمن خوارزمية تراجع أسي (Exponential Backoff with Jitter) وقواطع دوائر أوتوماتيكية. حين تتعثر الخدمات الخارجية، تنتظر مساراتنا وتعيد المحاولة بذكاء بدلاً من الانهيار الصامت وفقدان البيانات.
+          </p>
+        </div>
+
+        <div class="craft-card p-5 rounded-xl">
+          <div class="font-mono text-xs text-linear font-semibold mb-2">02 // تدوير البصمات والبروكسيات</div>
+          <h3 class="text-base font-semibold text-ink tracking-tight mb-2">كشط بيانات متخفٍ بلا حظر</h3>
+          <p class="text-xs text-ink-muted leading-relaxed">
+            مسارات استخراج البيانات تولد بصمات عشوائية للـ Canvas و WebGL ومعرفات المتصفح وحركات الماوس. تتوزع الطلبات على مجموعات بروكسيات سكنية للحفاظ على كفاءة التدفق دون إثارة جدران الحماية مثل Cloudflare.
+          </p>
+        </div>
+
+        <div class="craft-card p-5 rounded-xl">
+          <div class="font-mono text-xs text-linear font-semibold mb-2">03 // فحص صارم لهياكل البيانات</div>
+          <h3 class="text-base font-semibold text-ink tracking-tight mb-2">منع وصول أي بيانات مشوهة للقواعد</h3>
+          <p class="text-xs text-ink-muted leading-relaxed">
+            يتم فحص كل حمولة Webhook أو بيانات مكشوطة بدقة عبر مخططات Pydantic / Zod الصارمة قبل كتابتها على القرص أو في جداول قاعدة البيانات. تُحوّل البيانات غير المتطابقة لطوابير الأخطاء مع إشعار فوري عبر تيليجرام.
+          </p>
+        </div>
+
+        <div class="craft-card p-5 rounded-xl">
+          <div class="font-mono text-xs text-linear font-semibold mb-2">04 // أمان التحكم البشري</div>
+          <h3 class="text-base font-semibold text-ink tracking-tight mb-2">تنفيذ آمن ومضبوط لقرارات الـ AI</h3>
+          <p class="text-xs text-ink-muted leading-relaxed">
+            تستطيع روبوتات الذكاء الاصطناعي القراءة والتلخيص بحرية، لكن العمليات ذات الأثر العالي (خصم الأرصدة، حذف السجلات، إرسال رسائل بريد رسمية) تتطلب موافقة بشرية صريحة أو صمامات أمان حازمة قبل التنفيذ.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TECH STACK COMPACT GRID -->
+  <section class="py-12 px-4 sm:px-6 border-b border-hairline bg-surface-1/30">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-[11px] font-mono text-ink-subtle uppercase tracking-wider mb-6">التقنيات المستخدمة في البيئات الإنتاجية</div>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-xs">
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">n8n / Self-Hosted</div>
+          <div class="text-[11px] text-ink-subtle">أتمتة مسارات العمل</div>
+        </div>
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">Python &amp; Playwright</div>
+          <div class="text-[11px] text-ink-subtle">استخراج وكشط البيانات</div>
+        </div>
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">Next.js &amp; Tailwind</div>
+          <div class="text-[11px] text-ink-subtle">بناء واجهات الويب</div>
+        </div>
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">PostgreSQL &amp; Supabase</div>
+          <div class="text-[11px] text-ink-subtle">قواعد البيانات العلائقية</div>
+        </div>
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">FastAPI &amp; Node.js</div>
+          <div class="text-[11px] text-ink-subtle">خدمات الأنظمة الخلفية</div>
+        </div>
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">Docker &amp; Linux VPS</div>
+          <div class="text-[11px] text-ink-subtle">نشر وإدارة الخوادم</div>
+        </div>
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">Telegram &amp; WhatsApp</div>
+          <div class="text-[11px] text-ink-subtle">بوابات روبوتات المحادثة</div>
+        </div>
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">Three.js &amp; WebGL</div>
+          <div class="text-[11px] text-ink-subtle">رسوميات 3D تفاعلية</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECT CONTACT SECTION -->
+  <section id="contact" class="py-16 px-4 sm:px-6 border-b border-hairline">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="craft-card rounded-2xl p-6 sm:p-10 border border-hairline-strong relative overflow-hidden">
+        <div class="max-w-xl">
+          <div class="flex items-center space-x-3 space-x-reverse mb-6">
+            <img src="seif_avatar.jpg" alt="سيف وليد" class="w-12 h-12 rounded-full object-cover border border-hairline-strong shadow-md">
+            <div>
+              <div class="text-sm font-semibold text-ink">سيف وليد</div>
+              <div class="text-xs font-mono text-status-online flex items-center space-x-1.5 space-x-reverse">
+                <span class="w-1.5 h-1.5 rounded-full bg-status-online"></span>
+                <span>تواصل مباشر · القاهرة، مصر</span>
+              </div>
+            </div>
+          </div>
+          
+          <h2 class="text-2xl sm:text-4xl font-semibold tracking-tight text-ink mb-4 leading-snug">
+            تحتاج مسار أتمتة أو نظام خلفي لا يخذل أعمالك؟ دعنا نتحدث.
+          </h2>
+          <p class="text-sm text-ink-muted leading-relaxed mb-8">
+            أعمل مباشرة مع المؤسسين التقنيين، وكالات التسويق، وفرق العمليات لأتمتة المهام المعقدة، بناء كواشط بيانات متينة، وتطوير تطبيقات متكاملة ومستقرة.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 font-mono text-xs">
+            <a href="mailto:seif.walid.fathe@gmail.com" class="px-4 py-2.5 rounded bg-linear hover:bg-linear-hover text-white font-medium transition shadow-lg shadow-linear/20">
+              إرسال بريد إلكتروني مباشر ←
+            </a>
+            <button onclick="copyEmail()" class="px-4 py-2.5 rounded bg-surface-2 hover:bg-surface-3 border border-hairline text-ink transition">
+              نسخ البريد (seif.walid.fathe@gmail.com)
+            </button>
+            <a href="https://github.com/seifwalidfathe-bot" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded bg-surface-1 hover:bg-surface-2 border border-hairline text-ink-subtle hover:text-ink transition">
+              الملف الشخصي على GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-4 sm:px-6 bg-canvas border-t border-hairline">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-ink-tertiary gap-4">
+      <div>
+        <span>سيف وليد · أنظمة خلفية وأتمتة سحابية</span>
+      </div>
+      <div class="flex items-center space-x-4 space-x-reverse">
+        <span>القاهرة، مصر</span>
+        <span>·</span>
+        <span>© 2026 سيف وليد</span>
+        <span>·</span>
+        <a href="#projects" class="text-ink-subtle hover:text-ink transition">للأعلى ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DETAIL MODAL FOR ARCHITECTURE NOTES -->
+  <div id="projectModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="w-full max-w-xl bg-surface-2 border border-hairline-strong rounded-xl shadow-2xl p-6 text-xs">
+      <div class="flex items-center justify-between border-b border-hairline pb-3 mb-4">
+        <h3 id="modalTitle" class="text-sm font-semibold text-ink">المخطط المعماري الهندسي</h3>
+        <button onclick="closeProjectModal()" class="text-ink-subtle hover:text-ink">✕ إغلاق</button>
+      </div>
+      <div id="modalContent" class="text-ink-muted space-y-3 leading-relaxed">
+        <!-- Injected via JS -->
+      </div>
+      <div class="mt-6 pt-3 border-t border-hairline flex justify-end">
+        <button onclick="closeProjectModal()" class="px-3 py-1.5 rounded bg-surface-3 border border-hairline text-ink hover:bg-surface-4 transition">إغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 left-6 z-50 px-4 py-2.5 rounded-lg border border-hairline-strong bg-surface-2 text-ink font-mono text-xs shadow-2xl hidden items-center space-x-2 space-x-reverse transition-all transform duration-200">
+    <span class="w-2 h-2 rounded-full bg-status-online"></span>
+    <span id="toastMessage">تم النسخ إلى الحافظة</span>
+  </div>
+
+  <!-- CLIENT SCRIPTS -->
+  <script>
+    function copyEmail() {
+      const email = 'seif.walid.fathe@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        showToast('تم نسخ البريد الإلكتروني: ' + email);
+        const btn = document.getElementById('copyBtnText');
+        if (btn) {
+          btn.innerText = 'تم النسخ بنجاح!';
+          setTimeout(() => { btn.innerText = 'نسخ البريد الإلكتروني'; }, 2000);
+        }
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.innerText = msg;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 3000);
+    }
+
+    function toggleCmdPalette() {
+      const palette = document.getElementById('cmdPalette');
+      if (palette.classList.contains('hidden')) {
+        palette.classList.remove('hidden');
+        palette.classList.add('flex');
+        document.getElementById('cmdInput').focus();
+      } else {
+        palette.classList.add('hidden');
+        palette.classList.remove('flex');
+      }
+    }
+
+    function navigateTo(hash) {
+      toggleCmdPalette();
+      window.location.hash = hash;
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        toggleCmdPalette();
+      }
+      if (e.key === 'Escape') {
+        const palette = document.getElementById('cmdPalette');
+        const modal = document.getElementById('projectModal');
+        if (!palette.classList.contains('hidden')) palette.classList.add('hidden');
+        if (!modal.classList.contains('hidden')) modal.classList.add('hidden');
+      }
+    });
+
+    function filterProjects(cat) {
+      const items = document.querySelectorAll('.project-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(b => {
+        if (b.getAttribute('data-filter') === cat) {
+          b.className = 'filter-btn px-2.5 py-1 rounded border border-hairline bg-surface-2 text-ink';
+        } else {
+          b.className = 'filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink';
+        }
+      });
+
+      items.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        if (cat === 'all' || itemCat.includes(cat)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    const workflows = {
+      scraper: {
+        steps: [
+          { title: "تهيئة البروكسيات", desc: "تدوير 4 عقد سكنية" },
+          { title: "كتلة Playwright", desc: "استخراج خفي بدون واجهة" },
+          { title: "التحليل والمطابقة", desc: "تحقق بمخطط Pydantic" },
+          { title: "الحفظ في Postgres", desc: "إدراج مفهرس وإرسال Webhook" }
+        ],
+        logs: [
+          "[00:00:01] Initializing rotating proxy pool (session hash: a8f912...)",
+          "[00:00:02] Injecting randomized navigator properties: Chrome/124.0 (Linux x86_64)",
+          "[00:00:03] Page query: 'Industrial machinery suppliers Cairo' -> 120 nodes found",
+          "[00:00:04] Cleaned 120 raw cards -> validated against Pydantic model",
+          "[00:00:05] Batch insert committed: 120 records written to postgres.leads (took 184ms)"
+        ]
+      },
+      bot: {
+        steps: [
+          { title: "استقبال Webhook", desc: "التحقق من توقيع HMAC" },
+          { title: "تصنيف النية", desc: "توجيه LangChain وتصفية الرموز" },
+          { title: "بحث متجهي بالقاعدة", desc: "استرجاع كتالوج خدمات العيادة" },
+          { title: "إرسال رد واتساب", desc: "تسليم الرد عبر Cloud API" }
+        ],
+        logs: [
+          "[00:00:01] POST /webhooks/whatsapp HTTP/1.1 200 OK (verified via SHA-256)",
+          "[00:00:02] Inbound text: 'Can I book a consultation with Dr. Aya tomorrow?'",
+          "[00:00:03] Querying appointment slots in Supabase calendar view...",
+          "[00:00:04] Found open slot: 14:00 UTC. Formatted WhatsApp reply message",
+          "[00:00:05] Delivered message via Meta Cloud API (latency: 342ms)"
+        ]
+      },
+      subpulse: {
+        steps: [
+          { title: "مشغل مجدول Cron", desc: "تشغيل يومي منتظم عند منتصف الليل" },
+          { title: "تدقيق الاشتراكات", desc: "فحص مواعيد تجديد البطاقات القادمة" },
+          { title: "توقع حرق السيولة", desc: "حساب الأثر المالي لـ 30 يوماً" },
+          { title: "إرسال التنبيه", desc: "إشعار فوري لفريق العمليات" }
+        ],
+        logs: [
+          "[00:00:01] Scheduled cron trigger fired: audit_subscriptions()",
+          "[00:00:02] Scanning 34 active SaaS accounts across 3 departments...",
+          "[00:00:03] Flagged renewal: AWS reserved instances renew in 72 hours ($450.00)",
+          "[00:00:04] Generated spend summary payload with Stripe invoice link",
+          "[00:00:05] Dispatched webhook alert to operations channel (Status: 200 OK)"
+        ]
+      }
+    };
+
+    let activeWorkflow = 'scraper';
+
+    function setSimWorkflow(wf) {
+      activeWorkflow = wf;
+      ['scraper', 'bot', 'subpulse'].forEach(k => {
+        const tab = document.getElementById('tab-' + k);
+        if (k === wf) {
+          tab.className = 'px-3 py-1.5 rounded border border-hairline bg-surface-2 text-ink font-medium transition';
+        } else {
+          tab.className = 'px-3 py-1.5 rounded border border-transparent text-ink-subtle hover:text-ink transition';
+        }
+      });
+
+      const config = workflows[wf];
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`node-${i}-title`).innerText = config.steps[i-1].title;
+        document.getElementById(`node-${i}-desc`).innerText = config.steps[i-1].desc;
+        resetNode(i);
+      }
+      document.getElementById('simLogConsole').innerHTML = `<p class="text-ink-subtle">// Switched to ${wf} workflow. Click "بدء المحاكاة" to execute.</p>`;
+      document.getElementById('simExecutionTime').innerText = 'Idle (Ready)';
+    }
+
+    function resetNode(i) {
+      const node = document.getElementById(`node-${i}`);
+      const dot = document.getElementById(`node-${i}-status`);
+      node.className = 'p-3 rounded-lg border border-hairline bg-surface-2 transition duration-300';
+      dot.className = 'w-1.5 h-1.5 rounded-full bg-ink-tertiary';
+    }
+
+    function runSimulation() {
+      const runBtn = document.getElementById('runSimBtn');
+      runBtn.disabled = true;
+      runBtn.innerHTML = '<span>جاري المعالجة...</span>';
+
+      const config = workflows[activeWorkflow];
+      const consoleEl = document.getElementById('simLogConsole');
+      consoleEl.innerHTML = '';
+
+      let step = 0;
+      const startTime = performance.now();
+
+      function nextStep() {
+        if (step < 4) {
+          const nodeIdx = step + 1;
+          const node = document.getElementById(`node-${nodeIdx}`);
+          const dot = document.getElementById(`node-${nodeIdx}-status`);
+
+          node.className = 'p-3 rounded-lg border border-linear bg-surface-3 transition duration-300 shadow-md shadow-linear/10';
+          dot.className = 'w-1.5 h-1.5 rounded-full bg-status-online animate-ping';
+
+          const logLine = document.createElement('p');
+          logLine.className = 'text-ink-muted';
+          logLine.innerText = config.logs[step];
+          consoleEl.appendChild(logLine);
+
+          step++;
+          setTimeout(nextStep, 500);
+        } else {
+          const totalMs = Math.round(performance.now() - startTime);
+          document.getElementById('simExecutionTime').innerText = `Finished in ${totalMs}ms (Success)`;
+          const finalLine = document.createElement('p');
+          finalLine.className = 'text-status-online font-semibold pt-1';
+          finalLine.innerText = `[SUCCESS] اكتمل تنفيذ المسار بنجاح مع 0 أخطاء عبر 4 خدمات صغرى.`;
+          consoleEl.appendChild(finalLine);
+
+          runBtn.disabled = false;
+          runBtn.innerHTML = '<svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span>بدء المحاكاة</span>';
+        }
+      }
+
+      nextStep();
+    }
+
+    const termInput = document.getElementById('termInput');
+    const termOutput = document.getElementById('termOutput');
+
+    const terminalCommands = {
+      help: () => `الأوامر المتاحة (Available Commands):
+  • <span class="text-linear">projects</span> (أو <span class="text-linear">مشاريع</span>) : عرض الأنظمة البرمجية المنشورة
+  • <span class="text-linear">stack</span>    (أو <span class="text-linear">مهارات</span>)  : استعراض مكدس التقنيات والبيئات
+  • <span class="text-linear">status</span>   (أو <span class="text-linear">حالة</span>)    : الاستعلام عن حالة النظام والتوفر
+  • <span class="text-linear">contact</span>  (أو <span class="text-linear">تواصل</span>)   : قنوات التواصل المباشرة والبريد
+  • <span class="text-linear">whoami</span>   (أو <span class="text-linear">من_أنا</span>)  : نبذة عن سيف وليد
+  • <span class="text-linear">clear</span>    (أو <span class="text-linear">مسح</span>)    : مسح شاشة الطرفية`,
+
+      مساعدة: () => terminalCommands.help(),
+      
+      projects: () => `المشاريع المنشورة في بيئات الإنتاج:
+  1. أداة كشط عملاء Google Maps  [Playwright · Python · Postgres]
+  2. منصة SubPulse لمصاريف SaaS  [Next.js · Supabase · Tailwind]
+  3. المركز الطبي لد. آية درغام    [Medical CRM · WhatsApp Gateway]
+  4. متجر AETHER ثلاثي الأبعاد     [Three.js · WebGL · E-Commerce]
+  5. غرفة القياس الافتراضية الذكية  [Diffusion · Pose Estimation]`,
+
+      مشاريع: () => terminalCommands.projects(),
+
+      stack: () => `المكدس التقني والبيئات التشغيلية:
+  - الأتمتة      : n8n، كتل Python Celery، وسطاء الـ Webhooks
+  - الكشط والبيانات : Playwright، BeautifulSoup، شبكات البروكسي السكنية
+  - الباك إند    : Python FastAPI، Node.js، PostgreSQL
+  - الفرونت إند  : Next.js، Tailwind CSS، Three.js WebGL
+  - البنية التحتية : خوادم Linux VPS، Docker، GitHub Actions، Supabase`,
+
+      مهارات: () => terminalCommands.stack(),
+
+      status: () => `بيانات النظام والجاهزية:
+  - المهندس      : سيف وليد (Seif Walid)
+  - الموقع       : القاهرة، جمهورية مصر العربية (UTC+2)
+  - التعاقدات    : متاح للمشاريع والأنظمة عالية التأثير
+  - الرد         : عادة خلال أقل من 24 ساعة عبر البريد`,
+
+      حالة: () => terminalCommands.status(),
+
+      contact: () => `التواصل المباشر:
+  - البريد الإلكتروني : <a href="mailto:seif.walid.fathe@gmail.com" class="text-linear underline">seif.walid.fathe@gmail.com</a>
+  - حساب GitHub      : <a href="https://github.com/seifwalidfathe-bot" target="_blank" class="text-linear underline">github.com/seifwalidfathe-bot</a>`,
+
+      تواصل: () => terminalCommands.contact(),
+
+      whoami: () => `سيف وليد · مهندس أتمتة وبناء أنظمة خلفية متينة.
+أركز على بناء حلول معقدة تعمل باستقرار ومصممة للتعامل مع سيناريوهات الخطأ الواقعية.`,
+
+      من_أنا: () => terminalCommands.whoami()
+    };
+
+    termInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const val = termInput.value.trim().toLowerCase();
+        if (!val) return;
+        runCommand(val);
+        termInput.value = '';
+      }
+    });
+
+    function runCommand(cmd) {
+      const line = document.createElement('div');
+      line.className = 'pt-1';
+      line.innerHTML = `<span class="text-linear font-bold">➜</span> <span class="text-ink font-semibold">${cmd}</span>`;
+      termOutput.appendChild(line);
+
+      if (cmd === 'clear' || cmd === 'مسح') {
+        termOutput.innerHTML = '';
+        return;
+      }
+
+      const handler = terminalCommands[cmd];
+      const resp = document.createElement('div');
+      resp.className = 'text-ink-muted pl-4 whitespace-pre-wrap leading-relaxed';
+      if (handler) {
+        resp.innerHTML = handler();
+      } else {
+        resp.innerHTML = `<span class="text-red-400">الأمر غير معروف: '${cmd}'. اكتب 'help' أو 'مساعدة' لعرض الأوامر.</span>`;
+      }
+      termOutput.appendChild(resp);
+      termOutput.scrollTop = termOutput.scrollHeight;
+    }
+
+    const modalDetails = {
+      scraper: {
+        title: "المخطط المعماري: أداة كشط عملاء Google Maps",
+        body: `<p><strong>التحدي الأساسي:</strong> مكتبات الكشط العادية تُحظر بعد أقل من 50 طلباً نتيجة فحص بصمات الـ Canvas ومحددات TLS ومعدل الطلبات الصارم على Google Maps.</p>
+        <p><strong>الحل الهندسي:</strong></p>
+        <ul class="list-disc pr-4 space-y-1">
+          <li>تشغيل كتل Playwright خفية مع ترويسات متغيرة وتوليد عشوائي لحركة الماوس.</li>
+          <li>توزيع الطلبات عبر شبكة بروكسيات سكنية مع إعادة المحاولة بتأخير متصاعد.</li>
+          <li>محول بيانات فوري يحول عناصر الـ DOM إلى هياكل Pydantic قبل الإدراج المجمع في PostgreSQL.</li>
+        </ul>
+        <p><strong>النتيجة:</strong> استخراج أكثر من 10,000 شركة محلياً لكل جلسة مع صفر حظر IP.</p>`
+      },
+      subpulse: {
+        title: "المعمارية التقنية: منصة SubPulse لمصاريف الـ SaaS",
+        body: `<p><strong>التحدي الأساسي:</strong> فقدان الشركات لتتبع الاشتراكات السنوية وتفاجئها بخصومات كبيرة غير متوقعة على بطاقات العمل.</p>
+        <p><strong>الحل الهندسي:</strong></p>
+        <ul class="list-disc pr-4 space-y-1">
+          <li>استخدام Next.js App Router لسرعة تحميل فائقة عبر خوادم الـ SSR (&lt;150ms).</li>
+          <li>قاعدة بيانات Supabase مدعومة بسياسات أمان Row Level Security (RLS) لحماية بيانات الفرق.</li>
+          <li>مهام مجدولة تفحص مواعيد التجديد وترسل إشعارات Webhook عبر Telegram و Slack قبل 3 أيام.</li>
+        </ul>`
+      },
+      draya: {
+        title: "دراسة حالة: منصة د. آية درغام الطبية",
+        body: `<p><strong>التحدي الأساسي:</strong> توفير تجربة حجز استشارات سلسة عبر واتساب دون خسارة بيانات تتبع مصادر الحملات الإعلانية.</p>
+        <p><strong>الحل الهندسي:</strong></p>
+        <ul class="list-disc pr-4 space-y-1">
+          <li>واجهة أمامية سريعة جداً تسجل 100% على مقاييس أداء Core Web Vitals.</li>
+          <li>تحقق وتنسيق فوري لبيانات المريض وحقن نوع الإجراء الطبي برابط محادثة الواتساب مباشرة.</li>
+          <li>إرسال نسخة احتياطية من بيانات العميل عبر Webhook لقواعد بيانات وجداول العيادة لحظياً.</li>
+        </ul>`
+      },
+      aether: {
+        title: "المواصفات التقنية: متجر AETHER 3D الفاخر",
+        body: `<p>كانفاس WebGL مبني بـ Three.js مع إضاءة استوديو واقعية وخامات PBR متطورة. يتميز بضغط وتحميل تدريجي للأصول ثلاثية الأبعاد للحفاظ على معدل ثابت 60 إطار بالثانية حتى على الهواتف الذكية.</p>`
+      },
+      fitting: {
+        title: "معمارية البايبلاين: غرفة القياس الافتراضية بالذكاء الاصطناعي",
+        body: `<p>خط معالجة موزع يدمج نموذج OpenPose لتحديد معالم الجسد مع نموذج انتشار Image-to-Image. تدير خوادم Celery طوابير المعالجة لتسليم تجربة الملابس ومطابقتها في أقل من 4 ثوانٍ.</p>`
+      }
+    };
+
+    function openProjectModal(key) {
+      const data = modalDetails[key];
+      if (!data) return;
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalContent').innerHTML = data.body;
+      const modal = document.getElementById('projectModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('projectModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  </script>
+</body>
+</html>
