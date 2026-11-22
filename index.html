@@ -403,6 +403,39 @@
 
       <!-- Project Cards Grid -->
       <div class="space-y-8" id="projectsList">
+
+        <!-- Project 0: Stampee Loyalty Platform -->
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="saas">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
+            <div class="md:col-span-7 p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 font-mono text-[11px] text-ink-subtle mb-2">
+                  <span class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-rose-400">Proprietary SaaS</span>
+                  <span>React · TypeScript · Web Audio · Apple Wallet</span>
+                </div>
+                <h3 class="text-xl font-semibold text-ink tracking-tight mb-2">Stampee: Digital Loyalty &amp; POS Engine</h3>
+                <p class="text-sm text-ink-muted leading-relaxed mb-4">
+                  Zero-app-download loyalty pass replacing physical punch cards for cafés and retail brands. Features realistic rubber-stamp physical synthesis via Web Audio API, dynamic expiring QR codes, sub-3-second cashier POS stamping, and direct Apple &amp; Google Wallet integration.
+                </p>
+                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-subtle">
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">&lt;3s Checkout Stamping</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">0 App Store Friction</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Web Audio Synthesizer</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Apple Wallet Pass</span>
+                </div>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 font-mono text-xs">
+                <button onclick="openProjectModal('stampee')" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1">
+                  <span>Architecture &amp; Defensive Model</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </div>
+            <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-l border-hairline overflow-hidden flex items-center justify-center p-2">
+              <img src="project_stampee_loyalty.png" alt="Stampee Digital Loyalty Platform Pass and POS Terminal" class="w-full h-full object-cover rounded-md opacity-90 hover:opacity-100 transition duration-300" loading="lazy">
+            </div>
+          </div>
+        </article>
         
         <!-- Project 1: Google Maps Lead Scraper Kit -->
         <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="scraping automation">
@@ -1102,6 +1135,17 @@ Focused on building reliable pipelines that handle real failure modes without hu
 
     // 7. Project Modal Details
     const modalDetails = {
+      stampee: {
+        title: "Architecture & Defensive Model: Stampee Loyalty Platform",
+        body: `<p><strong>Core Challenge:</strong> Traditional punch cards get lost or forged, while SaaS apps (like Stamp Me or Monaasba) add checkout friction and high monthly subscription lock-in.</p>
+        <p><strong>Defensive Technical Architecture:</strong></p>
+        <ul class="list-disc pl-4 space-y-1">
+          <li><strong>Zero App Friction:</strong> Web PWA pass stored in client browser with Apple Wallet (.pkpass) and Google Wallet integration.</li>
+          <li><strong>Physical Feel Engine:</strong> Custom Web Audio API synthesizer modeling mechanical rubber stamp impact and paper click friction with haptic vibration feedback.</li>
+          <li><strong>Anti-Fraud Protection:</strong> Expiring HMAC signed QR tokens and cashier PIN protection preventing unauthorized stamp additions.</li>
+          <li><strong>High-Speed POS:</strong> Sub-3-second counter terminal with one-tap +1 stamp and instant reward redemption.</li>
+        </ul>`
+      },
       scraper: {
         title: "Architecture: Google Maps Lead Scraper Kit",
         body: `<p><strong>Core Challenge:</strong> Standard scraping libraries get detected within 50 requests due to browser canvas fingerprinting, TLS fingerprints, and aggressive IP rate limiting on Google Maps.</p>
