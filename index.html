@@ -3,69 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#010102">
   <title>Seif Walid · Websites, Shopify Themes &amp; Automation Systems</title>
   <meta name="description" content="Portfolio of Seif Walid. Engineering custom high-performance websites, Shopify Online Store 2.0 themes, e-commerce stores, and fault-tolerant automation pipelines.">
   <meta name="author" content="Seif Walid">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%2232%22%20height=%2232%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23010102%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 font-weight=%22700%22 fill=%22%235e6ad2%22>SW</text></svg>">
+  <link rel="canonical" href="https://seifwalidfathe-bot.github.io/portfolio/">
+  <link rel="alternate" hreflang="en" href="https://seifwalidfathe-bot.github.io/portfolio/">
+  <link rel="alternate" hreflang="ar" href="https://seifwalidfathe-bot.github.io/portfolio/ar.html">
+  <link rel="alternate" hreflang="x-default" href="https://seifwalidfathe-bot.github.io/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://seifwalidfathe-bot.github.io/portfolio/">
+  <meta property="og:title" content="Seif Walid · Websites, Shopify OS 2.0 Themes &amp; Automation">
+  <meta property="og:description" content="Fast Shopify OS 2.0 themes with native InstaPay checkout, custom Next.js web platforms, and resilient B2B automation pipelines.">
+  <meta property="og:image" content="https://seifwalidfathe-bot.github.io/portfolio/seif_portrait.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Seif Walid · Websites, Shopify OS 2.0 Themes &amp; Automation">
+  <meta name="twitter:description" content="Fast Shopify OS 2.0 themes with native InstaPay checkout, custom Next.js web platforms, and resilient B2B automation pipelines.">
+  <meta name="twitter:image" content="https://seifwalidfathe-bot.github.io/portfolio/seif_portrait.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22 width=%2232%22 height=%2232%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23010102%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 font-weight=%22700%22 fill=%22%235e6ad2%22>SW</text></svg>">
 
   <!-- Inter & JetBrains Mono Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
-          },
-          colors: {
-            canvas: '#010102',
-            surface: {
-              1: '#08090a',
-              2: '#0f1011',
-              3: '#141516',
-              4: '#18191a',
-            },
-            hairline: {
-              DEFAULT: '#23252a',
-              strong: '#34343a',
-              subtle: '#1a1b20',
-            },
-            linear: {
-              DEFAULT: '#5e6ad2',
-              hover: '#828fff',
-              subtle: 'rgba(94, 106, 210, 0.12)',
-              glow: 'rgba(94, 106, 210, 0.25)',
-            },
-            ink: {
-              DEFAULT: '#f7f8f8',
-              muted: '#d0d6e0',
-              subtle: '#8a8f98',
-              tertiary: '#62666d',
-            },
-            status: {
-              online: '#27a644',
-              warning: '#f59e0b',
-            }
-          },
-          letterSpacing: {
-            tighter: '-0.04em',
-            tight: '-0.025em',
-            snug: '-0.015em',
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Precompiled Tailwind CSS (Zero render-blocking JS runtime) -->
+  <link rel="stylesheet" href="assets/styles.css">
 
   <style>
     /* Linear Design System Baseline */
     :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --canvas: #010102;
       --surface-1: #08090a;
       --surface-2: #0f1011;
@@ -137,7 +105,7 @@
 <body class="selection:bg-linear/30 selection:text-white min-h-screen flex flex-col justify-between pb-24 sm:pb-0">
 
   <!-- COMMAND PALETTE MODAL (Cmd+K) -->
-  <div id="cmdPalette" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div id="cmdPalette" onclick="if(event.target===this) toggleCmdPalette()" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
     <div class="w-full max-w-lg bg-surface-2 border border-hairline-strong rounded-xl shadow-2xl overflow-hidden">
       <div class="flex items-center px-4 py-3 border-b border-hairline">
         <svg class="w-4 h-4 text-ink-subtle mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -153,28 +121,32 @@
           <span class="text-ink">02. Services &amp; Offerings</span>
           <span class="text-ink-tertiary">#services</span>
         </button>
-        <button onclick="toggleCmdPalette(); openProjectModal('shaghaf');" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">03. Shopify OS 2.0 &amp; E-Commerce Theme</span>
-          <span class="text-emerald-400">#shaghaf</span>
+        <button onclick="toggleCmdPalette(); openCartDrawerDemo();" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">03. Launch Live Cart &amp; InstaPay Demo</span>
+          <span class="text-emerald-400">#cart-demo</span>
+        </button>
+        <button onclick="navigateTo('#estimator')" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">04. Project Scope &amp; Timeline Estimator</span>
+          <span class="text-ink-tertiary">#estimator</span>
         </button>
         <button onclick="navigateTo('#simulator')" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">04. Live Automation Simulator</span>
+          <span class="text-ink">05. Live Automation Simulator</span>
           <span class="text-ink-tertiary">#simulator</span>
         </button>
         <button onclick="navigateTo('#terminal')" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">05. Interactive Shell Terminal</span>
+          <span class="text-ink">06. Interactive Shell Terminal</span>
           <span class="text-ink-tertiary">#terminal</span>
         </button>
         <button onclick="navigateTo('#architecture')" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">06. Engineering Architecture</span>
+          <span class="text-ink">07. Engineering Architecture</span>
           <span class="text-ink-tertiary">#architecture</span>
         </button>
         <button onclick="copyEmail()" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">07. Copy Direct Email</span>
+          <span class="text-ink">08. Copy Direct Email</span>
           <span class="text-ink-tertiary">seif.walid.fathe@gmail.com</span>
         </button>
         <button onclick="window.open('https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio', '_blank')" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">08. Chat on WhatsApp</span>
+          <span class="text-ink">09. Chat on WhatsApp</span>
           <span class="text-ink-tertiary">+20 109 671 1601</span>
         </button>
       </div>
@@ -182,18 +154,18 @@
   </div>
 
   <!-- MOBILE NAVIGATION DRAWER (FOR FAST MOBILE AD ACCESS) -->
-  <div id="mobileDrawer" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-start justify-end transition-opacity duration-300">
+  <div id="mobileDrawer" onclick="if(event.target===this) toggleMobileDrawer()" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-start justify-end transition-opacity duration-300">
     <div class="w-4/5 max-w-xs h-full bg-surface-1 border-l border-hairline p-5 flex flex-col justify-between overflow-y-auto shadow-2xl">
       <div>
         <div class="flex items-center justify-between pb-4 border-b border-hairline mb-5">
           <div class="flex items-center space-x-2.5">
-            <img src="seif_avatar.jpg" alt="Seif Walid" class="w-8 h-8 rounded-full object-cover border border-hairline">
+            <img src="seif_avatar.jpg" alt="Seif Walid" width="32" height="32" class="w-8 h-8 rounded-full object-cover border border-hairline">
             <div class="flex flex-col">
               <span class="text-xs font-semibold text-ink">Seif Walid</span>
               <span class="text-[10px] text-status-online font-mono">Available for Contracts</span>
             </div>
           </div>
-          <button onclick="toggleMobileDrawer()" class="w-9 h-9 rounded-lg bg-surface-2 border border-hairline text-ink-subtle hover:text-ink flex items-center justify-center text-sm" aria-label="Close menu">✕</button>
+          <button onclick="toggleMobileDrawer()" class="w-10 h-10 rounded-lg bg-surface-2 border border-hairline text-ink-subtle hover:text-ink flex items-center justify-center text-sm" aria-label="Close menu">✕</button>
         </div>
 
         <nav class="space-y-1 text-sm font-medium">
@@ -205,21 +177,25 @@
             <span>Services &amp; Capabilities</span>
             <span class="text-xs font-mono text-linear font-bold">02</span>
           </a>
+          <a href="#estimator" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
+            <span>Project Estimator</span>
+            <span class="text-xs font-mono text-linear font-bold">03</span>
+          </a>
           <a href="#simulator" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
             <span>Pipeline Simulator</span>
-            <span class="text-xs font-mono text-linear font-bold">03</span>
+            <span class="text-xs font-mono text-linear font-bold">04</span>
           </a>
           <a href="#terminal" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
             <span>Interactive Shell</span>
-            <span class="text-xs font-mono text-linear font-bold">04</span>
+            <span class="text-xs font-mono text-linear font-bold">05</span>
           </a>
           <a href="#architecture" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
             <span>Engineering Architecture</span>
-            <span class="text-xs font-mono text-linear font-bold">05</span>
+            <span class="text-xs font-mono text-linear font-bold">06</span>
           </a>
           <a href="#contact" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
             <span>Direct Contact</span>
-            <span class="text-xs font-mono text-linear font-bold">06</span>
+            <span class="text-xs font-mono text-linear font-bold">07</span>
           </a>
         </nav>
       </div>
@@ -238,28 +214,28 @@
 
   <!-- NAVIGATION -->
   <header class="sticky top-0 z-40 w-full border-b border-hairline/80 bg-canvas/90 backdrop-blur-md">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
       <a href="#" class="flex items-center space-x-3 group">
-        <img src="seif_avatar.jpg" alt="Seif Walid" class="w-8 h-8 rounded-full object-cover border border-hairline group-hover:border-linear transition shadow-sm">
+        <img src="seif_avatar.jpg" alt="Seif Walid" width="32" height="32" class="w-8 h-8 rounded-full object-cover border border-hairline group-hover:border-linear transition shadow-sm">
         <div class="flex flex-col">
           <span class="text-xs font-semibold text-ink tracking-tight">Seif Walid</span>
           <span class="text-[10px] font-mono text-ink-subtle">Websites · Shopify &amp; E-Commerce · Systems</span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center space-x-6 text-xs text-ink-subtle font-medium">
-        <a href="#projects" class="hover:text-ink transition">Selected Work</a>
+      <nav class="hidden md:flex items-center space-x-5 text-xs text-ink-subtle font-medium">
+        <a href="#projects" class="hover:text-ink transition">Work</a>
         <a href="#services" class="hover:text-ink transition">Services</a>
-        <a href="#simulator" class="hover:text-ink transition">Pipeline Simulator</a>
+        <a href="#estimator" class="hover:text-ink transition">Estimator</a>
+        <a href="#simulator" class="hover:text-ink transition">Simulator</a>
         <a href="#terminal" class="hover:text-ink transition">Shell</a>
-        <a href="#architecture" class="hover:text-ink transition">Architecture</a>
         <a href="#contact" class="hover:text-ink transition">Contact</a>
       </nav>
 
       <div class="flex items-center space-x-2">
         <a href="ar.html" class="text-xs font-mono px-2.5 py-1.5 rounded border border-hairline bg-surface-1 text-ink-muted hover:border-linear hover:text-white transition flex items-center space-x-1" title="التبديل إلى النسخة العربية">
           <span class="text-linear font-bold">AR</span>
-          <span class="hidden xs:inline">العربية</span>
+          <span class="hidden sm:inline">العربية</span>
         </a>
         <button onclick="toggleCmdPalette()" class="hidden sm:flex items-center space-x-1.5 px-2.5 py-1 rounded border border-hairline bg-surface-1 text-[11px] font-mono text-ink-subtle hover:border-hairline-strong hover:text-ink transition" title="Press Cmd+K">
           <span class="text-[10px]">⌘</span><span>K</span>
@@ -370,7 +346,7 @@
 
   <!-- MOMENT 1: INTERACTIVE AUTOMATION PIPELINE SIMULATOR -->
   <section id="simulator" class="py-16 px-4 sm:px-6 border-b border-hairline bg-surface-1/40">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
       
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
         <div>
@@ -464,7 +440,7 @@
 
   <!-- PRODUCTION PROJECTS SECTION -->
   <section id="projects" class="py-16 px-4 sm:px-6 border-b border-hairline">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
       
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
         <div>
@@ -487,8 +463,6 @@
       <div class="space-y-8" id="projectsList">
 
         <!-- Project 00: Shaghaf Store Egypt (Shopify OS 2.0 Theme) -->
-                <!-- Project 00: Shaghaf Store Egypt (Shopify OS 2.0 Theme) -->
-                <!-- Project 00: Shaghaf Store Egypt (Shopify OS 2.0 Theme) -->
         <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="ecommerce websites">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
             <div class="md:col-span-7 p-6 flex flex-col justify-between">
@@ -581,12 +555,12 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Apple &amp; Google Wallet</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 font-mono text-xs">
-                <a href="https://github.com/seifwalidfathe-bot/stampee-loyalty" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1">
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 font-mono text-xs">
+                <a href="https://github.com/seifwalidfathe-bot/stampee-loyalty" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 py-2 min-h-[44px]">
                   <span>View Repository</span>
                   <span>↗</span>
                 </a>
-                <button onclick="openProjectModal('stampee')" class="text-ink-subtle hover:text-ink">Architecture &amp; Security</button>
+                <button onclick="openProjectModal('stampee')" class="text-ink-subtle hover:text-ink py-2 px-2 min-h-[44px]">Architecture &amp; Security</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-l border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -631,12 +605,12 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Direct Sheets / CSV Sync</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 font-mono text-xs">
-                <a href="https://github.com/seifwalidfathe-bot/gmaps-lead-scraper" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1">
-                  <span>View Repository</span>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 font-mono text-xs">
+                <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20want%20a%20live%20demo%20of%20the%20Google%20Maps%20Lead%20Scraper%20Kit" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 py-2 min-h-[44px]">
+                  <span>Request Live Demo</span>
                   <span>↗</span>
                 </a>
-                <button onclick="openProjectModal('scraper')" class="text-ink-subtle hover:text-ink">Architecture &amp; Security</button>
+                <button onclick="openProjectModal('scraper')" class="text-ink-subtle hover:text-ink py-2 px-2 min-h-[44px]">Architecture &amp; Security</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-l border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -681,12 +655,12 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Row-Level Security (RLS)</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 font-mono text-xs">
-                <a href="https://github.com/seifwalidfathe-bot/subpulse-saas-dashboard" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1">
-                  <span>View Repository</span>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 font-mono text-xs">
+                <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20want%20to%20see%20the%20SubPulse%20SaaS%20Hub%20demo" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 py-2 min-h-[44px]">
+                  <span>Request Live Demo</span>
                   <span>↗</span>
                 </a>
-                <button onclick="openProjectModal('subpulse')" class="text-ink-subtle hover:text-ink">Architecture &amp; Security</button>
+                <button onclick="openProjectModal('subpulse')" class="text-ink-subtle hover:text-ink py-2 px-2 min-h-[44px]">Architecture &amp; Security</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-l border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -731,12 +705,12 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Automated Lead Sync</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 font-mono text-xs">
-                <a href="https://github.com/seifwalidfathe-bot/dr-aya-dergham-platform" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1">
-                  <span>View Repository</span>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 font-mono text-xs">
+                <a href="dr-aya/index-en.html" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 py-2 min-h-[44px]">
+                  <span>Live Clinic Demo</span>
                   <span>↗</span>
                 </a>
-                <button onclick="openProjectModal('draya')" class="text-ink-subtle hover:text-ink">Architecture &amp; Security</button>
+                <button onclick="openProjectModal('draya')" class="text-ink-subtle hover:text-ink py-2 px-2 min-h-[44px]">Architecture &amp; Security</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-l border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -781,12 +755,12 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Physically Based Materials</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 font-mono text-xs">
-                <a href="https://github.com/seifwalidfathe-bot/aether-3d-storefront" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1">
-                  <span>View Repository</span>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 font-mono text-xs">
+                <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20want%20to%20preview%20the%20AETHER%203D%20Storefront" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 py-2 min-h-[44px]">
+                  <span>Request Live 3D Demo</span>
                   <span>↗</span>
                 </a>
-                <button onclick="openProjectModal('aether')" class="text-ink-subtle hover:text-ink">Architecture &amp; Security</button>
+                <button onclick="openProjectModal('aether')" class="text-ink-subtle hover:text-ink py-2 px-2 min-h-[44px]">Architecture &amp; Security</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-l border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -831,12 +805,12 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Celery Distributed Queues</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 font-mono text-xs">
-                <a href="https://github.com/seifwalidfathe-bot/virtual-fitting-room-ai" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1">
-                  <span>View Repository</span>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 font-mono text-xs">
+                <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20want%20to%20discuss%20the%20Virtual%20Fitting%20Room%20AI%20pipeline" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 py-2 min-h-[44px]">
+                  <span>Request AI Pipeline Demo</span>
                   <span>↗</span>
                 </a>
-                <button onclick="openProjectModal('fitting')" class="text-ink-subtle hover:text-ink">Architecture &amp; Security</button>
+                <button onclick="openProjectModal('fitting')" class="text-ink-subtle hover:text-ink py-2 px-2 min-h-[44px]">Architecture &amp; Security</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-l border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -852,7 +826,7 @@
 
   <!-- MOMENT 2: INTERACTIVE SHELL TERMINAL -->
   <section id="terminal" class="py-16 px-4 sm:px-6 border-b border-hairline bg-surface-1/60">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
       
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
         <div>
@@ -860,13 +834,13 @@
           <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">Interactive Shell Terminal</h2>
           <p class="text-xs text-ink-subtle mt-1">Direct environment access. Run shell commands to inspect system configurations, dependencies, and contact points.</p>
         </div>
-        <div class="flex items-center space-x-1.5 font-mono text-xs text-ink-tertiary">
+        <div class="flex flex-wrap items-center gap-1.5 font-mono text-xs text-ink-tertiary">
           <span>Commands:</span>
-          <button onclick="runCommand('services')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">services</button>
-          <button onclick="runCommand('projects')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">projects</button>
-          <button onclick="runCommand('stack')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">stack</button>
-          <button onclick="runCommand('status')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">status</button>
-          <button onclick="runCommand('contact')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">contact</button>
+          <button onclick="runCommand('services')" class="px-2.5 py-1 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink min-h-[36px]">services</button>
+          <button onclick="runCommand('projects')" class="px-2.5 py-1 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink min-h-[36px]">projects</button>
+          <button onclick="runCommand('stack')" class="px-2.5 py-1 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink min-h-[36px]">stack</button>
+          <button onclick="runCommand('status')" class="px-2.5 py-1 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink min-h-[36px]">status</button>
+          <button onclick="runCommand('contact')" class="px-2.5 py-1 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink min-h-[36px]">contact</button>
         </div>
       </div>
 
@@ -903,7 +877,7 @@
 
   <!-- ENGINEERING PHILOSOPHY & ARCHITECTURE -->
   <section id="architecture" class="py-16 px-4 sm:px-6 border-b border-hairline">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
       
       <div class="mb-10">
         <div class="text-[11px] font-mono text-linear font-medium uppercase tracking-wider mb-1">Methodology</div>
@@ -952,7 +926,7 @@
 
   <!-- TECH STACK COMPACT GRID -->
   <section class="py-12 px-4 sm:px-6 border-b border-hairline bg-surface-1/30">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
       <div class="text-[11px] font-mono text-ink-subtle uppercase tracking-wider mb-6">Technologies in Active Production Use</div>
       
       <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 font-mono text-xs">
@@ -1169,7 +1143,7 @@
 
   <!-- DIRECT CONTACT SECTION -->
   <section id="contact" class="py-16 px-4 sm:px-6 border-b border-hairline">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
       
       <div class="craft-card rounded-2xl p-6 sm:p-10 border border-hairline-strong relative overflow-hidden">
         <div class="max-w-xl">
@@ -1266,7 +1240,7 @@
   </footer>
 
   <!-- INTERACTIVE LIVE CART DRAWER & INSTAPAY DEMO -->
-  <div id="cartDrawerDemo" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-end sm:p-4">
+  <div id="cartDrawerDemo" onclick="if(event.target===this) closeCartDrawerDemo()" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-end sm:p-4">
     <div class="w-full sm:max-w-md h-full sm:h-auto sm:max-h-[90vh] bg-surface-1 border border-hairline-strong sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden text-xs font-mono">
       <!-- Drawer Header -->
       <div class="p-4 border-b border-hairline flex items-center justify-between bg-surface-2">
@@ -1293,10 +1267,10 @@
             <div class="text-[10px] text-ink-subtle">Size: 14 · Free Custom Engraving</div>
             <div class="text-xs text-linear font-bold mt-1">1,450 EGP</div>
           </div>
-          <div class="flex items-center border border-hairline rounded bg-surface-1 px-2 py-1 space-x-2 text-xs">
-            <span class="text-ink-subtle cursor-pointer">-</span>
-            <span class="text-ink font-bold">1</span>
-            <span class="text-ink-subtle cursor-pointer">+</span>
+          <div class="flex items-center border border-hairline rounded bg-surface-1 px-1 py-0.5 text-xs">
+            <button onclick="updateCartQty(-1)" aria-label="Decrease quantity" class="w-7 h-7 flex items-center justify-center text-ink-subtle hover:text-ink transition">-</button>
+            <span id="cartDemoQty" class="text-ink font-bold px-2">1</span>
+            <button onclick="updateCartQty(1)" aria-label="Increase quantity" class="w-7 h-7 flex items-center justify-center text-ink-subtle hover:text-ink transition">+</button>
           </div>
         </div>
 
@@ -1372,7 +1346,7 @@
   </div>
 
   <!-- DETAIL MODAL FOR ARCHITECTURE NOTES -->
-  <div id="projectModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div id="projectModal" onclick="if(event.target===this) closeProjectModal()" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
     <div class="w-full max-w-xl bg-surface-2 border border-hairline-strong rounded-xl shadow-2xl p-6 font-mono text-xs">
       <div class="flex items-center justify-between border-b border-hairline pb-3 mb-4">
         <h3 id="modalTitle" class="text-sm font-semibold text-ink">Architecture Blueprint</h3>
@@ -1388,7 +1362,7 @@
   </div>
 
   <!-- TOAST NOTIFICATION -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-lg border border-hairline-strong bg-surface-2 text-ink font-mono text-xs shadow-2xl hidden items-center space-x-2 transition-all transform duration-200">
+  <div id="toast" class="fixed bottom-24 sm:bottom-6 right-4 sm:right-6 z-50 px-4 py-2.5 rounded-lg border border-hairline-strong bg-surface-2 text-ink font-mono text-xs shadow-2xl hidden items-center space-x-2 transition-all transform duration-200">
     <span class="w-2 h-2 rounded-full bg-status-online"></span>
     <span id="toastMessage">Copied to clipboard</span>
   </div>
@@ -1471,8 +1445,22 @@
       if (e.key === 'Escape') {
         const palette = document.getElementById('cmdPalette');
         const modal = document.getElementById('projectModal');
-        if (!palette.classList.contains('hidden')) palette.classList.add('hidden');
-        if (!modal.classList.contains('hidden')) modal.classList.add('hidden');
+        const cartDrawer = document.getElementById('cartDrawerDemo');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        if (palette && !palette.classList.contains('hidden')) {
+          palette.classList.add('hidden');
+          palette.classList.remove('flex');
+        }
+        if (modal && !modal.classList.contains('hidden')) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+        if (cartDrawer && !cartDrawer.classList.contains('hidden')) {
+          closeCartDrawerDemo();
+        }
+        if (mobileDrawer && !mobileDrawer.classList.contains('hidden')) {
+          toggleMobileDrawer();
+        }
       }
     });
 
@@ -1483,9 +1471,9 @@
 
       buttons.forEach(b => {
         if (b.getAttribute('data-filter') === cat) {
-          b.className = 'filter-btn px-2.5 py-1 rounded border border-hairline bg-surface-2 text-ink';
+          b.className = 'filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-hairline bg-surface-2 text-ink min-h-[44px] flex items-center';
         } else {
-          b.className = 'filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink';
+          b.className = 'filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink min-h-[44px] flex items-center';
         }
       });
 
@@ -1555,9 +1543,9 @@
       ['scraper', 'bot', 'subpulse'].forEach(k => {
         const tab = document.getElementById('tab-' + k);
         if (k === wf) {
-          tab.className = 'px-3 py-1.5 rounded border border-hairline bg-surface-2 text-ink font-medium transition';
+          tab.className = 'whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-hairline bg-surface-2 text-ink font-medium transition min-h-[44px] flex items-center';
         } else {
-          tab.className = 'px-3 py-1.5 rounded border border-transparent text-ink-subtle hover:text-ink transition';
+          tab.className = 'whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink transition min-h-[44px] flex items-center';
         }
       });
 
@@ -1795,7 +1783,11 @@ Specializing in high-converting websites, custom Shopify OS 2.0 themes, and faul
     }
 
     // CART DRAWER DEMO
+    let cartQty = 1;
+    let upsellAdded = false;
+
     function openCartDrawerDemo() {
+      resetCartDrawerDemo();
       const drawer = document.getElementById('cartDrawerDemo');
       if (drawer) {
         drawer.classList.remove('hidden');
@@ -1813,19 +1805,29 @@ Specializing in high-converting websites, custom Shopify OS 2.0 themes, and faul
       }
     }
 
-    let upsellAdded = false;
+    function updateCartTotal() {
+      const qtyEl = document.getElementById('cartDemoQty');
+      const totalEl = document.getElementById('cartDemoTotal');
+      const total = (cartQty * 1450) + (upsellAdded ? 120 : 0);
+      if (qtyEl) qtyEl.innerText = String(cartQty);
+      if (totalEl) totalEl.innerText = total.toLocaleString('en-US') + ' EGP';
+    }
+
+    function updateCartQty(delta) {
+      cartQty = Math.max(1, Math.min(10, cartQty + delta));
+      updateCartTotal();
+    }
+
     function toggleUpsellDemo(btn) {
       upsellAdded = !upsellAdded;
-      const totalEl = document.getElementById('cartDemoTotal');
       if (upsellAdded) {
-        if (totalEl) totalEl.innerText = '1,570 EGP';
         btn.innerText = '✓ Added to Cart';
         btn.className = 'px-2.5 py-1 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800 text-[10px] font-medium flex-shrink-0';
       } else {
-        if (totalEl) totalEl.innerText = '1,450 EGP';
         btn.innerText = '+ Add to Cart';
         btn.className = 'px-2.5 py-1 rounded bg-surface-3 hover:bg-surface-4 text-ink text-[10px] font-medium border border-hairline flex-shrink-0 transition';
       }
+      updateCartTotal();
     }
 
     function triggerDemoSuccess(method) {
@@ -1895,13 +1897,14 @@ Specializing in high-converting websites, custom Shopify OS 2.0 themes, and faul
       const summary = `${cfg.name} (${selectedFeats.slice(0, 3).join(' + ')}${selectedFeats.length > 3 ? '...' : ''}) · Delivery in ${days} to ${days + 2} business days`;
       if (summaryEl) summaryEl.innerText = summary;
 
-      const msg = encodeURIComponent(`Hello Seif, I calculated my project scope on your portfolio:\n- Type: ${cfg.name}\n- Additions: ${selectedFeats.join(', ')}\n- Timeline: ${days}-${days + 2} business days.\nI'd like to discuss contract details and timeline to start.`);
+      const rawText = `Hello Seif, I calculated my project scope on your portfolio:\n- Type: ${cfg.name}\n- Additions: ${selectedFeats.join(', ')}\n- Timeline: ${days}-${days + 2} business days.\nI'd like to discuss contract details and timeline to start.${window.__adTrackerTag || ''}`;
       if (btnEl) {
-        btnEl.href = `https://wa.me/201096711601?text=${msg}`;
+        btnEl.href = `https://wa.me/201096711601?text=${encodeURIComponent(rawText)}`;
       }
     }
 
     // AUTO UTM & AD CAMPAIGN TRACKER FOR WHATSAPP
+    window.__adTrackerTag = '';
     function initAdTracker() {
       try {
         const params = new URLSearchParams(window.location.search);
@@ -1913,14 +1916,16 @@ Specializing in high-converting websites, custom Shopify OS 2.0 themes, and faul
         if (!utmSource && !utmCampaign && !fbclid && !gclid) return;
 
         let leadSource = utmSource || (fbclid ? 'facebook-ad' : (gclid ? 'google-ad' : 'ad-traffic'));
-        let trackerTag = ` [Source: ${leadSource}${utmCampaign ? ' | Campaign: ' + utmCampaign : ''}]`;
+        window.__adTrackerTag = ` [Source: ${leadSource}${utmCampaign ? ' | Campaign: ' + utmCampaign : ''}]`;
 
         document.querySelectorAll('a[href*="wa.me/201096711601"]').forEach(link => {
+          if (link.id === 'estWhatsappBtn') return;
           let href = link.getAttribute('href');
           if (href && !href.includes('Source:')) {
-            link.setAttribute('href', href + encodeURIComponent(trackerTag));
+            link.setAttribute('href', href + encodeURIComponent(window.__adTrackerTag));
           }
         });
+        updateEstimatorSummary();
       } catch (e) {
         // Graceful degradation
       }

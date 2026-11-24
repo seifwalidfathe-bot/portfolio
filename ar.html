@@ -3,63 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#010102">
   <title>سيف وليد · مواقع ويب، ثيمات شوبيفاي، ومتاجر إلكترونية</title>
   <meta name="description" content="البورتفوليو الرسمي لـ سيف وليد. ببرمج مواقع ويب سريعة، ثيمات شوبيفاي OS 2.0 ومتاجر إلكترونية بدفع محلي (InstaPay ومحافظ كاش)، ومسارات أوتوميشن بتعيش ومبتوقعش.">
   <meta name="author" content="سيف وليد">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%2232%22%20height=%2232%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23010102%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 font-weight=%22700%22 fill=%22%235e6ad2%22>SW</text></svg>">
+  <link rel="canonical" href="https://seifwalidfathe-bot.github.io/portfolio/ar.html">
+  <link rel="alternate" hreflang="ar" href="https://seifwalidfathe-bot.github.io/portfolio/ar.html">
+  <link rel="alternate" hreflang="en" href="https://seifwalidfathe-bot.github.io/portfolio/">
+  <link rel="alternate" hreflang="x-default" href="https://seifwalidfathe-bot.github.io/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://seifwalidfathe-bot.github.io/portfolio/ar.html">
+  <meta property="og:title" content="سيف وليد · مواقع ويب، ثيمات شوبيفاي OS 2.0، وأوتوميشن">
+  <meta property="og:description" content="ثيمات شوبيفاي سريعة بدفع InstaPay ومحافظ كاش، مواقع Next.js سريعة للإعلانات، ومسارات أوتوميشن للشركات.">
+  <meta property="og:image" content="https://seifwalidfathe-bot.github.io/portfolio/seif_portrait.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="سيف وليد · مواقع ويب، ثيمات شوبيفاي OS 2.0، وأوتوميشن">
+  <meta name="twitter:description" content="ثيمات شوبيفاي سريعة بدفع InstaPay ومحافظ كاش، مواقع Next.js سريعة للإعلانات، ومسارات أوتوميشن للشركات.">
+  <meta name="twitter:image" content="https://seifwalidfathe-bot.github.io/portfolio/seif_portrait.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22 width=%2232%22 height=%2232%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23010102%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 font-weight=%22700%22 fill=%22%235e6ad2%22>SW</text></svg>">
 
   <!-- IBM Plex Sans Arabic & JetBrains Mono Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"IBM Plex Sans Arabic"', 'system-ui', '-apple-system', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
-          },
-          colors: {
-            canvas: '#010102',
-            surface: {
-              1: '#08090a',
-              2: '#0f1011',
-              3: '#141516',
-              4: '#18191a',
-            },
-            hairline: {
-              DEFAULT: '#23252a',
-              strong: '#34343a',
-              subtle: '#1a1b20',
-            },
-            linear: {
-              DEFAULT: '#5e6ad2',
-              hover: '#828fff',
-              subtle: 'rgba(94, 106, 210, 0.12)',
-              glow: 'rgba(94, 106, 210, 0.25)',
-            },
-            ink: {
-              DEFAULT: '#f7f8f8',
-              muted: '#d0d6e0',
-              subtle: '#8a8f98',
-              tertiary: '#62666d',
-            },
-            status: {
-              online: '#27a644',
-              warning: '#f59e0b',
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Precompiled Tailwind CSS (Zero render-blocking JS runtime) -->
+  <link rel="stylesheet" href="assets/styles.css">
 
   <style>
     :root {
+      --font-sans: "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
       --canvas: #010102;
       --surface-1: #08090a;
       --surface-2: #0f1011;
@@ -126,7 +99,7 @@
 <body class="selection:bg-linear/30 selection:text-white min-h-screen flex flex-col justify-between pb-24 sm:pb-0">
 
   <!-- COMMAND PALETTE MODAL (Cmd+K) -->
-  <div id="cmdPalette" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div id="cmdPalette" onclick="if(event.target===this) toggleCmdPalette()" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
     <div class="w-full max-w-lg bg-surface-2 border border-hairline-strong rounded-xl shadow-2xl overflow-hidden">
       <div class="flex items-center px-4 py-3 border-b border-hairline">
         <svg class="w-4 h-4 text-ink-subtle ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -142,28 +115,32 @@
           <span class="text-ink">02. الخدمات والقدرات اللي بنقدمها</span>
           <span class="text-ink-tertiary">#services</span>
         </button>
-        <button onclick="toggleCmdPalette(); openProjectModal('shaghaf');" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">03. متجر شوبيفاي OS 2.0 للمجوهرات</span>
-          <span class="text-emerald-400">#shaghaf</span>
+        <button onclick="toggleCmdPalette(); openCartDrawerDemo();" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">03. جرب سلة شوبيفاي ودفع InstaPay لايف</span>
+          <span class="text-emerald-400">#cart-demo</span>
+        </button>
+        <button onclick="navigateTo('#estimator')" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">04. حاسبة نطاق وموعد تسليم المشروع</span>
+          <span class="text-ink-tertiary">#estimator</span>
         </button>
         <button onclick="navigateTo('#simulator')" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">04. محاكي الأوتوميشن اللايف</span>
+          <span class="text-ink">05. محاكي الأوتوميشن اللايف</span>
           <span class="text-ink-tertiary">#simulator</span>
         </button>
         <button onclick="navigateTo('#terminal')" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">05. شاشة التيرمينال التفاعلية</span>
+          <span class="text-ink">06. شاشة التيرمينال التفاعلية</span>
           <span class="text-ink-tertiary">#terminal</span>
         </button>
         <button onclick="navigateTo('#architecture')" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">06. طريقة شغلي وهندسة السيستم</span>
+          <span class="text-ink">07. طريقة شغلي وهندسة السيستم</span>
           <span class="text-ink-tertiary">#architecture</span>
         </button>
         <button onclick="copyEmail()" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">07. انسخ إيميلي المباشر</span>
+          <span class="text-ink">08. انسخ إيميلي المباشر</span>
           <span class="text-ink-tertiary">seif.walid.fathe@gmail.com</span>
         </button>
         <button onclick="window.open('https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio', '_blank')" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">08. شات مباشر ع الواتساب</span>
+          <span class="text-ink">09. شات مباشر ع الواتساب</span>
           <span class="text-ink-tertiary" dir="ltr">+20 109 671 1601</span>
         </button>
       </div>
@@ -171,18 +148,18 @@
   </div>
 
   <!-- MOBILE NAVIGATION DRAWER (FOR FAST MOBILE AD ACCESS) -->
-  <div id="mobileDrawer" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-start justify-end transition-opacity duration-300">
+  <div id="mobileDrawer" onclick="if(event.target===this) toggleMobileDrawer()" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-start justify-end transition-opacity duration-300">
     <div class="w-4/5 max-w-xs h-full bg-surface-1 border-r border-hairline p-5 flex flex-col justify-between overflow-y-auto shadow-2xl">
       <div>
         <div class="flex items-center justify-between pb-4 border-b border-hairline mb-5">
           <div class="flex items-center space-x-2.5 space-x-reverse">
-            <img src="seif_avatar.jpg" alt="سيف وليد" class="w-8 h-8 rounded-full object-cover border border-hairline">
+            <img src="seif_avatar.jpg" alt="سيف وليد" width="32" height="32" class="w-8 h-8 rounded-full object-cover border border-hairline">
             <div class="flex flex-col">
               <span class="text-xs font-semibold text-ink">سيف وليد</span>
               <span class="text-[10px] text-status-online font-mono">أونلاين وجاهز للشغل</span>
             </div>
           </div>
-          <button onclick="toggleMobileDrawer()" class="w-9 h-9 rounded-lg bg-surface-2 border border-hairline text-ink-subtle hover:text-ink flex items-center justify-center text-sm" aria-label="إغلاق القائمة">✕</button>
+          <button onclick="toggleMobileDrawer()" class="w-10 h-10 rounded-lg bg-surface-2 border border-hairline text-ink-subtle hover:text-ink flex items-center justify-center text-sm" aria-label="إغلاق القائمة">✕</button>
         </div>
 
         <nav class="space-y-1 text-sm font-medium">
@@ -194,21 +171,25 @@
             <span>الخدمات وما نبنيه</span>
             <span class="text-xs font-mono text-linear font-bold">02</span>
           </a>
+          <a href="#estimator" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
+            <span>احسب مواصفات مشروعك</span>
+            <span class="text-xs font-mono text-linear font-bold">03</span>
+          </a>
           <a href="#simulator" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
             <span>محاكي الأوتوميشن</span>
-            <span class="text-xs font-mono text-linear font-bold">03</span>
+            <span class="text-xs font-mono text-linear font-bold">04</span>
           </a>
           <a href="#terminal" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
             <span>شاشة التيرمينال</span>
-            <span class="text-xs font-mono text-linear font-bold">04</span>
+            <span class="text-xs font-mono text-linear font-bold">05</span>
           </a>
           <a href="#architecture" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
             <span>معايير الأمان والهندسة</span>
-            <span class="text-xs font-mono text-linear font-bold">05</span>
+            <span class="text-xs font-mono text-linear font-bold">06</span>
           </a>
           <a href="#contact" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
             <span>تواصل مباشر</span>
-            <span class="text-xs font-mono text-linear font-bold">06</span>
+            <span class="text-xs font-mono text-linear font-bold">07</span>
           </a>
         </nav>
       </div>
@@ -229,19 +210,19 @@
   <header class="sticky top-0 z-40 w-full border-b border-hairline/80 bg-canvas/90 backdrop-blur-md">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
       <a href="#" class="flex items-center space-x-3 space-x-reverse group">
-        <img src="seif_avatar.jpg" alt="سيف وليد" class="w-8 h-8 rounded-full object-cover border border-hairline group-hover:border-linear transition shadow-sm">
+        <img src="seif_avatar.jpg" alt="سيف وليد" width="32" height="32" class="w-8 h-8 rounded-full object-cover border border-hairline group-hover:border-linear transition shadow-sm">
         <div class="flex flex-col">
           <span class="text-xs font-semibold text-ink">سيف وليد</span>
           <span class="text-[10px] font-mono text-ink-subtle hidden sm:inline">مواقع ويب · ثيمات شوبيفاي · أوتوميشن</span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center space-x-6 space-x-reverse text-xs text-ink-subtle font-medium">
-        <a href="#projects" class="hover:text-ink transition">الشغل والمشاريع</a>
+      <nav class="hidden md:flex items-center space-x-5 space-x-reverse text-xs text-ink-subtle font-medium">
+        <a href="#projects" class="hover:text-ink transition">المشاريع</a>
         <a href="#services" class="hover:text-ink transition">الخدمات</a>
-        <a href="#simulator" class="hover:text-ink transition">محاكي الأوتوميشن</a>
+        <a href="#estimator" class="hover:text-ink transition">حاسبة المشروع</a>
+        <a href="#simulator" class="hover:text-ink transition">المحاكي</a>
         <a href="#terminal" class="hover:text-ink transition">التيرمينال</a>
-        <a href="#architecture" class="hover:text-ink transition">طريقة البناء</a>
         <a href="#contact" class="hover:text-ink transition">تواصل معايا</a>
       </nav>
 
@@ -378,15 +359,15 @@
         </div>
       </div>
 
-      <!-- Pipeline Selector Tabs -->
-      <div class="flex flex-wrap gap-2 border-b border-hairline pb-2 mb-6 font-mono text-xs">
-        <button onclick="setSimWorkflow('scraper')" id="tab-scraper" class="px-3 py-1.5 rounded border border-hairline bg-surface-2 text-ink font-medium transition">
+      <!-- Pipeline Selector Tabs (Scrollable on mobile) -->
+      <div class="flex overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 space-x-2 space-x-reverse border-b border-hairline mb-6 font-mono text-xs no-scrollbar">
+        <button onclick="setSimWorkflow('scraper')" id="tab-scraper" class="whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-hairline bg-surface-2 text-ink font-medium transition min-h-[44px] flex items-center">
           01. سكرابر داتا الشركات (B2B)
         </button>
-        <button onclick="setSimWorkflow('bot')" id="tab-bot" class="px-3 py-1.5 rounded border border-transparent text-ink-subtle hover:text-ink transition">
+        <button onclick="setSimWorkflow('bot')" id="tab-bot" class="whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink transition min-h-[44px] flex items-center">
           02. بوت واتساب وتيليجرام الذكي
         </button>
-        <button onclick="setSimWorkflow('subpulse')" id="tab-subpulse" class="px-3 py-1.5 rounded border border-transparent text-ink-subtle hover:text-ink transition">
+        <button onclick="setSimWorkflow('subpulse')" id="tab-subpulse" class="whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink transition min-h-[44px] flex items-center">
           03. منبه تجديد اشتراكات SubPulse
         </button>
       </div>
@@ -465,13 +446,13 @@
           <p class="text-xs text-ink-subtle mt-1">مش مجرد أفكار، دي أنظمة شغالة ومبنية بهندسة دفاعية وبتجيب أرقام وبيزنس حقيقي.</p>
         </div>
 
-        <!-- Filter Chips -->
+        <!-- Filter Chips (Native Horizontal Scroll on Mobile, Wrapped on Desktop) -->
         <div class="flex overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap gap-2 font-mono text-xs no-scrollbar">
-          <button onclick="filterProjects('all')" class="filter-btn px-2.5 py-1 rounded border border-hairline bg-surface-2 text-ink" data-filter="all">الكل (7)</button>
-          <button onclick="filterProjects('ecommerce')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="ecommerce">شوبيفاي ومتاجر إلكترونية</button>
-          <button onclick="filterProjects('websites')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="websites">مواقع وبورتفوليو</button>
-          <button onclick="filterProjects('saas')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="saas">SaaS ومنصات</button>
-          <button onclick="filterProjects('automation')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="automation">أوتوميشن وسكرابرز</button>
+          <button onclick="filterProjects('all')" class="filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-hairline bg-surface-2 text-ink min-h-[44px] flex items-center" data-filter="all">الكل (7)</button>
+          <button onclick="filterProjects('ecommerce')" class="filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink min-h-[44px] flex items-center" data-filter="ecommerce">شوبيفاي ومتاجر إلكترونية</button>
+          <button onclick="filterProjects('websites')" class="filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink min-h-[44px] flex items-center" data-filter="websites">مواقع وبورتفوليو</button>
+          <button onclick="filterProjects('saas')" class="filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink min-h-[44px] flex items-center" data-filter="saas">SaaS ومنصات</button>
+          <button onclick="filterProjects('automation')" class="filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink min-h-[44px] flex items-center" data-filter="automation">أوتوميشن وسكرابرز</button>
         </div>
       </div>
 
@@ -479,8 +460,6 @@
       <div class="space-y-8" id="projectsList">
 
         <!-- Project 00: Shaghaf Store Egypt (Shopify OS 2.0 Theme) -->
-                <!-- Project 00: Shaghaf Store Egypt (Shopify OS 2.0 Theme) -->
-                <!-- Project 00: Shaghaf Store Egypt (Shopify OS 2.0 Theme) -->
         <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="ecommerce websites">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
             <div class="md:col-span-7 p-6 flex flex-col justify-between">
@@ -573,12 +552,12 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Apple &amp; Google Wallet</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 space-x-reverse font-mono text-xs">
-                <a href="https://github.com/seifwalidfathe-bot/stampee-loyalty" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse">
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 space-x-reverse font-mono text-xs">
+                <a href="https://github.com/seifwalidfathe-bot/stampee-loyalty" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse py-2 min-h-[44px]">
                   <span>شوف الريبو على GitHub</span>
                   <span>↖</span>
                 </a>
-                <button onclick="openProjectModal('stampee')" class="text-ink-subtle hover:text-ink">المعمارية ونموذج الحماية</button>
+                <button onclick="openProjectModal('stampee')" class="text-ink-subtle hover:text-ink py-2 px-2 min-h-[44px]">المعمارية ونموذج الحماية</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -623,12 +602,12 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">تصدير مباشر لشيتات وإكسيل</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 space-x-reverse font-mono text-xs">
-                <a href="https://github.com/seifwalidfathe-bot/gmaps-lead-scraper" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse">
-                  <span>شوف الريبو على GitHub</span>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 space-x-reverse font-mono text-xs">
+                <a href="https://wa.me/201096711601?text=مساء%20الخير%20يا%20سيف،%20عاوز%20أشوف%20ديمو%20لايف%20لأداة%20سحب%20عملاء%20Google%20Maps" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse py-2 min-h-[44px]">
+                  <span>اطلب ديمو لايف ع الواتساب</span>
                   <span>↖</span>
                 </a>
-                <button onclick="openProjectModal('scraper')" class="text-ink-subtle hover:text-ink">المعمارية ونموذج الحماية</button>
+                <button onclick="openProjectModal('scraper')" class="text-ink-subtle hover:text-ink py-2 px-2 min-h-[44px]">المعمارية ونموذج الحماية</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -673,12 +652,12 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">عزل كامل لبيانات الشركة (RLS)</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 space-x-reverse font-mono text-xs">
-                <a href="https://github.com/seifwalidfathe-bot/subpulse-saas-dashboard" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse">
-                  <span>شوف الريبو على GitHub</span>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 space-x-reverse font-mono text-xs">
+                <a href="https://wa.me/201096711601?text=مساء%20الخير%20يا%20سيف،%20عاوز%20أشوف%20ديمو%20منصة%20SubPulse%20لمتابعة%20الاشتراكات" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse py-2 min-h-[44px]">
+                  <span>اطلب ديمو لايف ع الواتساب</span>
                   <span>↖</span>
                 </a>
-                <button onclick="openProjectModal('subpulse')" class="text-ink-subtle hover:text-ink">المعمارية ونموذج الحماية</button>
+                <button onclick="openProjectModal('subpulse')" class="text-ink-subtle hover:text-ink py-2 px-2 min-h-[44px]">المعمارية ونموذج الحماية</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -723,12 +702,12 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">تسجيل أوتوماتيك لبيانات المريض</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 space-x-reverse font-mono text-xs">
-                <a href="https://github.com/seifwalidfathe-bot/dr-aya-dergham-platform" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse">
-                  <span>شوف الريبو على GitHub</span>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 space-x-reverse font-mono text-xs">
+                <a href="dr-aya/" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse py-2 min-h-[44px]">
+                  <span>موقع العيادة لايف (Live Demo)</span>
                   <span>↖</span>
                 </a>
-                <button onclick="openProjectModal('draya')" class="text-ink-subtle hover:text-ink">المعمارية ونموذج الحماية</button>
+                <button onclick="openProjectModal('draya')" class="text-ink-subtle hover:text-ink py-2 px-2 min-h-[44px]">المعمارية ونموذج الحماية</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -773,12 +752,12 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">خامات PBR واقعية</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 space-x-reverse font-mono text-xs">
-                <a href="https://github.com/seifwalidfathe-bot/aether-3d-storefront" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse">
-                  <span>شوف الريبو على GitHub</span>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 space-x-reverse font-mono text-xs">
+                <a href="https://wa.me/201096711601?text=مساء%20الخير%20يا%20سيف،%20عاوز%20أعاين%20متجر%20AETHER%203D%20التفاعلي" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse py-2 min-h-[44px]">
+                  <span>اطلب معاينة 3D لايف</span>
                   <span>↖</span>
                 </a>
-                <button onclick="openProjectModal('aether')" class="text-ink-subtle hover:text-ink">المعمارية ونموذج الحماية</button>
+                <button onclick="openProjectModal('aether')" class="text-ink-subtle hover:text-ink py-2 px-2 min-h-[44px]">المعمارية ونموذج الحماية</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -823,12 +802,12 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">طوابير معالجة موزعة (Celery)</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 space-x-reverse font-mono text-xs">
-                <a href="https://github.com/seifwalidfathe-bot/virtual-fitting-room-ai" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse">
-                  <span>شوف الريبو على GitHub</span>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 space-x-reverse font-mono text-xs">
+                <a href="https://wa.me/201096711601?text=مساء%20الخير%20يا%20سيف،%20مهتم%20بغرفة%20القياس%20الافتراضية%20بالـ%20AI" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse py-2 min-h-[44px]">
+                  <span>اطلب ديمو الذكاء الاصطناعي</span>
                   <span>↖</span>
                 </a>
-                <button onclick="openProjectModal('fitting')" class="text-ink-subtle hover:text-ink">المعمارية ونموذج الحماية</button>
+                <button onclick="openProjectModal('fitting')" class="text-ink-subtle hover:text-ink py-2 px-2 min-h-[44px]">المعمارية ونموذج الحماية</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -854,11 +833,11 @@
         </div>
         <div class="flex flex-wrap items-center gap-1.5 font-mono text-xs text-ink-tertiary">
           <span>أوامر سريعة:</span>
-          <button onclick="runCommand('خدمات')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">خدمات</button>
-          <button onclick="runCommand('مشاريع')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">مشاريع</button>
-          <button onclick="runCommand('مهارات')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">مهارات</button>
-          <button onclick="runCommand('حالة')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">حالة</button>
-          <button onclick="runCommand('تواصل')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">تواصل</button>
+          <button onclick="runCommand('خدمات')" class="px-2.5 py-1 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink min-h-[36px]">خدمات</button>
+          <button onclick="runCommand('مشاريع')" class="px-2.5 py-1 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink min-h-[36px]">مشاريع</button>
+          <button onclick="runCommand('مهارات')" class="px-2.5 py-1 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink min-h-[36px]">مهارات</button>
+          <button onclick="runCommand('حالة')" class="px-2.5 py-1 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink min-h-[36px]">حالة</button>
+          <button onclick="runCommand('تواصل')" class="px-2.5 py-1 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink min-h-[36px]">تواصل</button>
         </div>
       </div>
 
@@ -1255,7 +1234,7 @@
   </footer>
 
   <!-- INTERACTIVE LIVE CART DRAWER & INSTAPAY DEMO -->
-  <div id="cartDrawerDemo" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-end sm:p-4">
+  <div id="cartDrawerDemo" onclick="if(event.target===this) closeCartDrawerDemo()" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-end sm:p-4">
     <div class="w-full sm:max-w-md h-full sm:h-auto sm:max-h-[90vh] bg-surface-1 border border-hairline-strong sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden text-xs font-mono">
       <!-- Drawer Header -->
       <div class="p-4 border-b border-hairline flex items-center justify-between bg-surface-2">
@@ -1282,10 +1261,10 @@
             <div class="text-[10px] text-ink-subtle">مقاس: 14 · نقش مجاني</div>
             <div class="text-xs text-linear font-bold mt-1">1,450 ج.م</div>
           </div>
-          <div class="flex items-center border border-hairline rounded bg-surface-1 px-2 py-1 space-x-2 space-x-reverse text-xs">
-            <span class="text-ink-subtle cursor-pointer">-</span>
-            <span class="text-ink font-bold">1</span>
-            <span class="text-ink-subtle cursor-pointer">+</span>
+          <div class="flex items-center border border-hairline rounded bg-surface-1 px-1 py-0.5 text-xs">
+            <button onclick="updateCartQty(-1)" aria-label="تقليل الكمية" class="w-7 h-7 flex items-center justify-center text-ink-subtle hover:text-ink transition">-</button>
+            <span id="cartDemoQty" class="text-ink font-bold px-2">1</span>
+            <button onclick="updateCartQty(1)" aria-label="زيادة الكمية" class="w-7 h-7 flex items-center justify-center text-ink-subtle hover:text-ink transition">+</button>
           </div>
         </div>
 
@@ -1361,7 +1340,7 @@
   </div>
 
   <!-- DETAIL MODAL FOR ARCHITECTURE NOTES -->
-  <div id="projectModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div id="projectModal" onclick="if(event.target===this) closeProjectModal()" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
     <div class="w-full max-w-xl bg-surface-2 border border-hairline-strong rounded-xl shadow-2xl p-6 text-xs">
       <div class="flex items-center justify-between border-b border-hairline pb-3 mb-4">
         <h3 id="modalTitle" class="text-sm font-semibold text-ink">تفاصيل المعمارية الهندسية</h3>
@@ -1377,7 +1356,7 @@
   </div>
 
   <!-- TOAST NOTIFICATION -->
-  <div id="toast" class="fixed bottom-6 left-6 z-50 px-4 py-2.5 rounded-lg border border-hairline-strong bg-surface-2 text-ink font-mono text-xs shadow-2xl hidden items-center space-x-2 space-x-reverse transition-all transform duration-200">
+  <div id="toast" class="fixed bottom-24 sm:bottom-6 left-4 sm:left-6 z-50 px-4 py-2.5 rounded-lg border border-hairline-strong bg-surface-2 text-ink font-mono text-xs shadow-2xl hidden items-center space-x-2 space-x-reverse transition-all transform duration-200">
     <span class="w-2 h-2 rounded-full bg-status-online"></span>
     <span id="toastMessage">تم نسخ الإيميل بنجاح</span>
   </div>
@@ -1458,8 +1437,22 @@
       if (e.key === 'Escape') {
         const palette = document.getElementById('cmdPalette');
         const modal = document.getElementById('projectModal');
-        if (!palette.classList.contains('hidden')) palette.classList.add('hidden');
-        if (!modal.classList.contains('hidden')) modal.classList.add('hidden');
+        const cartDrawer = document.getElementById('cartDrawerDemo');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        if (palette && !palette.classList.contains('hidden')) {
+          palette.classList.add('hidden');
+          palette.classList.remove('flex');
+        }
+        if (modal && !modal.classList.contains('hidden')) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+        if (cartDrawer && !cartDrawer.classList.contains('hidden')) {
+          closeCartDrawerDemo();
+        }
+        if (mobileDrawer && !mobileDrawer.classList.contains('hidden')) {
+          toggleMobileDrawer();
+        }
       }
     });
 
@@ -1469,9 +1462,9 @@
 
       buttons.forEach(b => {
         if (b.getAttribute('data-filter') === cat) {
-          b.className = 'filter-btn px-2.5 py-1 rounded border border-hairline bg-surface-2 text-ink';
+          b.className = 'filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-hairline bg-surface-2 text-ink min-h-[44px] flex items-center';
         } else {
-          b.className = 'filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink';
+          b.className = 'filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink min-h-[44px] flex items-center';
         }
       });
 
@@ -1540,9 +1533,9 @@
       ['scraper', 'bot', 'subpulse'].forEach(k => {
         const tab = document.getElementById('tab-' + k);
         if (k === wf) {
-          tab.className = 'px-3 py-1.5 rounded border border-hairline bg-surface-2 text-ink font-medium transition';
+          tab.className = 'whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-hairline bg-surface-2 text-ink font-medium transition min-h-[44px] flex items-center';
         } else {
-          tab.className = 'px-3 py-1.5 rounded border border-transparent text-ink-subtle hover:text-ink transition';
+          tab.className = 'whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink transition min-h-[44px] flex items-center';
         }
       });
 
@@ -1792,7 +1785,11 @@
     }
 
     // CART DRAWER DEMO
+    let cartQty = 1;
+    let upsellAdded = false;
+
     function openCartDrawerDemo() {
+      resetCartDrawerDemo();
       const drawer = document.getElementById('cartDrawerDemo');
       if (drawer) {
         drawer.classList.remove('hidden');
@@ -1810,19 +1807,29 @@
       }
     }
 
-    let upsellAdded = false;
+    function updateCartTotal() {
+      const qtyEl = document.getElementById('cartDemoQty');
+      const totalEl = document.getElementById('cartDemoTotal');
+      const total = (cartQty * 1450) + (upsellAdded ? 120 : 0);
+      if (qtyEl) qtyEl.innerText = String(cartQty);
+      if (totalEl) totalEl.innerText = total.toLocaleString('en-US') + ' ج.م';
+    }
+
+    function updateCartQty(delta) {
+      cartQty = Math.max(1, Math.min(10, cartQty + delta));
+      updateCartTotal();
+    }
+
     function toggleUpsellDemo(btn) {
       upsellAdded = !upsellAdded;
-      const totalEl = document.getElementById('cartDemoTotal');
       if (upsellAdded) {
-        if (totalEl) totalEl.innerText = '1,570 ج.م';
         btn.innerText = '✓ تمت الإضافة';
         btn.className = 'px-2.5 py-1 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800 text-[10px] font-medium flex-shrink-0';
       } else {
-        if (totalEl) totalEl.innerText = '1,450 ج.م';
         btn.innerText = '+ إضافة للسلة';
         btn.className = 'px-2.5 py-1 rounded bg-surface-3 hover:bg-surface-4 text-ink text-[10px] font-medium border border-hairline flex-shrink-0 transition';
       }
+      updateCartTotal();
     }
 
     function triggerDemoSuccess(method) {
@@ -1892,13 +1899,14 @@
       const summary = `${cfg.name} (${selectedFeats.slice(0, 3).join(' + ')}${selectedFeats.length > 3 ? '...' : ''}) · تسليم خلال ${days} إلى ${days + 2} أيام عمل`;
       if (summaryEl) summaryEl.innerText = summary;
 
-      const msg = encodeURIComponent(`مساء الخير يا سيف، حسبت مواصفات مشروعي على موقعك:\n- النوع: ${cfg.name}\n- الإضافات: ${selectedFeats.join('، ')}\n- التسليم المطلوب: خلال ${days}-${days + 2} أيام عمل.\nعاوزين نعرف تفاصيل التعاقد وميعاد البدء.`);
+      const rawText = `مساء الخير يا سيف، حسبت مواصفات مشروعي على موقعك:\n- النوع: ${cfg.name}\n- الإضافات: ${selectedFeats.join('، ')}\n- التسليم المطلوب: خلال ${days}-${days + 2} أيام عمل.\nعاوزين نعرف تفاصيل التعاقد وميعاد البدء.${window.__adTrackerTag || ''}`;
       if (btnEl) {
-        btnEl.href = `https://wa.me/201096711601?text=${msg}`;
+        btnEl.href = `https://wa.me/201096711601?text=${encodeURIComponent(rawText)}`;
       }
     }
 
     // AUTO UTM & AD CAMPAIGN TRACKER FOR WHATSAPP
+    window.__adTrackerTag = '';
     function initAdTracker() {
       try {
         const params = new URLSearchParams(window.location.search);
@@ -1910,14 +1918,16 @@
         if (!utmSource && !utmCampaign && !fbclid && !gclid) return;
 
         let leadSource = utmSource || (fbclid ? 'facebook-ad' : (gclid ? 'google-ad' : 'ad-traffic'));
-        let trackerTag = ` [المصدر: ${leadSource}${utmCampaign ? ' | حملة: ' + utmCampaign : ''}]`;
+        window.__adTrackerTag = ` [المصدر: ${leadSource}${utmCampaign ? ' | حملة: ' + utmCampaign : ''}]`;
 
         document.querySelectorAll('a[href*="wa.me/201096711601"]').forEach(link => {
+          if (link.id === 'estWhatsappBtn') return;
           let href = link.getAttribute('href');
           if (href && !href.includes('المصدر:')) {
-            link.setAttribute('href', href + encodeURIComponent(trackerTag));
+            link.setAttribute('href', href + encodeURIComponent(window.__adTrackerTag));
           }
         });
+        updateEstimatorSummary();
       } catch (e) {
         // Graceful degradation
       }
