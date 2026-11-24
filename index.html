@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seif Walid · Automation Engineer &amp; Backend Systems Builder</title>
-  <meta name="description" content="Portfolio of Seif Walid. Specializing in fault-tolerant n8n workflows, stealth web scrapers, and AI agent bridges connected to production databases.">
+  <title>Seif Walid · Websites, Shopify Themes &amp; Automation Systems</title>
+  <meta name="description" content="Portfolio of Seif Walid. Engineering custom high-performance websites, Shopify Online Store 2.0 themes, e-commerce stores, and fault-tolerant automation pipelines.">
   <meta name="author" content="Seif Walid">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%2232%22%20height=%2232%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23010102%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 font-weight=%22700%22 fill=%22%235e6ad2%22>SW</text></svg>">
 
@@ -140,28 +140,36 @@
         <span class="text-xs font-mono text-ink-tertiary border border-hairline px-1.5 py-0.5 rounded">ESC</span>
       </div>
       <div class="py-2 max-h-72 overflow-y-auto" id="cmdResults">
-        <button onclick="navigateTo('#projects')" class="w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+        <button onclick="navigateTo('#projects')" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
           <span class="text-ink">01. Jump to Production Projects</span>
           <span class="text-ink-tertiary">#projects</span>
         </button>
-        <button onclick="navigateTo('#simulator')" class="w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">02. Live Automation Simulator</span>
+        <button onclick="navigateTo('#services')" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">02. Services &amp; Offerings</span>
+          <span class="text-ink-tertiary">#services</span>
+        </button>
+        <button onclick="toggleCmdPalette(); openProjectModal('shaghaf');" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">03. Shopify OS 2.0 &amp; E-Commerce Theme</span>
+          <span class="text-emerald-400">#shaghaf</span>
+        </button>
+        <button onclick="navigateTo('#simulator')" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">04. Live Automation Simulator</span>
           <span class="text-ink-tertiary">#simulator</span>
         </button>
-        <button onclick="navigateTo('#terminal')" class="w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">03. Interactive Shell Terminal</span>
+        <button onclick="navigateTo('#terminal')" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">05. Interactive Shell Terminal</span>
           <span class="text-ink-tertiary">#terminal</span>
         </button>
-        <button onclick="navigateTo('#architecture')" class="w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">04. Engineering Architecture</span>
+        <button onclick="navigateTo('#architecture')" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">06. Engineering Architecture</span>
           <span class="text-ink-tertiary">#architecture</span>
         </button>
-        <button onclick="copyEmail()" class="w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">05. Copy Direct Email</span>
+        <button onclick="copyEmail()" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">07. Copy Direct Email</span>
           <span class="text-ink-tertiary">seif.walid.fathe@gmail.com</span>
         </button>
-        <button onclick="window.open('https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio', '_blank')" class="w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">06. Chat on WhatsApp</span>
+        <button onclick="window.open('https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio', '_blank')" class="cmd-item w-full px-4 py-2.5 text-left text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">08. Chat on WhatsApp</span>
           <span class="text-ink-tertiary">+20 109 671 1601</span>
         </button>
       </div>
@@ -175,12 +183,13 @@
         <img src="seif_avatar.jpg" alt="Seif Walid" class="w-8 h-8 rounded-full object-cover border border-hairline group-hover:border-linear transition shadow-sm">
         <div class="flex flex-col">
           <span class="text-xs font-semibold text-ink tracking-tight">Seif Walid</span>
-          <span class="text-[10px] font-mono text-ink-subtle">Backend &amp; Automation</span>
+          <span class="text-[10px] font-mono text-ink-subtle">Websites · Shopify &amp; E-Commerce · Systems</span>
         </div>
       </a>
 
       <nav class="hidden md:flex items-center space-x-6 text-xs text-ink-subtle font-medium">
-        <a href="#projects" class="hover:text-ink transition">Projects</a>
+        <a href="#projects" class="hover:text-ink transition">Selected Work</a>
+        <a href="#services" class="hover:text-ink transition">Services</a>
         <a href="#simulator" class="hover:text-ink transition">Pipeline Simulator</a>
         <a href="#terminal" class="hover:text-ink transition">Shell</a>
         <a href="#architecture" class="hover:text-ink transition">Architecture</a>
@@ -219,25 +228,25 @@
             <span class="text-hairline-strong">·</span>
             <span>Cairo (UTC+2)</span>
             <span class="text-hairline-strong">·</span>
-            <span class="text-linear">Available for Contracts</span>
+            <span class="text-linear">Available for Web &amp; E-Commerce Contracts</span>
           </div>
 
           <!-- Humanized Core Pitch -->
           <h1 class="hero-animate-2 text-3xl sm:text-5xl font-semibold tracking-tighter text-ink leading-[1.08] mb-6">
-            Building automation pipelines and backend systems that run without breaking.
+            Engineering custom websites, Shopify themes, and resilient automation systems.
           </h1>
 
           <p class="hero-animate-3 text-base text-ink-muted leading-relaxed max-w-2xl mb-8 font-normal">
-            Most workflows fail when an upstream API returns an unexpected code or a web layout changes overnight. I build resilient pipelines using n8n, Python headless browser clusters, and tailored LLM integrations designed to handle real failure modes without human intervention.
+            From high-conversion Shopify Online Store 2.0 themes with native InstaPay and mobile wallet checkouts to fast custom web platforms and fault-tolerant automation pipelines, I engineer digital products that convert visitors, eliminate manual friction, and stay online under load.
           </p>
 
           <!-- Primary CTA Bar -->
           <div class="hero-animate-3 flex flex-wrap items-center gap-3 font-mono text-xs">
             <a href="#projects" class="px-4 py-2.5 rounded bg-linear hover:bg-linear-hover text-white font-medium transition shadow-lg shadow-linear/15">
-              View Selected Systems →
+              Explore Live Deployments →
             </a>
-            <a href="#simulator" class="px-4 py-2.5 rounded bg-surface-2 hover:bg-surface-3 border border-hairline text-ink-muted transition">
-              Test Pipeline Simulator
+            <a href="#services" class="px-4 py-2.5 rounded bg-surface-2 hover:bg-surface-3 border border-hairline text-ink-muted transition">
+              Services &amp; Capabilities
             </a>
             <button onclick="copyEmail()" class="px-4 py-2.5 rounded bg-surface-1 hover:bg-surface-2 border border-hairline text-ink-subtle hover:text-ink transition flex items-center space-x-2">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
@@ -260,7 +269,7 @@
                   <span class="w-1.5 h-1.5 rounded-full bg-status-online"></span>
                   <span>Seif Walid</span>
                 </div>
-                <div class="text-[10px] text-ink-subtle mt-0.5">Automation &amp; Systems Engineer</div>
+                <div class="text-[10px] text-ink-subtle mt-0.5">Websites · Shopify OS 2.0 · Automation</div>
               </div>
             </div>
           </div>
@@ -268,19 +277,27 @@
 
       </div>
 
-      <!-- Core Technical Focus -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 pt-8 border-t border-hairline font-mono text-xs">
-        <div class="p-3.5 rounded border border-hairline bg-surface-1">
-          <div class="text-ink font-semibold">Resilient Scraping</div>
-          <div class="text-ink-subtle mt-1 text-[11px] leading-relaxed">Playwright clusters, residential proxy rotation, and anti-fingerprinting.</div>
+      <!-- Core Technical Focus / Services Grid -->
+      <div id="services" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 pt-8 border-t border-hairline font-mono text-xs">
+        <div class="p-4 rounded border border-hairline bg-surface-1 hover:border-hairline-strong transition">
+          <div class="text-linear text-[10px] uppercase font-bold tracking-wider mb-1">01 · E-Commerce</div>
+          <div class="text-ink font-semibold">Shopify Themes &amp; Stores</div>
+          <div class="text-ink-subtle mt-1.5 text-[11px] leading-relaxed">Custom OS 2.0 Liquid, zero app bloat, instant slide-out cart drawer, and localized checkout (InstaPay, Vodafone Cash).</div>
         </div>
-        <div class="p-3.5 rounded border border-hairline bg-surface-1">
-          <div class="text-ink font-semibold">n8n &amp; Backends</div>
-          <div class="text-ink-subtle mt-1 text-[11px] leading-relaxed">Event-driven pipelines, webhook validation, and PostgreSQL storage.</div>
+        <div class="p-4 rounded border border-hairline bg-surface-1 hover:border-hairline-strong transition">
+          <div class="text-linear text-[10px] uppercase font-bold tracking-wider mb-1">02 · Web Applications</div>
+          <div class="text-ink font-semibold">Custom Websites &amp; SaaS</div>
+          <div class="text-ink-subtle mt-1.5 text-[11px] leading-relaxed">High-performance Next.js &amp; Tailwind platforms, clean mobile navigation, sub-second load times, and custom CRM portals.</div>
         </div>
-        <div class="p-3.5 rounded border border-hairline bg-surface-1">
-          <div class="text-ink font-semibold">AI Tool Bridges</div>
-          <div class="text-ink-subtle mt-1 text-[11px] leading-relaxed">WhatsApp and Telegram bots connected to verified company knowledge.</div>
+        <div class="p-4 rounded border border-hairline bg-surface-1 hover:border-hairline-strong transition">
+          <div class="text-linear text-[10px] uppercase font-bold tracking-wider mb-1">03 · Digital Identity</div>
+          <div class="text-ink font-semibold">Portfolios &amp; Showcases</div>
+          <div class="text-ink-subtle mt-1.5 text-[11px] leading-relaxed">Linear &amp; Stripe-tier craft design systems, interactive 3D WebGL scenes, and high-conversion client showcases.</div>
+        </div>
+        <div class="p-4 rounded border border-hairline bg-surface-1 hover:border-hairline-strong transition">
+          <div class="text-linear text-[10px] uppercase font-bold tracking-wider mb-1">04 · Infrastructure</div>
+          <div class="text-ink font-semibold">Automation &amp; Backends</div>
+          <div class="text-ink-subtle mt-1.5 text-[11px] leading-relaxed">Fault-tolerant n8n pipelines, stealth scraping clusters, and WhatsApp/Telegram CRM bridges that run 24/7.</div>
         </div>
       </div>
 
@@ -394,18 +411,54 @@
 
         <!-- Filter Chips -->
         <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-          <button onclick="filterProjects('all')" class="filter-btn px-2.5 py-1 rounded border border-hairline bg-surface-2 text-ink" data-filter="all">All</button>
-          <button onclick="filterProjects('automation')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="automation">Automation</button>
-          <button onclick="filterProjects('scraping')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="scraping">Scraping</button>
-          <button onclick="filterProjects('saas')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="saas">SaaS</button>
+          <button onclick="filterProjects('all')" class="filter-btn px-2.5 py-1 rounded border border-hairline bg-surface-2 text-ink" data-filter="all">All (7)</button>
+          <button onclick="filterProjects('ecommerce')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="ecommerce">Shopify &amp; E-Commerce</button>
+          <button onclick="filterProjects('websites')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="websites">Websites &amp; Portfolios</button>
+          <button onclick="filterProjects('saas')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="saas">SaaS &amp; Platforms</button>
+          <button onclick="filterProjects('automation')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="automation">Automation &amp; Scraping</button>
         </div>
       </div>
 
       <!-- Project Cards Grid -->
       <div class="space-y-8" id="projectsList">
 
+        <!-- Project 00: Shaghaf Store Egypt (Shopify OS 2.0 Theme) -->
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="ecommerce websites">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
+            <div class="md:col-span-7 p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 font-mono text-[11px] text-ink-subtle mb-2">
+                  <span class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-emerald-400">Shopify OS 2.0 Theme</span>
+                  <span>Pure Liquid · Tailwind · Localized RTL</span>
+                </div>
+                <h3 class="text-xl font-semibold text-ink tracking-tight mb-2">Shaghaf Store: Egyptian Jewelry &amp; E-Commerce Theme</h3>
+                <p class="text-sm text-ink-muted leading-relaxed mb-4">
+                  Custom-coded Shopify Online Store 2.0 theme engineered for Egyptian jewelry retail. Built with zero third-party app bloat, featuring sub-second LCP speeds, a slide-out cart drawer with instant InstaPay and mobile wallet checkout triggers, dynamic ring sizing guides, and automated WhatsApp order dispatch.
+                </p>
+                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-subtle">
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">⚡ 98/100 Lighthouse</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">0 Third-Party App Bloat</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">InstaPay &amp; Wallets Drawer</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Sticky Quick Add-to-Cart</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Native RTL &amp; Egyptian Copy</span>
+                </div>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 font-mono text-xs">
+                <a href="https://github.com/seifwalidfathe-bot/shaghaf-store-shopify" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1">
+                  <span>Theme Repository</span>
+                  <span>↗</span>
+                </a>
+                <button onclick="openProjectModal('shaghaf')" class="text-ink-subtle hover:text-ink">Architecture &amp; Performance Model</button>
+              </div>
+            </div>
+            <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-l border-hairline overflow-hidden flex items-center justify-center p-2">
+              <img src="project_shaghaf_shopify.png" alt="Shaghaf Store Egypt Shopify Theme Storefront and Cart Drawer" class="w-full h-full object-cover rounded-md opacity-90 hover:opacity-100 transition duration-300" loading="lazy">
+            </div>
+          </div>
+        </article>
+
         <!-- Project 0: Stampee Loyalty Platform -->
-        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="saas">
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="saas websites">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
             <div class="md:col-span-7 p-6 flex flex-col justify-between">
               <div>
@@ -502,7 +555,7 @@
         </article>
 
         <!-- Project 3: Dr. Aya Dergham Medical Platform -->
-        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="automation saas">
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="websites saas automation">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
             <div class="md:col-span-7 p-6 flex flex-col justify-between">
               <div>
@@ -535,7 +588,7 @@
         </article>
 
         <!-- Project 4: AETHER™ 3D Storefront -->
-        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="saas">
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="ecommerce websites saas">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
             <div class="md:col-span-7 p-6 flex flex-col justify-between">
               <div>
@@ -607,6 +660,7 @@
         </div>
         <div class="flex items-center space-x-1.5 font-mono text-xs text-ink-tertiary">
           <span>Commands:</span>
+          <button onclick="runCommand('services')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">services</button>
           <button onclick="runCommand('projects')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">projects</button>
           <button onclick="runCommand('stack')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">stack</button>
           <button onclick="runCommand('status')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">status</button>
@@ -699,7 +753,15 @@
     <div class="max-w-4xl mx-auto">
       <div class="text-[11px] font-mono text-ink-subtle uppercase tracking-wider mb-6">Technologies in Active Production Use</div>
       
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-xs">
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 font-mono text-xs">
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">Shopify OS 2.0</div>
+          <div class="text-[11px] text-ink-subtle">Liquid &amp; E-Commerce</div>
+        </div>
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">Next.js &amp; Tailwind</div>
+          <div class="text-[11px] text-ink-subtle">Web Platforms</div>
+        </div>
         <div class="p-3 rounded border border-hairline bg-surface-1">
           <div class="text-ink font-medium">n8n / Self-Hosted</div>
           <div class="text-[11px] text-ink-subtle">Workflow Automation</div>
@@ -707,10 +769,6 @@
         <div class="p-3 rounded border border-hairline bg-surface-1">
           <div class="text-ink font-medium">Python &amp; Playwright</div>
           <div class="text-[11px] text-ink-subtle">Data Extraction</div>
-        </div>
-        <div class="p-3 rounded border border-hairline bg-surface-1">
-          <div class="text-ink font-medium">Next.js &amp; Tailwind</div>
-          <div class="text-[11px] text-ink-subtle">Frontend Applications</div>
         </div>
         <div class="p-3 rounded border border-hairline bg-surface-1">
           <div class="text-ink font-medium">PostgreSQL &amp; Supabase</div>
@@ -725,12 +783,16 @@
           <div class="text-[11px] text-ink-subtle">Deployment &amp; Pods</div>
         </div>
         <div class="p-3 rounded border border-hairline bg-surface-1">
-          <div class="text-ink font-medium">Telegram &amp; WhatsApp</div>
-          <div class="text-[11px] text-ink-subtle">Bot Webhook Gateways</div>
+          <div class="text-ink font-medium">WhatsApp &amp; Telegram</div>
+          <div class="text-[11px] text-ink-subtle">Bot &amp; Order Gateways</div>
         </div>
         <div class="p-3 rounded border border-hairline bg-surface-1">
           <div class="text-ink font-medium">Three.js &amp; WebGL</div>
           <div class="text-[11px] text-ink-subtle">Interactive 3D Media</div>
+        </div>
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">Apple Wallet Passes</div>
+          <div class="text-[11px] text-ink-subtle">Mobile PWA Loyalty</div>
         </div>
       </div>
     </div>
@@ -902,6 +964,18 @@
       window.location.hash = hash;
     }
 
+    const cmdInputEl = document.getElementById('cmdInput');
+    if (cmdInputEl) {
+      cmdInputEl.addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase().trim();
+        const items = document.querySelectorAll('#cmdResults .cmd-item');
+        items.forEach(item => {
+          const text = item.innerText.toLowerCase();
+          item.style.display = (!q || text.includes(q)) ? 'flex' : 'none';
+        });
+      });
+    }
+
     window.addEventListener('keydown', (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
@@ -1067,40 +1141,56 @@
 
     const terminalCommands = {
       help: () => `Available commands:
+  • <span class="text-linear">services</span>   : Summary of core engineering offerings
   • <span class="text-linear">projects</span>   : List production engineering projects
   • <span class="text-linear">stack</span>      : Show active tools and production runtimes
   • <span class="text-linear">status</span>     : Query system health and availability
   • <span class="text-linear">contact</span>    : Print direct email and communication handles
   • <span class="text-linear">whoami</span>     : Summary of Seif Walid
   • <span class="text-linear">clear</span>      : Clear the terminal screen`,
+
+      services: () => `Core Engineering Offerings:
+  1. Shopify OS 2.0 Themes &amp; E-Commerce:
+     Custom Liquid themes, zero-app bloat, sub-second LCP, instant slide-out cart drawer, and localized checkout (InstaPay, Vodafone Cash).
+  2. Custom High-Performance Websites:
+     Next.js &amp; Tailwind platforms, accessible mobile navigation, direct appointment/CRM routing, and 100% Core Web Vitals.
+  3. Brand Portfolios &amp; Showcases:
+     Linear/Stripe-tier design systems, interactive Three.js 3D WebGL scenes, and high-conversion client showcases.
+  4. Resilient Automation &amp; Backends:
+     Fault-tolerant n8n pipelines, stealth Playwright scrapers, and WhatsApp/Telegram CRM webhook bridges.`,
       
       projects: () => `Production Deployments:
-  1. Google Maps Lead Scraper Kit  [Playwright · Python · Postgres]
-  2. SubPulse SaaS Subscription Hub [Next.js · Supabase · Tailwind]
-  3. Dr. Aya Dergham Clinic Platform [Medical CRM · WhatsApp Gateway]
-  4. AETHER 3D Luxury Storefront   [Three.js · WebGL · E-Commerce]
-  5. Virtual Fitting Room AI        [Diffusion · Pose Estimation]`,
+  1. Shaghaf Store Egypt [Shopify OS 2.0 · Liquid · InstaPay &amp; Wallets]
+  2. Stampee Loyalty Engine [React · TypeScript · Web Audio · Wallet Passes]
+  3. Google Maps Lead Scraper Kit [Playwright · Python · Postgres]
+  4. SubPulse SaaS Subscription Hub [Next.js · Supabase · Tailwind]
+  5. Dr. Aya Dergham Clinic Platform [Medical CRM · WhatsApp Gateway]
+  6. AETHER 3D Luxury Storefront [Three.js · WebGL · E-Commerce]
+  7. Virtual Fitting Room AI [Diffusion · Pose Estimation]`,
 
-      stack: () => `Runtimes & Frameworks:
-  - Automation : n8n, Python Celery, Webhook brokers
+      stack: () => `Runtimes &amp; Frameworks:
+  - E-Commerce : Shopify Online Store 2.0, Pure Liquid, InstaPay &amp; Wallets
+  - Web &amp; Apps  : Next.js, React, Tailwind CSS, TypeScript, HTML5
+  - 3D &amp; Audio : Three.js WebGL, Web Audio API synthesis
+  - Automation : n8n (Self-Hosted), Python Celery, Webhook brokers
   - Scraping   : Playwright, BeautifulSoup, Residential Proxy Pools
   - Backend    : Python FastAPI, Node.js, Express, PostgreSQL
-  - Frontend   : Next.js, Tailwind CSS, Three.js WebGL
   - DevOps     : Docker, Linux VPS, GitHub Actions, Supabase`,
 
       status: () => `System Telemetry:
   - Engineer   : Seif Walid
   - Location   : Cairo, Egypt (UTC+2)
-  - Contracts  : Open for high-impact automation & backend builds
-  - Response   : Typically under 24 hours via email`,
+  - Focus      : Websites, Shopify OS 2.0 Themes, Portfolios &amp; Automation
+  - Contracts  : Open for high-impact web, e-commerce, and automation builds
+  - Response   : Typically under 24 hours via email or WhatsApp`,
 
       contact: () => `Direct Communication:
-  - Email      : <a href="mailto:seif.walid.fathe@gmail.com" class="text-linear underline">seif.walid.fathe@gmail.com</a>
   - WhatsApp   : <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio" target="_blank" class="text-linear underline">+20 109 671 1601</a>
+  - Email      : <a href="mailto:seif.walid.fathe@gmail.com" class="text-linear underline">seif.walid.fathe@gmail.com</a>
   - GitHub     : <a href="https://github.com/seifwalidfathe-bot" target="_blank" class="text-linear underline">github.com/seifwalidfathe-bot</a>`,
 
-      whoami: () => `Seif Walid · Automation Engineer & Full-Stack Systems Builder.
-Focused on building reliable pipelines that handle real failure modes without human panic.`
+      whoami: () => `Seif Walid · Full-Stack Web Developer &amp; Systems Builder.
+Specializing in high-converting websites, custom Shopify OS 2.0 themes, and fault-tolerant automation pipelines.`
     };
 
     termInput.addEventListener('keydown', (e) => {
@@ -1137,6 +1227,17 @@ Focused on building reliable pipelines that handle real failure modes without hu
 
     // 7. Project Modal Details
     const modalDetails = {
+      shaghaf: {
+        title: "Architecture &amp; Performance: Shaghaf Store Shopify OS 2.0 Theme",
+        body: `<p><strong>Core Challenge:</strong> Standard commercial themes bundle heavy scripts and apps, creating laggy checkout pages that drop conversion rates in Egyptian e-commerce.</p>
+        <p><strong>Clean OS 2.0 Architecture:</strong></p>
+        <ul class="list-disc pl-4 space-y-1">
+          <li><strong>Zero App Dependency:</strong> Custom Liquid sections for cart drawer, size charts, countdown banners, and cross-sells with zero monthly app fees and zero third-party script bloat.</li>
+          <li><strong>Egyptian Payment Integration:</strong> Slide-out AJAX cart drawer features dedicated 1-click payment triggers for InstaPay IPA accounts and Vodafone Cash/Smart Wallets.</li>
+          <li><strong>Sub-Second Loading Performance:</strong> Scored 98/100 on Google Lighthouse mobile with preloaded fonts, inline critical CSS, and lazy-loaded image pipelines.</li>
+          <li><strong>Automated E2E Testing Suite:</strong> Verified across 23 core features using a native Node.js offline test harness ensuring zero regression across all Shopify templates.</li>
+        </ul>`
+      },
       stampee: {
         title: "Architecture & Defensive Model: Stampee Loyalty Platform",
         body: `<p><strong>Core Challenge:</strong> Traditional punch cards get lost or forged, while SaaS apps (like Stamp Me or Monaasba) add checkout friction and high monthly subscription lock-in.</p>

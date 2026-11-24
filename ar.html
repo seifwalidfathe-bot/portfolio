@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سيف وليد · أوتوميشن وباك إند بيعيش ومبيوقعش</title>
-  <meta name="description" content="البورتفوليو الرسمي لـ سيف وليد. متخصص في مسارات أوتوميشن n8n موثوقة، سكرابرز خفية ضد البلوك، وبوتات ذكاء اصطناعي مربوطة بقواعد بيانات حقيقية.">
+  <title>سيف وليد · مواقع ويب، ثيمات شوبيفاي، ومتاجر إلكترونية</title>
+  <meta name="description" content="البورتفوليو الرسمي لـ سيف وليد. ببرمج مواقع ويب سريعة، ثيمات شوبيفاي OS 2.0 ومتاجر إلكترونية بدفع محلي (InstaPay ومحافظ كاش)، ومسارات أوتوميشن بتعيش ومبتوقعش.">
   <meta name="author" content="سيف وليد">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%2232%22%20height=%2232%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23010102%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 font-weight=%22700%22 fill=%22%235e6ad2%22>SW</text></svg>">
 
@@ -129,28 +129,36 @@
         <span class="text-xs font-mono text-ink-tertiary border border-hairline px-1.5 py-0.5 rounded">ESC</span>
       </div>
       <div class="py-2 max-h-72 overflow-y-auto" id="cmdResults">
-        <button onclick="navigateTo('#projects')" class="w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+        <button onclick="navigateTo('#projects')" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
           <span class="text-ink">01. انزل لشغل ومشاريع الإنتاج</span>
           <span class="text-ink-tertiary">#projects</span>
         </button>
-        <button onclick="navigateTo('#simulator')" class="w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">02. محاكي الأوتوميشن اللايف</span>
+        <button onclick="navigateTo('#services')" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">02. الخدمات والقدرات اللي بنقدمها</span>
+          <span class="text-ink-tertiary">#services</span>
+        </button>
+        <button onclick="toggleCmdPalette(); openProjectModal('shaghaf');" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">03. متجر شوبيفاي OS 2.0 للمجوهرات</span>
+          <span class="text-emerald-400">#shaghaf</span>
+        </button>
+        <button onclick="navigateTo('#simulator')" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">04. محاكي الأوتوميشن اللايف</span>
           <span class="text-ink-tertiary">#simulator</span>
         </button>
-        <button onclick="navigateTo('#terminal')" class="w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">03. شاشة التيرمينال التفاعلية</span>
+        <button onclick="navigateTo('#terminal')" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">05. شاشة التيرمينال التفاعلية</span>
           <span class="text-ink-tertiary">#terminal</span>
         </button>
-        <button onclick="navigateTo('#architecture')" class="w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">04. طريقة شغلي وهندسة السيستم</span>
+        <button onclick="navigateTo('#architecture')" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">06. طريقة شغلي وهندسة السيستم</span>
           <span class="text-ink-tertiary">#architecture</span>
         </button>
-        <button onclick="copyEmail()" class="w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">05. انسخ إيميلي المباشر</span>
+        <button onclick="copyEmail()" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">07. انسخ إيميلي المباشر</span>
           <span class="text-ink-tertiary">seif.walid.fathe@gmail.com</span>
         </button>
-        <button onclick="window.open('https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio', '_blank')" class="w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
-          <span class="text-ink">06. شات مباشر ع الواتساب</span>
+        <button onclick="window.open('https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio', '_blank')" class="cmd-item w-full px-4 py-2.5 text-right text-xs font-mono flex items-center justify-between hover:bg-surface-3 transition">
+          <span class="text-ink">08. شات مباشر ع الواتساب</span>
           <span class="text-ink-tertiary" dir="ltr">+20 109 671 1601</span>
         </button>
       </div>
@@ -164,12 +172,13 @@
         <img src="seif_avatar.jpg" alt="سيف وليد" class="w-8 h-8 rounded-full object-cover border border-hairline group-hover:border-linear transition shadow-sm">
         <div class="flex flex-col">
           <span class="text-xs font-semibold text-ink">سيف وليد</span>
-          <span class="text-[10px] font-mono text-ink-subtle">أوتوميشن وأنظمة باك إند</span>
+          <span class="text-[10px] font-mono text-ink-subtle">مواقع ويب · ثيمات شوبيفاي · أوتوميشن</span>
         </div>
       </a>
 
       <nav class="hidden md:flex items-center space-x-6 space-x-reverse text-xs text-ink-subtle font-medium">
         <a href="#projects" class="hover:text-ink transition">الشغل والمشاريع</a>
+        <a href="#services" class="hover:text-ink transition">الخدمات</a>
         <a href="#simulator" class="hover:text-ink transition">محاكي الأوتوميشن</a>
         <a href="#terminal" class="hover:text-ink transition">التيرمينال</a>
         <a href="#architecture" class="hover:text-ink transition">طريقة البناء</a>
@@ -211,28 +220,28 @@
             <span class="text-hairline-strong">·</span>
             <span>القاهرة (UTC+2)</span>
             <span class="text-hairline-strong">·</span>
-            <span class="text-linear">متاح لمشاريع وتعاقدات تقيلة</span>
+            <span class="text-linear">متاح لمشاريع ويب وإي-كوميرس وأوتوميشن</span>
           </div>
 
           <!-- Humanized Pitch in Egyptian Arabic -->
           <h1 class="hero-animate-2 text-3xl sm:text-5xl font-semibold tracking-tight text-ink leading-[1.25] mb-6">
-            ببني مسارات أوتوميشن وأنظمة باك إند بتعيش ومبتوقعش فجأة.
+            ببني مواقع ويب سريعة، ثيمات شوبيفاي ومتاجر إلكترونية، ومسارات أوتوميشن مبتوقعش.
           </h1>
 
           <p class="hero-animate-3 text-base text-ink-muted leading-relaxed max-w-2xl mb-8 font-normal">
-            أغلب الأوتوميشن بيبوظ أول ما API خارجي يرمي كود غلط أو شكل صفحة ويب يتغير فجأة. أنا ببني مسارات وسكربتات بـ n8n وبايثون بتتعامل مع البوتات والـ Rate limits من غير ما تقف، وبتشتغل بهدوء في الإنتاج من غير ما تفضل تشيل همها كل شوية.
+            من أول ثيمات Shopify OS 2.0 مخصصة بمداخل دفع سريعة (InstaPay ومحافظ كاش) و Cart Drawer فوري، لبورتفوليوهات ومواقع ويب احترافية بتصميم نظيف وسريع، لحد مسارات أوتوميشن بـ n8n وبايثون بتشيل عنك الشغل الروتيني ومبتوقعش فجأة.
           </p>
 
           <!-- Primary CTA Bar -->
           <div class="hero-animate-3 flex flex-wrap items-center gap-3 font-mono text-xs">
             <a href="#projects" class="px-4 py-2.5 rounded bg-linear hover:bg-linear-hover text-white font-medium transition shadow-lg shadow-linear/15">
-              شوف الأنظمة اللي بنيتها ←
+              شوف الشغل والمشاريع ←
             </a>
-            <a href="#simulator" class="px-4 py-2.5 rounded bg-surface-2 hover:bg-surface-3 border border-hairline text-ink-muted transition">
-              جرّب المحاكي اللايف
+            <a href="#services" class="px-4 py-2.5 rounded bg-surface-2 hover:bg-surface-3 border border-hairline text-ink-muted transition">
+              الخدمات اللي بنقدمها
             </a>
             <button onclick="copyEmail()" class="px-4 py-2.5 rounded bg-surface-1 hover:bg-surface-2 border border-hairline text-ink-subtle hover:text-ink transition flex items-center space-x-2 space-x-reverse">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
               <span id="copyBtnText">انسخ إيميلي</span>
             </button>
           </div>
@@ -252,7 +261,7 @@
                   <span class="w-1.5 h-1.5 rounded-full bg-status-online"></span>
                   <span>سيف وليد</span>
                 </div>
-                <div class="text-[10px] text-ink-subtle mt-0.5">مهندس أوتوميشن وباك إند</div>
+                <div class="text-[10px] text-ink-subtle mt-0.5">مواقع ويب · شوبيفاي · أوتوميشن</div>
               </div>
             </div>
           </div>
@@ -261,18 +270,26 @@
       </div>
 
       <!-- Core Technical Focus in Egyptian Tech Voice -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 pt-8 border-t border-hairline text-xs">
-        <div class="p-3.5 rounded border border-hairline bg-surface-1">
-          <div class="text-ink font-semibold">سكرابر وسحب داتا مبيقفش</div>
-          <div class="text-ink-subtle mt-1 text-[11px] leading-relaxed">كتل Playwright خفية مع تدوير بروكسيات سكنية عشان نتفادى الحظر وتحديات الكابتشا.</div>
+      <div id="services" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 pt-8 border-t border-hairline text-xs">
+        <div class="p-4 rounded border border-hairline bg-surface-1 hover:border-hairline-strong transition">
+          <div class="text-linear text-[10px] font-mono uppercase font-bold tracking-wider mb-1">01 · تجارة إلكترونية</div>
+          <div class="text-ink font-semibold">ثيمات شوبيفاي ومتاجر سريعة</div>
+          <div class="text-ink-subtle mt-1.5 text-[11px] leading-relaxed">ثيمات Shopify OS 2.0 مخصصة بكود Liquid بيور بدون تطبيقات تبطأ المتجر، مع Cart Drawer منزلق ودفع فوري بـ InstaPay والمحافظ.</div>
         </div>
-        <div class="p-3.5 rounded border border-hairline bg-surface-1">
-          <div class="text-ink font-semibold">باك إند ومسارات بـ n8n</div>
-          <div class="text-ink-subtle mt-1 text-[11px] leading-relaxed">مسارات شغل قايمة على الأحداث، تحقق صارم من الـ Webhooks وقواعد بيانات PostgreSQL.</div>
+        <div class="p-4 rounded border border-hairline bg-surface-1 hover:border-hairline-strong transition">
+          <div class="text-linear text-[10px] font-mono uppercase font-bold tracking-wider mb-1">02 · مواقع وتطبيقات ويب</div>
+          <div class="text-ink font-semibold">مواقع مخصصة وويب أبلكيشن</div>
+          <div class="text-ink-subtle mt-1.5 text-[11px] leading-relaxed">منصات ومواقع بـ Next.js و Tailwind، بتفتح في أقل من ثانية، ومتوافقة تماماً مع الموبايل وبتوصل العملاء لـ واتساب والـ CRM مباشرة.</div>
         </div>
-        <div class="p-3.5 rounded border border-hairline bg-surface-1">
-          <div class="text-ink font-semibold">جسور وبوتات AI للبيزنس</div>
-          <div class="text-ink-subtle mt-1 text-[11px] leading-relaxed">بوتات واتساب وتيليجرام مربوطة بداتا شغلك الحقيقية مع صمامات أمان عشان متفتيش لوحدها.</div>
+        <div class="p-4 rounded border border-hairline bg-surface-1 hover:border-hairline-strong transition">
+          <div class="text-linear text-[10px] font-mono uppercase font-bold tracking-wider mb-1">03 · هوية وبورتفوليو</div>
+          <div class="text-ink font-semibold">بورتفوليو احترافي للبراند</div>
+          <div class="text-ink-subtle mt-1.5 text-[11px] leading-relaxed">تصميمات بنظام Linear و Stripe، مشاهد 3D WebGL تفاعلية، وطريقة عرض بتبرز شغلك وقيمتك الحقيقية للعملاء بوضوح.</div>
+        </div>
+        <div class="p-4 rounded border border-hairline bg-surface-1 hover:border-hairline-strong transition">
+          <div class="text-linear text-[10px] font-mono uppercase font-bold tracking-wider mb-1">04 · بنية تحتية وأوتوميشن</div>
+          <div class="text-ink font-semibold">أوتوميشن وباك إند وسكرابرز</div>
+          <div class="text-ink-subtle mt-1.5 text-[11px] leading-relaxed">مسارات n8n متكاملة وسكرابرز Playwright خفية مع تدوير بروكسيات وبوتات واتساب وتيليجرام مربوطة بقواعد بياناتك 24/7.</div>
         </div>
       </div>
 
@@ -386,18 +403,54 @@
 
         <!-- Filter Chips -->
         <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-          <button onclick="filterProjects('all')" class="filter-btn px-2.5 py-1 rounded border border-hairline bg-surface-2 text-ink" data-filter="all">الكل</button>
-          <button onclick="filterProjects('automation')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="automation">أوتوميشن</button>
-          <button onclick="filterProjects('scraping')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="scraping">كشط وسحب داتا</button>
-          <button onclick="filterProjects('saas')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="saas">SaaS</button>
+          <button onclick="filterProjects('all')" class="filter-btn px-2.5 py-1 rounded border border-hairline bg-surface-2 text-ink" data-filter="all">الكل (7)</button>
+          <button onclick="filterProjects('ecommerce')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="ecommerce">شوبيفاي ومتاجر إلكترونية</button>
+          <button onclick="filterProjects('websites')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="websites">مواقع وبورتفوليو</button>
+          <button onclick="filterProjects('saas')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="saas">SaaS ومنصات</button>
+          <button onclick="filterProjects('automation')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="automation">أوتوميشن وسكرابرز</button>
         </div>
       </div>
 
       <!-- Project Cards Grid -->
       <div class="space-y-8" id="projectsList">
 
+        <!-- Project 00: Shaghaf Store Egypt (Shopify OS 2.0 Theme) -->
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="ecommerce websites">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
+            <div class="md:col-span-7 p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-2 space-x-reverse font-mono text-[11px] text-ink-subtle mb-2">
+                  <span class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-emerald-400">ثيم شوبيفاي OS 2.0</span>
+                  <span>Pure Liquid · Tailwind · RTL عربي بالكامل</span>
+                </div>
+                <h3 class="text-xl font-semibold text-ink tracking-tight mb-2">متجر شغف: ثيم شوبيفاي للمجوهرات والتجارة الإلكترونية في مصر</h3>
+                <p class="text-sm text-ink-muted leading-relaxed mb-4">
+                  ثيم Shopify Online Store 2.0 معمول مخصوص لبراند مجوهرات وفضة مصرية. مبني من الصفر بكود Liquid خفيف بدون أي تطبيقات مدفوعة تبطأ المتجر، بيفتح في أقل من ثانية، وفيه Cart Drawer منزلق بأزرار دفع فوري لـ InstaPay ومحافظ كاش، مع دليل مقاسات تفاعلي وتحويل تلقائي للطلبات على واتساب.
+                </p>
+                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-subtle">
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">⚡ 98/100 سرعة لايتهاوس</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">0 تطبيقات تبطأ المتجر</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Cart Drawer بـ InstaPay وكاش</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">زر إضافة سريع ع الموبايل</span>
+                  <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">عربي مصري أصيل LTR/RTL</span>
+                </div>
+              </div>
+              <div class="mt-6 pt-4 border-t border-hairline flex items-center space-x-4 space-x-reverse font-mono text-xs">
+                <a href="https://github.com/seifwalidfathe-bot/shaghaf-store-shopify" target="_blank" rel="noopener noreferrer" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse">
+                  <span>شوف الريبو على GitHub</span>
+                  <span>↖</span>
+                </a>
+                <button onclick="openProjectModal('shaghaf')" class="text-ink-subtle hover:text-ink">المعمارية ونموذج الأداء</button>
+              </div>
+            </div>
+            <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
+              <img src="project_shaghaf_shopify.png" alt="متجر شغف للمجوهرات المصرية ثيم شوبيفاي ودرج السلة السريع" class="w-full h-full object-cover rounded-md opacity-90 hover:opacity-100 transition duration-300" loading="lazy">
+            </div>
+          </div>
+        </article>
+
         <!-- Project 0: Stampee Loyalty Platform -->
-        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="saas">
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="saas websites">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
             <div class="md:col-span-7 p-6 flex flex-col justify-between">
               <div>
@@ -494,7 +547,7 @@
         </article>
 
         <!-- Project 3: Dr. Aya Dergham Medical Platform -->
-        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="automation saas">
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="websites saas automation">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
             <div class="md:col-span-7 p-6 flex flex-col justify-between">
               <div>
@@ -527,7 +580,7 @@
         </article>
 
         <!-- Project 4: AETHER 3D Storefront -->
-        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="saas">
+        <article class="project-item craft-card rounded-xl overflow-hidden border border-hairline" data-category="ecommerce websites saas">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
             <div class="md:col-span-7 p-6 flex flex-col justify-between">
               <div>
@@ -599,6 +652,7 @@
         </div>
         <div class="flex flex-wrap items-center gap-1.5 font-mono text-xs text-ink-tertiary">
           <span>أوامر سريعة:</span>
+          <button onclick="runCommand('خدمات')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">خدمات</button>
           <button onclick="runCommand('مشاريع')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">مشاريع</button>
           <button onclick="runCommand('مهارات')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">مهارات</button>
           <button onclick="runCommand('حالة')" class="px-2 py-0.5 rounded bg-surface-2 border border-hairline text-ink-subtle hover:text-ink">حالة</button>
@@ -691,7 +745,15 @@
     <div class="max-w-5xl mx-auto">
       <div class="text-[11px] font-mono text-ink-subtle uppercase tracking-wider mb-6">العدة والتقنيات اللي بشتغل بيها في الشغل الحقيقي</div>
       
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-xs">
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 font-mono text-xs">
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">Shopify OS 2.0</div>
+          <div class="text-[11px] text-ink-subtle">ثيمات ومتاجر Liquid</div>
+        </div>
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">Next.js &amp; Tailwind</div>
+          <div class="text-[11px] text-ink-subtle">واجهات وتطبيقات ويب</div>
+        </div>
         <div class="p-3 rounded border border-hairline bg-surface-1">
           <div class="text-ink font-medium">n8n / Self-Hosted</div>
           <div class="text-[11px] text-ink-subtle">أوتوميشن ومسارات العمل</div>
@@ -699,10 +761,6 @@
         <div class="p-3 rounded border border-hairline bg-surface-1">
           <div class="text-ink font-medium">Python &amp; Playwright</div>
           <div class="text-[11px] text-ink-subtle">كشط وسحب الداتا المعقدة</div>
-        </div>
-        <div class="p-3 rounded border border-hairline bg-surface-1">
-          <div class="text-ink font-medium">Next.js &amp; Tailwind</div>
-          <div class="text-[11px] text-ink-subtle">واجهات ويب سريعة جداً</div>
         </div>
         <div class="p-3 rounded border border-hairline bg-surface-1">
           <div class="text-ink font-medium">PostgreSQL &amp; Supabase</div>
@@ -717,12 +775,16 @@
           <div class="text-[11px] text-ink-subtle">إدارة ونشر السيرفرات</div>
         </div>
         <div class="p-3 rounded border border-hairline bg-surface-1">
-          <div class="text-ink font-medium">Telegram &amp; WhatsApp</div>
-          <div class="text-[11px] text-ink-subtle">بوابات البوتات الذكية</div>
+          <div class="text-ink font-medium">WhatsApp &amp; Telegram</div>
+          <div class="text-[11px] text-ink-subtle">بوابات الطلبات والبوتات</div>
         </div>
         <div class="p-3 rounded border border-hairline bg-surface-1">
           <div class="text-ink font-medium">Three.js &amp; WebGL</div>
           <div class="text-[11px] text-ink-subtle">رسوميات 3D تفاعلية</div>
+        </div>
+        <div class="p-3 rounded border border-hairline bg-surface-1">
+          <div class="text-ink font-medium">Apple Wallet Passes</div>
+          <div class="text-[11px] text-ink-subtle">كروت PWA ومحافظ رقمية</div>
         </div>
       </div>
     </div>
@@ -888,6 +950,18 @@
       window.location.hash = hash;
     }
 
+    const cmdInputEl = document.getElementById('cmdInput');
+    if (cmdInputEl) {
+      cmdInputEl.addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase().trim();
+        const items = document.querySelectorAll('#cmdResults .cmd-item');
+        items.forEach(item => {
+          const text = item.innerText.toLowerCase();
+          item.style.display = (!q || text.includes(q)) ? 'flex' : 'none';
+        });
+      });
+    }
+
     window.addEventListener('keydown', (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
@@ -1050,50 +1124,68 @@
 
     const terminalCommands = {
       help: () => `الأوامر اللي تقدر تكتبها (أو تختارها من فوق):
+  • <span class="text-linear">خدمات</span>  (أو <span class="text-linear">services</span>) : الخدمات البرمجية اللي بنقدمها
   • <span class="text-linear">مشاريع</span> (أو <span class="text-linear">projects</span>) : استعراض الأنظمة اللي بنيتها وشغالة في الإنتاج
   • <span class="text-linear">مهارات</span> (أو <span class="text-linear">stack</span>)    : العدة والتقنيات اللي بشتغل بيها في الشغل الحقيقي
   • <span class="text-linear">حالة</span>   (أو <span class="text-linear">status</span>)   : حالة النظام والتوفر للشغل
-  • <span class="text-linear">تواصل</span>  (أو <span class="text-linear">contact</span>)  : إزاي توصلي (إيميل أو جيتهاب)
+  • <span class="text-linear">تواصل</span>  (أو <span class="text-linear">contact</span>)  : إزاي توصلي (واتساب أو إيميل أو جيتهاب)
   • <span class="text-linear">من_أنا</span> (أو <span class="text-linear">whoami</span>)   : نبذة سريعة عن سيف وليد
   • <span class="text-linear">مسح</span>    (أو <span class="text-linear">clear</span>)    : مسح كلام الشاشة`,
 
       مساعدة: () => terminalCommands.help(),
+
+      خدمات: () => `الخدمات البرمجية اللي بنقدمها:
+  1. ثيمات شوبيفاي OS 2.0 ومتاجر إلكترونية:
+     ثيمات Liquid بيور سريعة بدون تطبيقات تبطأ المتجر، Cart Drawer فوري، ودفع محلي بـ InstaPay ومحافظ كاش.
+  2. مواقع ويب وتطبيقات مخصصة:
+     منصات بـ Next.js و Tailwind، متوافقة تماماً مع الموبايل، وبتفتح في أقل من ثانية وبتحول الزوار لمبيعات.
+  3. بورتفوليو وهوية براند احترافية:
+     أنظمة تصميم عالمية (Linear و Stripe)، ومشاهد 3D WebGL بتوضح شغلك وقيمتك الحقيقية.
+  4. مسارات أوتوميشن وباك إند وسكرابرز:
+     مسارات n8n وبايثون وسكرابرز ضد البلوك وبوتات واتساب وتيليجرام مربوطة بداتا شغلك 24/7.`,
+
+      services: () => terminalCommands.خدمات(),
       
       projects: () => `المشاريع المنشورة في السوق وشغالة لايف:
-  1. أداة كشط وسحب عملاء Google Maps  [Playwright · Python · Postgres]
-  2. منصة SubPulse لمصاريف واشتراكات SaaS [Next.js · Supabase · Tailwind]
+  1. متجر شغف مصر [Shopify OS 2.0 · Liquid · InstaPay ومحافظ كاش]
+  2. منصة Stampee للولاء الرقمي [React · TypeScript · Web Audio · كروت Apple Wallet]
   3. المنصة الطبية والحجوزات لد. آية درغام [Medical CRM · WhatsApp Gateway]
-  4. متجر AETHER ثلاثي الأبعاد الفاخر   [Three.js · WebGL · E-Commerce]
-  5. غرفة القياس الافتراضية بالـ AI     [Diffusion · Pose Estimation]`,
+  4. متجر AETHER ثلاثي الأبعاد الفاخر [Three.js · WebGL · E-Commerce]
+  5. أداة كشط وسحب عملاء Google Maps [Playwright · Python · Postgres]
+  6. منصة SubPulse لمصاريف واشتراكات SaaS [Next.js · Supabase · Tailwind]
+  7. غرفة القياس الافتراضية بالـ AI [Diffusion · Pose Estimation]`,
 
       مشاريع: () => terminalCommands.projects(),
 
       stack: () => `العدة والتقنيات اللي بشتغل بيها يومياً في الشغل الحقيقي:
-  - الأوتوميشن   : n8n، كتل Python Celery، وسطاء الـ Webhooks
-  - الكشط والبيانات : Playwright، BeautifulSoup، شبكات البروكسي السكنية
-  - الباك إند    : Python FastAPI، Node.js، PostgreSQL
-  - الفرونت إند  : Next.js، Tailwind CSS، Three.js WebGL
-  - السيرفرات    : خوادم Linux VPS، Docker، GitHub Actions، Supabase`,
+  - التجارة الإلكترونية : Shopify Online Store 2.0، كود Liquid بيور، InstaPay ومحافظ كاش
+  - واجهات ومواقع الويب : Next.js، React، Tailwind CSS، TypeScript
+  - الجرافيكس والصوتيات : Three.js WebGL، Web Audio API synthesizer
+  - الأوتوميشن والربط  : n8n (سيرفر خاص)، كتل Python Celery، وسطاء الـ Webhooks
+  - الكشط والبيانات     : Playwright، BeautifulSoup، شبكات البروكسي السكنية
+  - الباك إند          : Python FastAPI، Node.js، PostgreSQL، Supabase
+  - السيرفرات          : خوادم Linux VPS، Docker، GitHub Actions، كروت Apple Wallet`,
 
       مهارات: () => terminalCommands.stack(),
 
       status: () => `بيانات التوفر والجاهزية:
   - المهندس      : سيف وليد (Seif Walid)
   - المكان       : القاهرة، جمهورية مصر العربية (UTC+2)
-  - الشغل والتعاقد : متاح لمشاريع وتعاقدات تقيلة
-  - سرعة الرد    : في العادة برد في أقل من 24 ساعة ع الإيميل`,
+  - التخصص       : مواقع ويب، ثيمات شوبيفاي، بورتفوليو، ومسارات أوتوميشن
+  - الشغل والتعاقد : متاح لمشاريع ويب وإي-كوميرس وأوتوميشن
+  - سرعة الرد    : في العادة برد في أقل من 24 ساعة ع الواتساب أو الإيميل`,
 
       حالة: () => terminalCommands.status(),
 
       contact: () => `قنوات التواصل المباشرة:
-  - الإيميل   : <a href="mailto:seif.walid.fathe@gmail.com" class="text-linear underline">seif.walid.fathe@gmail.com</a>
   - واتساب   : <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio" target="_blank" class="text-linear underline">+20 109 671 1601</a>
+  - الإيميل   : <a href="mailto:seif.walid.fathe@gmail.com" class="text-linear underline">seif.walid.fathe@gmail.com</a>
   - جيتهاب   : <a href="https://github.com/seifwalidfathe-bot" target="_blank" class="text-linear underline">github.com/seifwalidfathe-bot</a>`,
 
       تواصل: () => terminalCommands.contact(),
 
-      whoami: () => `سيف وليد · مهندس أوتوميشن وباك إند بيعيش ومبيوقعش.
-بركز ع الأنظمة اللي بتشتغل في الحقيقة ومبتضربش أول ما الضغط يعلى.`,
+      whoami: () => `سيف وليد · مبرمج مواقع ويب، ثيمات شوبيفاي، ومسارات أوتوميشن.
+بركز ع بناء مواقع ومتاجر وأنظمة بتشتغل في الحقيقة ومبتضربش أول ما الضغط يعلى.`,
 
       من_أنا: () => terminalCommands.whoami()
     };
@@ -1131,6 +1223,17 @@
     }
 
     const modalDetails = {
+      shaghaf: {
+        title: "المعمارية ونموذج الأداء: متجر شغف (ثيم شوبيفاي OS 2.0 للمجوهرات)",
+        body: `<p><strong>التحدي الأساسي:</strong> الثيمات الجاهزة في متجر شوبيفاي مليانة تطبيقات تقيلة بتأخر تحميل المتجر وبتضيع العملاء، ومفيهاش توافق حقيقي مع عادات الدفع في مصر (InstaPay ومحافظ كاش وواتساب).</p>
+        <p><strong>المعمارية ونموذج العمل:</strong></p>
+        <ul class="list-disc pr-4 space-y-1">
+          <li><strong>بدون تطبيقات تبطأ المتجر (Zero App Dependency):</strong> كود Liquid وسكاشن مخصصة بالكامل لدرج السلة (Cart Drawer)، دليل المقاسات، والـ Upsells من غير أي اشتراكات تطبيقات شهرية.</li>
+          <li><strong>مداخل دفع مصرية فورية:</strong> Cart Drawer منزلق سريع فيه أزرار دفع بلمسة واحدة لحسابات InstaPay ومحافظ فودافون كاش واتصالات كاش.</li>
+          <li><strong>سرعة تحميل أقل من ثانية:</strong> سكور 98/100 على Google Lighthouse Mobile بفضل الـ Preloaded fonts والـ Critical CSS وتخفيف الـ Assets.</li>
+          <li><strong>حزمة اختبارات آلية E2E:</strong> اختبار وتغطية شاملة لـ 23 ميزة أساسية بنظام Node.js مستقل لضمان خلو المتجر من أي أخطاء.</li>
+        </ul>`
+      },
       stampee: {
         title: "المعمارية ونموذج الحماية: منصة Stampee للولاء الرقمي",
         body: `<p><strong>التحدي الأساسي:</strong> كروت الورق بتضيع وبتتزور، وبرامج الولاء المعقدة (زي مناسبة و Stamp Me) بتجبر الزبون ينزل أبلكيشن وبتعطل طابور الكاشير باشتراكات شهرية غالية.</p>
