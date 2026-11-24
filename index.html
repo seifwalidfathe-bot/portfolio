@@ -126,10 +126,15 @@
       border-color: #34343a;
       box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.7);
     }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    html { -webkit-tap-highlight-color: transparent; }
   </style>
 </head>
 
-<body class="selection:bg-linear/30 selection:text-white min-h-screen flex flex-col justify-between">
+<body class="selection:bg-linear/30 selection:text-white min-h-screen flex flex-col justify-between pb-24 sm:pb-0">
 
   <!-- COMMAND PALETTE MODAL (Cmd+K) -->
   <div id="cmdPalette" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
@@ -176,6 +181,61 @@
     </div>
   </div>
 
+  <!-- MOBILE NAVIGATION DRAWER (FOR FAST MOBILE AD ACCESS) -->
+  <div id="mobileDrawer" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-start justify-end transition-opacity duration-300">
+    <div class="w-4/5 max-w-xs h-full bg-surface-1 border-l border-hairline p-5 flex flex-col justify-between overflow-y-auto shadow-2xl">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-hairline mb-5">
+          <div class="flex items-center space-x-2.5">
+            <img src="seif_avatar.jpg" alt="Seif Walid" class="w-8 h-8 rounded-full object-cover border border-hairline">
+            <div class="flex flex-col">
+              <span class="text-xs font-semibold text-ink">Seif Walid</span>
+              <span class="text-[10px] text-status-online font-mono">Available for Contracts</span>
+            </div>
+          </div>
+          <button onclick="toggleMobileDrawer()" class="w-9 h-9 rounded-lg bg-surface-2 border border-hairline text-ink-subtle hover:text-ink flex items-center justify-center text-sm" aria-label="Close menu">✕</button>
+        </div>
+
+        <nav class="space-y-1 text-sm font-medium">
+          <a href="#projects" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
+            <span>Selected Projects</span>
+            <span class="text-xs font-mono text-linear font-bold">01</span>
+          </a>
+          <a href="#services" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
+            <span>Services &amp; Capabilities</span>
+            <span class="text-xs font-mono text-linear font-bold">02</span>
+          </a>
+          <a href="#simulator" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
+            <span>Pipeline Simulator</span>
+            <span class="text-xs font-mono text-linear font-bold">03</span>
+          </a>
+          <a href="#terminal" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
+            <span>Interactive Shell</span>
+            <span class="text-xs font-mono text-linear font-bold">04</span>
+          </a>
+          <a href="#architecture" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
+            <span>Engineering Architecture</span>
+            <span class="text-xs font-mono text-linear font-bold">05</span>
+          </a>
+          <a href="#contact" onclick="toggleMobileDrawer()" class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-2 text-ink min-h-[44px]">
+            <span>Direct Contact</span>
+            <span class="text-xs font-mono text-linear font-bold">06</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="pt-5 border-t border-hairline space-y-2.5">
+        <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project" target="_blank" class="w-full p-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs flex items-center justify-center space-x-2 min-h-[44px] shadow-lg shadow-emerald-950/40">
+          <span>Chat on WhatsApp (Direct) ⚡</span>
+        </a>
+        <a href="ar.html" class="w-full p-2.5 rounded-lg bg-surface-2 border border-hairline text-ink-muted text-xs flex items-center justify-center space-x-1 min-h-[44px]">
+          <span class="text-linear font-bold font-mono">AR</span>
+          <span>النسخة العربية (بالعامية المصرية)</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- NAVIGATION -->
   <header class="sticky top-0 z-40 w-full border-b border-hairline/80 bg-canvas/90 backdrop-blur-md">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
@@ -196,18 +256,22 @@
         <a href="#contact" class="hover:text-ink transition">Contact</a>
       </nav>
 
-      <div class="flex items-center space-x-3">
+      <div class="flex items-center space-x-2">
         <a href="ar.html" class="text-xs font-mono px-2.5 py-1.5 rounded border border-hairline bg-surface-1 text-ink-muted hover:border-linear hover:text-white transition flex items-center space-x-1" title="التبديل إلى النسخة العربية">
           <span class="text-linear font-bold">AR</span>
-          <span>العربية</span>
+          <span class="hidden xs:inline">العربية</span>
         </a>
         <button onclick="toggleCmdPalette()" class="hidden sm:flex items-center space-x-1.5 px-2.5 py-1 rounded border border-hairline bg-surface-1 text-[11px] font-mono text-ink-subtle hover:border-hairline-strong hover:text-ink transition" title="Press Cmd+K">
           <span class="text-[10px]">⌘</span><span>K</span>
         </button>
-        <a href="https://github.com/seifwalidfathe-bot" target="_blank" rel="noopener noreferrer" class="text-xs font-mono px-3 py-1.5 rounded border border-hairline bg-surface-1 text-ink-muted hover:border-linear hover:text-white transition flex items-center space-x-1.5">
+        <a href="https://github.com/seifwalidfathe-bot" target="_blank" rel="noopener noreferrer" class="hidden sm:flex text-xs font-mono px-3 py-1.5 rounded border border-hairline bg-surface-1 text-ink-muted hover:border-linear hover:text-white transition items-center space-x-1.5">
           <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           <span>GitHub</span>
         </a>
+        <!-- MOBILE HAMBURGER BUTTON (44px TOUCH TARGET) -->
+        <button onclick="toggleMobileDrawer()" class="md:hidden w-11 h-11 min-h-[44px] min-w-[44px] rounded-lg border border-hairline bg-surface-2 text-ink flex items-center justify-center hover:border-linear transition" aria-label="Open mobile navigation">
+          <svg class="w-5 h-5 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
       </div>
     </div>
   </header>
@@ -222,42 +286,60 @@
         <div class="lg:col-span-8">
           
           <!-- Live Status Badge -->
-          <div class="hero-animate-1 inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-hairline bg-surface-1/80 text-[11px] font-mono text-ink-subtle mb-6">
+          <div class="hero-animate-1 inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-hairline bg-surface-1/80 text-[11px] font-mono text-ink-subtle mb-4 sm:mb-6">
             <span class="w-2 h-2 rounded-full bg-status-online animate-pulse"></span>
             <span class="text-ink">Operational</span>
             <span class="text-hairline-strong">·</span>
             <span>Cairo (UTC+2)</span>
             <span class="text-hairline-strong">·</span>
-            <span class="text-linear">Available for Web &amp; E-Commerce Contracts</span>
+            <span class="text-linear">Available for Contracts</span>
+          </div>
+
+          <!-- Mobile Founder Trust Strip (Visible only on mobile to build immediate trust from ad traffic) -->
+          <div class="lg:hidden flex items-center space-x-3 p-3 mb-6 rounded-xl border border-hairline bg-surface-1/90 backdrop-blur-md">
+            <img src="seif_avatar.jpg" alt="Seif Walid" class="w-12 h-12 rounded-full object-cover border-2 border-linear flex-shrink-0">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center space-x-1.5">
+                <span class="text-xs font-semibold text-ink">Seif Walid</span>
+                <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-1.5 py-0.2 rounded">Available</span>
+              </div>
+              <p class="text-[11px] text-ink-subtle truncate mt-0.5">Websites · Shopify OS 2.0 · Automation</p>
+            </div>
+            <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project" target="_blank" class="px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-mono flex items-center space-x-1 flex-shrink-0 min-h-[44px]">
+              <span>WhatsApp</span>
+            </a>
           </div>
 
           <!-- Humanized Core Pitch -->
-          <h1 class="hero-animate-2 text-3xl sm:text-5xl font-semibold tracking-tighter text-ink leading-[1.08] mb-6">
+          <h1 class="hero-animate-2 text-3xl sm:text-5xl font-semibold tracking-tighter text-ink leading-[1.08] mb-4 sm:mb-6">
             Engineering custom websites, Shopify themes, and resilient automation systems.
           </h1>
 
-          <p class="hero-animate-3 text-base text-ink-muted leading-relaxed max-w-2xl mb-8 font-normal">
+          <p class="hero-animate-3 text-sm sm:text-base text-ink-muted leading-relaxed max-w-2xl mb-6 sm:mb-8 font-normal">
             From high-conversion Shopify Online Store 2.0 themes with native InstaPay and mobile wallet checkouts to fast custom web platforms and fault-tolerant automation pipelines, I engineer digital products that convert visitors, eliminate manual friction, and stay online under load.
           </p>
 
-          <!-- Primary CTA Bar -->
-          <div class="hero-animate-3 flex flex-wrap items-center gap-3 font-mono text-xs">
-            <a href="#projects" class="px-4 py-2.5 rounded bg-linear hover:bg-linear-hover text-white font-medium transition shadow-lg shadow-linear/15">
-              Explore Live Deployments →
+          <!-- Primary CTA Bar (Optimized for Mobile Ad Conversions) -->
+          <div class="hero-animate-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 font-mono text-xs">
+            <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project" target="_blank" class="px-5 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-center transition shadow-lg shadow-emerald-950/50 flex items-center justify-center space-x-2 min-h-[44px]">
+              <svg class="w-4 h-4 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Chat on WhatsApp (Direct) ⚡</span>
             </a>
-            <a href="#services" class="px-4 py-2.5 rounded bg-surface-2 hover:bg-surface-3 border border-hairline text-ink-muted transition">
-              Services &amp; Capabilities
-            </a>
-            <button onclick="copyEmail()" class="px-4 py-2.5 rounded bg-surface-1 hover:bg-surface-2 border border-hairline text-ink-subtle hover:text-ink transition flex items-center space-x-2">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-              <span id="copyBtnText">Copy Email</span>
-            </button>
+            <div class="flex items-center gap-2">
+              <a href="#projects" class="flex-1 sm:flex-initial px-4 py-3 rounded-lg bg-surface-2 hover:bg-surface-3 border border-hairline text-ink text-center transition min-h-[44px] flex items-center justify-center">
+                Explore Work →
+              </a>
+              <button onclick="copyEmail()" class="flex-1 sm:flex-initial px-4 py-3 rounded-lg bg-surface-1 hover:bg-surface-2 border border-hairline text-ink-subtle hover:text-ink transition flex items-center justify-center space-x-2 min-h-[44px]">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                <span id="copyBtnText">Copy Email</span>
+              </button>
+            </div>
           </div>
 
         </div>
 
-        <!-- Right: Seif's Portrait Card (4 cols) -->
-        <div class="lg:col-span-4 hero-animate-2 flex justify-center lg:justify-end">
+        <!-- Right: Seif's Portrait Card (Visible on desktop, hidden on mobile for clean above-the-fold ad focus) -->
+        <div class="hidden lg:flex lg:col-span-4 hero-animate-2 justify-center lg:justify-end">
           <div class="craft-card rounded-2xl overflow-hidden border border-hairline-strong max-w-[280px] sm:max-w-[320px] shadow-2xl relative group">
             <div class="relative overflow-hidden aspect-[4/5] bg-surface-2">
               <img src="seif_portrait.jpg" alt="Seif Walid" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
@@ -322,15 +404,15 @@
         </div>
       </div>
 
-      <!-- Pipeline Selector Tabs -->
-      <div class="flex space-x-2 border-b border-hairline pb-2 mb-6 font-mono text-xs">
-        <button onclick="setSimWorkflow('scraper')" id="tab-scraper" class="px-3 py-1.5 rounded border border-hairline bg-surface-2 text-ink font-medium transition">
+      <!-- Pipeline Selector Tabs (Scrollable on mobile) -->
+      <div class="flex overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 space-x-2 border-b border-hairline mb-6 font-mono text-xs no-scrollbar">
+        <button onclick="setSimWorkflow('scraper')" id="tab-scraper" class="whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-hairline bg-surface-2 text-ink font-medium transition min-h-[44px] flex items-center">
           01. B2B Headless Scraper
         </button>
-        <button onclick="setSimWorkflow('bot')" id="tab-bot" class="px-3 py-1.5 rounded border border-transparent text-ink-subtle hover:text-ink transition">
+        <button onclick="setSimWorkflow('bot')" id="tab-bot" class="whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink transition min-h-[44px] flex items-center">
           02. WhatsApp / Telegram Bridge
         </button>
-        <button onclick="setSimWorkflow('subpulse')" id="tab-subpulse" class="px-3 py-1.5 rounded border border-transparent text-ink-subtle hover:text-ink transition">
+        <button onclick="setSimWorkflow('subpulse')" id="tab-subpulse" class="whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink transition min-h-[44px] flex items-center">
           03. Subscription Alert Webhook
         </button>
       </div>
@@ -338,8 +420,8 @@
       <!-- Simulator Visual Stage -->
       <div class="craft-card rounded-xl p-5 sm:p-6 overflow-hidden">
         
-        <!-- Workflow Nodes Graph -->
-        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-6 relative">
+        <!-- Workflow Nodes Graph (Compact 2x2 on mobile, 4-col on desktop) -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-4 sm:mb-6 relative">
           
           <div id="node-1" class="p-3 rounded-lg border border-hairline bg-surface-2 transition duration-300">
             <div class="flex items-center justify-between text-[10px] font-mono text-ink-subtle mb-1">
@@ -409,13 +491,13 @@
           <p class="text-xs text-ink-subtle mt-1">Real applications built with defensive architectures and measured business outcomes.</p>
         </div>
 
-        <!-- Filter Chips -->
-        <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-          <button onclick="filterProjects('all')" class="filter-btn px-2.5 py-1 rounded border border-hairline bg-surface-2 text-ink" data-filter="all">All (7)</button>
-          <button onclick="filterProjects('ecommerce')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="ecommerce">Shopify &amp; E-Commerce</button>
-          <button onclick="filterProjects('websites')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="websites">Websites &amp; Portfolios</button>
-          <button onclick="filterProjects('saas')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="saas">SaaS &amp; Platforms</button>
-          <button onclick="filterProjects('automation')" class="filter-btn px-2.5 py-1 rounded border border-transparent text-ink-subtle hover:text-ink" data-filter="automation">Automation &amp; Scraping</button>
+        <!-- Filter Chips (Native Horizontal Scroll on Mobile, Wrapped on Desktop) -->
+        <div class="flex overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap gap-2 font-mono text-xs no-scrollbar">
+          <button onclick="filterProjects('all')" class="filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-hairline bg-surface-2 text-ink min-h-[44px] flex items-center" data-filter="all">All (7)</button>
+          <button onclick="filterProjects('ecommerce')" class="filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink min-h-[44px] flex items-center" data-filter="ecommerce">Shopify &amp; E-Commerce</button>
+          <button onclick="filterProjects('websites')" class="filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink min-h-[44px] flex items-center" data-filter="websites">Websites &amp; Portfolios</button>
+          <button onclick="filterProjects('saas')" class="filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink min-h-[44px] flex items-center" data-filter="saas">SaaS &amp; Platforms</button>
+          <button onclick="filterProjects('automation')" class="filter-btn whitespace-nowrap flex-shrink-0 px-3 py-2 rounded-lg border border-transparent text-ink-subtle hover:text-ink min-h-[44px] flex items-center" data-filter="automation">Automation &amp; Scraping</button>
         </div>
       </div>
 
@@ -798,6 +880,40 @@
     </div>
   </section>
 
+  <!-- TRUST & WHY WORK WITH SEIF (FOR AD TRAFFIC CONVERSION) -->
+  <section class="py-12 sm:py-16 px-4 sm:px-6 border-b border-hairline bg-surface-1/40">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-8">
+        <div class="text-[11px] font-mono text-linear font-medium uppercase tracking-wider mb-1">Execution &amp; Guarantees</div>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">Why Build With Seif Walid?</h2>
+        <p class="text-xs text-ink-subtle mt-1">Clear production standards engineered for speed, reliability, and zero friction.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 font-mono text-xs">
+        <div class="craft-card p-4 rounded-xl border border-hairline">
+          <div class="text-linear text-base font-bold mb-1.5">⚡ Rapid Turnaround</div>
+          <div class="text-ink font-semibold mb-1">Days, Not Months</div>
+          <div class="text-ink-subtle text-[11px] leading-relaxed">Shopify themes and Next.js sites shipped production-ready with 95+ mobile performance scores.</div>
+        </div>
+        <div class="craft-card p-4 rounded-xl border border-hairline">
+          <div class="text-emerald-400 text-base font-bold mb-1.5">🛡️ Milestone Payments</div>
+          <div class="text-ink font-semibold mb-1">Preview Before Approval</div>
+          <div class="text-ink-subtle text-[11px] leading-relaxed">Staged payments tied to clear deliverables. Test functionality directly on mobile before final approval.</div>
+        </div>
+        <div class="craft-card p-4 rounded-xl border border-hairline">
+          <div class="text-status-online text-base font-bold mb-1.5">📱 Direct 1-on-1 Access</div>
+          <div class="text-ink font-semibold mb-1">Direct WhatsApp Chat</div>
+          <div class="text-ink-subtle text-[11px] leading-relaxed">Direct communication with Seif—no account managers, no ticket delays, fast turnaround on questions.</div>
+        </div>
+        <div class="craft-card p-4 rounded-xl border border-hairline">
+          <div class="text-amber-400 text-base font-bold mb-1.5">🇪🇬 Local &amp; Global Pay</div>
+          <div class="text-ink font-semibold mb-1">InstaPay, Wallets &amp; Stripe</div>
+          <div class="text-ink-subtle text-[11px] leading-relaxed">Native Egyptian checkout integrations, fast slide-out cart drawers, and automated webhook order logging.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- DIRECT CONTACT SECTION -->
   <section id="contact" class="py-16 px-4 sm:px-6 border-b border-hairline">
     <div class="max-w-4xl mx-auto">
@@ -819,33 +935,33 @@
             </div>
           </div>
           <h2 class="text-2xl sm:text-4xl font-semibold tracking-tight text-ink mb-4">
-            Need an automation pipeline or backend that won't fail? Let's talk.
+            Have a website, Shopify store, or automation system to build? Let's talk.
           </h2>
           <p class="text-sm text-ink-muted leading-relaxed mb-8">
-            I work directly with technical founders, agencies, and operations teams to automate repetitive workflows, build resilient scrapers, or launch full-stack applications.
+            I work directly with technical founders, brand owners, and operations teams to launch custom websites, high-converting Shopify stores, and resilient automation pipelines.
           </p>
 
           <div class="flex flex-wrap items-center gap-3 font-mono text-xs">
-            <a href="mailto:seif.walid.fathe@gmail.com" class="px-4 py-2.5 rounded bg-linear hover:bg-linear-hover text-white font-medium transition shadow-lg shadow-linear/20">
+            <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium transition shadow-lg shadow-emerald-950/40 flex items-center space-x-2 min-h-[44px]">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Chat on WhatsApp (Direct) ⚡</span>
+            </a>
+            <a href="mailto:seif.walid.fathe@gmail.com" class="px-4 py-3 rounded-lg bg-surface-2 hover:bg-surface-3 border border-hairline text-ink font-medium transition min-h-[44px] flex items-center">
               Send Email Directly →
             </a>
-            <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded bg-surface-2 hover:bg-surface-3 border border-hairline text-ink transition flex items-center space-x-1.5">
-              <svg class="w-3.5 h-3.5 fill-current text-status-online" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-              <span>WhatsApp</span>
-            </a>
-            <a href="https://www.linkedin.com/in/seif-w-fathe" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded bg-surface-2 hover:bg-surface-3 border border-hairline text-ink transition flex items-center space-x-1.5">
+            <a href="https://www.linkedin.com/in/seif-w-fathe" target="_blank" rel="noopener noreferrer" class="px-3.5 py-3 rounded-lg bg-surface-2 hover:bg-surface-3 border border-hairline text-ink transition flex items-center space-x-1.5 min-h-[44px]">
               <svg class="w-3.5 h-3.5 fill-current text-[#0a66c2]" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
               <span>LinkedIn</span>
             </a>
-            <a href="https://github.com/seifwalidfathe-bot" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded bg-surface-2 hover:bg-surface-3 border border-hairline text-ink transition flex items-center space-x-1.5">
+            <a href="https://github.com/seifwalidfathe-bot" target="_blank" rel="noopener noreferrer" class="px-3.5 py-3 rounded-lg bg-surface-2 hover:bg-surface-3 border border-hairline text-ink transition flex items-center space-x-1.5 min-h-[44px]">
               <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               <span>GitHub</span>
             </a>
-            <a href="https://www.instagram.com/seif.w.fathe/" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded bg-surface-2 hover:bg-surface-3 border border-hairline text-ink transition flex items-center space-x-1.5">
+            <a href="https://www.instagram.com/seif.w.fathe/" target="_blank" rel="noopener noreferrer" class="px-3.5 py-3 rounded-lg bg-surface-2 hover:bg-surface-3 border border-hairline text-ink transition flex items-center space-x-1.5 min-h-[44px]">
               <svg class="w-3.5 h-3.5 fill-current text-pink-400" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
               <span>Instagram</span>
             </a>
-            <button onclick="copyEmail()" class="px-3.5 py-2.5 rounded bg-surface-1 hover:bg-surface-2 border border-hairline text-ink-subtle hover:text-ink transition">
+            <button onclick="copyEmail()" class="px-3.5 py-3 rounded-lg bg-surface-1 hover:bg-surface-2 border border-hairline text-ink-subtle hover:text-ink transition min-h-[44px]">
               Copy Address
             </button>
           </div>
@@ -920,6 +1036,18 @@
 
   <!-- CLIENT SCRIPTS -->
   <script>
+    function toggleMobileDrawer() {
+      const drawer = document.getElementById('mobileDrawer');
+      if (drawer.classList.contains('hidden')) {
+        drawer.classList.remove('hidden');
+        drawer.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      } else {
+        drawer.classList.add('hidden');
+        drawer.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    }
     // 1. Copy Email functionality
     function copyEmail() {
       const email = 'seif.walid.fathe@gmail.com';
@@ -1307,5 +1435,15 @@ Specializing in high-converting websites, custom Shopify OS 2.0 themes, and faul
       modal.classList.remove('flex');
     }
   </script>
+  <!-- STICKY MOBILE ACTION BAR (CONVERSION ENGINE FOR AD TRAFFIC) -->
+  <div class="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-surface-1/95 backdrop-blur-md border-t border-hairline p-2.5 px-4 flex items-center justify-between gap-2.5 shadow-2xl pb-[max(0.625rem,env(safe-area-inset-bottom))]">
+    <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project" target="_blank" class="flex-1 min-h-[46px] rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs flex items-center justify-center space-x-2 shadow-md shadow-emerald-950/40">
+      <svg class="w-4 h-4 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      <span>Chat on WhatsApp (Direct) ⚡</span>
+    </a>
+    <a href="tel:+201096711601" class="min-h-[46px] px-3.5 rounded-lg bg-surface-2 border border-hairline text-ink text-xs flex items-center justify-center font-mono" title="Call Direct">
+      <svg class="w-4 h-4 text-ink-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+    </a>
+  </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 # Seif Walid — Official Portfolio Website 🚀
 
 > **Full-Stack Web Developer, Shopify Theme Engineer & Systems Builder**  
-> Crafting high-converting websites, bespoke Shopify OS 2.0 stores, and resilient automation pipelines.
+> Crafting high-converting websites, custom Shopify OS 2.0 themes, and resilient automation pipelines.
 
 ## 🌟 Highlights
 - **High-Performance Storefronts**: Shaghaf Store Egypt (Shopify OS 2.0 pure Liquid theme with InstaPay & mobile wallets drawer, 98/100 Lighthouse).
