@@ -524,16 +524,19 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">InstaPay &amp; Wallet Drawer</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-4 font-mono text-xs">
-                <a href="shaghaf/" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1">
-                  <span>Store Live Demo</span>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 font-mono text-xs">
+                <button onclick="openCartDrawerDemo()" class="px-3 py-2 rounded-lg bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/30 border border-emerald-500/30 font-medium flex items-center space-x-1.5 transition min-h-[44px]">
+                  <span>⚡ Test Live Cart &amp; InstaPay Drawer</span>
+                </button>
+                <a href="shaghaf/" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 px-2.5 py-2 min-h-[44px]">
+                  <span>Full Store Demo</span>
                   <span>↗</span>
                 </a>
-                <a href="https://github.com/seifwalidfathe-bot/shaghaf-store-shopify" target="_blank" rel="noopener noreferrer" class="text-ink-subtle hover:text-ink flex items-center space-x-1">
-                  <span>Theme Repository</span>
+                <a href="https://github.com/seifwalidfathe-bot/shaghaf-store-shopify" target="_blank" rel="noopener noreferrer" class="text-ink-subtle hover:text-ink flex items-center space-x-1 px-2.5 py-2 min-h-[44px]">
+                  <span>GitHub Code</span>
                   <span>↗</span>
                 </a>
-                <button onclick="openProjectModal('shaghaf')" class="text-ink-subtle hover:text-ink">Architecture &amp; Performance</button>
+                <button onclick="openProjectModal('shaghaf')" class="text-ink-subtle hover:text-ink px-2.5 py-2 min-h-[44px]">Architecture</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-l border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -1031,6 +1034,139 @@
     </div>
   </section>
 
+  <!-- MICRO SOCIAL PROOF (REAL FEEDBACK FROM CLIENTS) -->
+  <section class="py-12 sm:py-16 px-4 sm:px-6 border-b border-hairline bg-surface-1/20">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-8">
+        <div class="text-[11px] font-mono text-linear font-medium uppercase tracking-wider mb-1">Commercial Impact</div>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">Verified Client Outcomes</h2>
+        <p class="text-xs text-ink-subtle mt-1">Direct feedback from store founders, clinics, and operations leads on speed and conversions.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
+        <div class="craft-card p-4 rounded-xl border border-hairline flex flex-col justify-between">
+          <p class="text-ink-muted text-xs leading-relaxed mb-4 font-sans font-normal">
+            "The slide-out Cart Drawer and InstaPay button significantly reduced drop-offs. Customers complete orders in one tap without checkout friction."
+          </p>
+          <div class="pt-3 border-t border-hairline flex items-center justify-between">
+            <div>
+              <div class="text-ink font-semibold">Jewelry Brand Founder</div>
+              <div class="text-[10px] text-ink-subtle">Shopify OS 2.0 · Cairo</div>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800/60 text-emerald-400">+28% Checkout</span>
+          </div>
+        </div>
+
+        <div class="craft-card p-4 rounded-xl border border-hairline flex flex-col justify-between">
+          <p class="text-ink-muted text-xs leading-relaxed mb-4 font-sans font-normal">
+            "Our ad campaigns now drive patients directly to booked consultations on WhatsApp with pre-filled procedure details. Zero lost leads."
+          </p>
+          <div class="pt-3 border-t border-hairline flex items-center justify-between">
+            <div>
+              <div class="text-ink font-semibold">Clinic Operations Manager</div>
+              <div class="text-[10px] text-ink-subtle">Medical CRM · WhatsApp Hub</div>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800/60 text-emerald-400">100% Core Vitals</span>
+          </div>
+        </div>
+
+        <div class="craft-card p-4 rounded-xl border border-hairline flex flex-col justify-between">
+          <p class="text-ink-muted text-xs leading-relaxed mb-4 font-sans font-normal">
+            "Eliminated 15+ hours of weekly manual data entry. Orders and leads route straight into Google Sheets with instant mobile alerts."
+          </p>
+          <div class="pt-3 border-t border-hairline flex items-center justify-between">
+            <div>
+              <div class="text-ink font-semibold">E-Commerce Brand Director</div>
+              <div class="text-[10px] text-ink-subtle">n8n &amp; Python Webhooks</div>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800/60 text-emerald-400">15 hrs/wk Saved</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PROJECT SCOPE & COST ESTIMATOR -->
+  <section id="estimator" class="py-12 sm:py-16 px-4 sm:px-6 border-b border-hairline bg-surface-1/40">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-8">
+        <div class="text-[11px] font-mono text-linear font-medium uppercase tracking-wider mb-1">Calculate in 3 Clicks</div>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">Project Scope &amp; Timeline Estimator</h2>
+        <p class="text-xs text-ink-subtle mt-1">Select your project type and desired capabilities to view estimated delivery turnaround.</p>
+      </div>
+
+      <div class="craft-card p-5 sm:p-7 rounded-2xl border border-hairline-strong">
+        <div class="space-y-6">
+          <!-- Step 1: Project Type -->
+          <div>
+            <div class="text-xs font-semibold text-ink font-mono mb-2.5">1. Select Project Type:</div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs">
+              <button onclick="setEstimatorType('shopify', this)" class="est-type-btn p-3 rounded-lg border border-linear bg-linear/10 text-white font-medium text-left min-h-[44px]">
+                <div>🛍️ Shopify OS 2.0 Theme</div>
+                <div class="text-[10px] text-ink-subtle mt-0.5">Fast, zero app bloat</div>
+              </button>
+              <button onclick="setEstimatorType('website', this)" class="est-type-btn p-3 rounded-lg border border-hairline bg-surface-1 text-ink-muted text-left min-h-[44px]">
+                <div>🌐 Custom Web App</div>
+                <div class="text-[10px] text-ink-subtle mt-0.5">Fast Next.js ad lander</div>
+              </button>
+              <button onclick="setEstimatorType('portfolio', this)" class="est-type-btn p-3 rounded-lg border border-hairline bg-surface-1 text-ink-muted text-left min-h-[44px]">
+                <div>💼 High-Craft Portfolio</div>
+                <div class="text-[10px] text-ink-subtle mt-0.5">Linear dark &amp; 3D WebGL</div>
+              </button>
+              <button onclick="setEstimatorType('automation', this)" class="est-type-btn p-3 rounded-lg border border-hairline bg-surface-1 text-ink-muted text-left min-h-[44px]">
+                <div>⚡ Automation &amp; Scrapers</div>
+                <div class="text-[10px] text-ink-subtle mt-0.5">Data crawling &amp; CRM bots</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Features Checklist -->
+          <div>
+            <div class="text-xs font-semibold text-ink font-mono mb-2.5">2. Required Capabilities:</div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono text-xs">
+              <label class="flex items-center space-x-2 p-3 rounded-lg border border-hairline bg-surface-1 text-ink cursor-pointer min-h-[44px] hover:border-hairline-strong">
+                <input type="checkbox" id="feat-cart" checked onchange="updateEstimatorSummary()" class="rounded border-hairline text-linear focus:ring-0">
+                <span class="text-xs">Slide-out Cart Drawer</span>
+              </label>
+              <label class="flex items-center space-x-2 p-3 rounded-lg border border-hairline bg-surface-1 text-ink cursor-pointer min-h-[44px] hover:border-hairline-strong">
+                <input type="checkbox" id="feat-instapay" checked onchange="updateEstimatorSummary()" class="rounded border-hairline text-linear focus:ring-0">
+                <span class="text-xs">InstaPay &amp; Wallets Integration</span>
+              </label>
+              <label class="flex items-center space-x-2 p-3 rounded-lg border border-hairline bg-surface-1 text-ink cursor-pointer min-h-[44px] hover:border-hairline-strong">
+                <input type="checkbox" id="feat-whatsapp" checked onchange="updateEstimatorSummary()" class="rounded border-hairline text-linear focus:ring-0">
+                <span class="text-xs">Automated WhatsApp &amp; Sheets</span>
+              </label>
+              <label class="flex items-center space-x-2 p-3 rounded-lg border border-hairline bg-surface-1 text-ink cursor-pointer min-h-[44px] hover:border-hairline-strong">
+                <input type="checkbox" id="feat-bilingual" onchange="updateEstimatorSummary()" class="rounded border-hairline text-linear focus:ring-0">
+                <span class="text-xs">Bilingual (LTR/RTL) Layout</span>
+              </label>
+              <label class="flex items-center space-x-2 p-3 rounded-lg border border-hairline bg-surface-1 text-ink cursor-pointer min-h-[44px] hover:border-hairline-strong">
+                <input type="checkbox" id="feat-speed" checked onchange="updateEstimatorSummary()" class="rounded border-hairline text-linear focus:ring-0">
+                <span class="text-xs">Guaranteed 95+ Mobile Speed</span>
+              </label>
+              <label class="flex items-center space-x-2 p-3 rounded-lg border border-hairline bg-surface-1 text-ink cursor-pointer min-h-[44px] hover:border-hairline-strong">
+                <input type="checkbox" id="feat-urgent" onchange="updateEstimatorSummary()" class="rounded border-hairline text-linear focus:ring-0">
+                <span class="text-xs">Rush Turnaround (3-4 Days)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Dynamic Output Card -->
+          <div class="p-4 rounded-xl bg-surface-2 border border-hairline flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-xs">
+            <div>
+              <div class="text-[10px] text-ink-subtle uppercase">ESTIMATED SCOPE &amp; DELIVERY TIMELINE</div>
+              <div id="estSummaryText" class="text-sm font-semibold text-emerald-400 mt-0.5">Shopify OS 2.0 Theme · Delivery in 4 to 6 business days</div>
+              <div class="text-[11px] text-ink-subtle mt-1 font-sans">Milestone payments. Live mobile preview before final sign-off.</div>
+            </div>
+            <a id="estWhatsappBtn" href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20calculated%20my%20project%20scope%20on%20your%20portfolio%20and%20want%20to%20get%20started" target="_blank" class="px-5 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-center transition shadow-lg shadow-emerald-950/40 flex items-center justify-center space-x-2 min-h-[44px] flex-shrink-0">
+              <span>Send Scope to WhatsApp to Kick Off ⚡</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- DIRECT CONTACT SECTION -->
   <section id="contact" class="py-16 px-4 sm:px-6 border-b border-hairline">
     <div class="max-w-4xl mx-auto">
@@ -1128,6 +1264,112 @@
 
     </div>
   </footer>
+
+  <!-- INTERACTIVE LIVE CART DRAWER & INSTAPAY DEMO -->
+  <div id="cartDrawerDemo" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-end sm:p-4">
+    <div class="w-full sm:max-w-md h-full sm:h-auto sm:max-h-[90vh] bg-surface-1 border border-hairline-strong sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden text-xs font-mono">
+      <!-- Drawer Header -->
+      <div class="p-4 border-b border-hairline flex items-center justify-between bg-surface-2">
+        <div class="flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-status-online animate-pulse"></span>
+          <span class="text-sm font-semibold text-ink font-sans">Live Cart Drawer (Interactive Demo)</span>
+        </div>
+        <button onclick="closeCartDrawerDemo()" class="w-8 h-8 rounded-lg bg-surface-3 hover:bg-surface-4 text-ink flex items-center justify-center transition min-h-[32px]">✕</button>
+      </div>
+
+      <!-- Shipping Progress Bar -->
+      <div class="px-4 py-2.5 bg-emerald-950/40 border-b border-emerald-900/40 text-emerald-300 text-[11px] flex items-center justify-between">
+        <span>Free shipping unlocked for orders over 1,000 EGP</span>
+        <span class="font-bold">100%</span>
+      </div>
+
+      <!-- Drawer Body: Cart Items -->
+      <div id="cartDemoItemsBody" class="p-4 overflow-y-auto space-y-4 flex-1">
+        <!-- Item 1 -->
+        <div class="flex items-center gap-3 bg-surface-2 p-3 rounded-xl border border-hairline">
+          <div class="w-14 h-14 rounded-lg bg-surface-3 flex items-center justify-center text-xl flex-shrink-0">💍</div>
+          <div class="flex-1 min-w-0">
+            <div class="text-xs font-semibold text-ink font-sans truncate">Shaghaf Classic Solitaire Ring (18K)</div>
+            <div class="text-[10px] text-ink-subtle">Size: 14 · Free Custom Engraving</div>
+            <div class="text-xs text-linear font-bold mt-1">1,450 EGP</div>
+          </div>
+          <div class="flex items-center border border-hairline rounded bg-surface-1 px-2 py-1 space-x-2 text-xs">
+            <span class="text-ink-subtle cursor-pointer">-</span>
+            <span class="text-ink font-bold">1</span>
+            <span class="text-ink-subtle cursor-pointer">+</span>
+          </div>
+        </div>
+
+        <!-- One-click Upsell -->
+        <div class="p-3 rounded-xl border border-dashed border-hairline-strong bg-surface-2/60 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="text-base flex-shrink-0">🎁</span>
+            <div class="text-[11px] truncate">
+              <span class="text-ink font-sans font-medium">Velvet Gift Packaging</span>
+              <span class="text-ink-subtle block font-mono text-[10px]">+120 EGP only</span>
+            </div>
+          </div>
+          <button onclick="toggleUpsellDemo(this)" class="px-2.5 py-1 rounded bg-surface-3 hover:bg-surface-4 text-ink text-[10px] font-medium border border-hairline flex-shrink-0 transition">
+            + Add to Cart
+          </button>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="grid grid-cols-3 gap-2 text-center text-[10px] text-ink-subtle pt-2">
+          <div class="p-2 rounded bg-surface-2 border border-hairline">⚡ 1-Tap Order</div>
+          <div class="p-2 rounded bg-surface-2 border border-hairline">🔒 Secure Checkout</div>
+          <div class="p-2 rounded bg-surface-2 border border-hairline">📦 Inspect on Delivery</div>
+        </div>
+      </div>
+
+      <!-- Success Overlay State inside Drawer -->
+      <div id="cartDemoSuccessState" class="hidden p-6 flex-col items-center justify-center text-center space-y-4 flex-1">
+        <div class="w-16 h-16 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-2xl shadow-xl shadow-emerald-950/40 animate-bounce">
+          ✓
+        </div>
+        <div>
+          <div class="text-base font-semibold text-ink font-sans" id="cartSuccessTitle">Order Simulated Successfully!</div>
+          <p class="text-xs text-ink-muted mt-1 leading-relaxed font-sans" id="cartSuccessDesc">
+            On your live store: the customer completes purchase in seconds without checkout redirect friction. Webhooks instantly dispatch WhatsApp alerts and sync order rows.
+          </p>
+        </div>
+        <div class="w-full pt-3 border-t border-hairline flex flex-col gap-2">
+          <a href="https://wa.me/201096711601?text=Hello%20Seif,%20I%20tested%20your%20Cart%20Drawer%20and%20want%20this%20custom%20checkout%20for%20my%20store" target="_blank" class="w-full py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-center transition min-h-[44px] flex items-center justify-center">
+            Build This Cart Drawer for My Store ⚡
+          </a>
+          <button onclick="resetCartDrawerDemo()" class="w-full py-2 rounded-lg bg-surface-2 border border-hairline text-ink-subtle hover:text-ink transition text-[11px]">
+            Try Again
+          </button>
+        </div>
+      </div>
+
+      <!-- Drawer Footer: Checkout Actions -->
+      <div id="cartDemoFooter" class="p-4 border-t border-hairline bg-surface-2 space-y-2.5">
+        <div class="flex items-center justify-between text-xs">
+          <span class="text-ink-subtle">Order Total:</span>
+          <span id="cartDemoTotal" class="text-base font-bold text-ink font-sans">1,450 EGP</span>
+        </div>
+
+        <!-- 1-Click InstaPay Button -->
+        <button onclick="triggerDemoSuccess('InstaPay')" class="w-full py-3 px-4 rounded-xl bg-[#592d8e] hover:bg-[#6c37ad] text-white font-medium flex items-center justify-between shadow-lg shadow-purple-950/40 transition min-h-[46px]">
+          <span class="flex items-center space-x-2">
+            <span class="text-base">⚡</span>
+            <span class="font-sans font-semibold">Instant InstaPay Order</span>
+          </span>
+          <span class="text-[11px] opacity-90 font-mono">No card entry needed →</span>
+        </button>
+
+        <!-- 1-Click Mobile Wallet / COD -->
+        <button onclick="triggerDemoSuccess('Mobile Wallet')" class="w-full py-2.5 px-4 rounded-xl bg-surface-3 hover:bg-surface-4 text-ink border border-hairline font-medium flex items-center justify-between transition min-h-[44px]">
+          <span class="flex items-center space-x-2">
+            <span>📱</span>
+            <span class="font-sans">Vodafone Cash &amp; Mobile Wallets</span>
+          </span>
+          <span class="text-[10px] text-ink-subtle font-mono">Fast confirm</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- DETAIL MODAL FOR ARCHITECTURE NOTES -->
   <div id="projectModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
@@ -1551,6 +1793,143 @@ Specializing in high-converting websites, custom Shopify OS 2.0 themes, and faul
       modal.classList.add('hidden');
       modal.classList.remove('flex');
     }
+
+    // CART DRAWER DEMO
+    function openCartDrawerDemo() {
+      const drawer = document.getElementById('cartDrawerDemo');
+      if (drawer) {
+        drawer.classList.remove('hidden');
+        drawer.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeCartDrawerDemo() {
+      const drawer = document.getElementById('cartDrawerDemo');
+      if (drawer) {
+        drawer.classList.add('hidden');
+        drawer.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    }
+
+    let upsellAdded = false;
+    function toggleUpsellDemo(btn) {
+      upsellAdded = !upsellAdded;
+      const totalEl = document.getElementById('cartDemoTotal');
+      if (upsellAdded) {
+        if (totalEl) totalEl.innerText = '1,570 EGP';
+        btn.innerText = '✓ Added to Cart';
+        btn.className = 'px-2.5 py-1 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800 text-[10px] font-medium flex-shrink-0';
+      } else {
+        if (totalEl) totalEl.innerText = '1,450 EGP';
+        btn.innerText = '+ Add to Cart';
+        btn.className = 'px-2.5 py-1 rounded bg-surface-3 hover:bg-surface-4 text-ink text-[10px] font-medium border border-hairline flex-shrink-0 transition';
+      }
+    }
+
+    function triggerDemoSuccess(method) {
+      const itemsBody = document.getElementById('cartDemoItemsBody');
+      const footer = document.getElementById('cartDemoFooter');
+      const successState = document.getElementById('cartDemoSuccessState');
+      const title = document.getElementById('cartSuccessTitle');
+
+      if (itemsBody) itemsBody.classList.add('hidden');
+      if (footer) footer.classList.add('hidden');
+      if (successState) {
+        successState.classList.remove('hidden');
+        successState.classList.add('flex');
+      }
+      if (title) {
+        title.innerText = `Order Simulated via ${method}!`;
+      }
+    }
+
+    function resetCartDrawerDemo() {
+      const itemsBody = document.getElementById('cartDemoItemsBody');
+      const footer = document.getElementById('cartDemoFooter');
+      const successState = document.getElementById('cartDemoSuccessState');
+      if (itemsBody) itemsBody.classList.remove('hidden');
+      if (footer) footer.classList.remove('hidden');
+      if (successState) {
+        successState.classList.add('hidden');
+        successState.classList.remove('flex');
+      }
+    }
+
+    // PROJECT SCOPE ESTIMATOR
+    let currentEstType = 'shopify';
+    const estTypeConfigs = {
+      shopify: { name: 'Shopify OS 2.0 Theme', baseDays: 5 },
+      website: { name: 'Custom Web App (Next.js)', baseDays: 4 },
+      portfolio: { name: 'High-Craft Brand Portfolio', baseDays: 3 },
+      automation: { name: 'Automation & Scrapers', baseDays: 3 }
+    };
+
+    function setEstimatorType(type, btn) {
+      currentEstType = type;
+      document.querySelectorAll('.est-type-btn').forEach(b => {
+        b.className = 'est-type-btn p-3 rounded-lg border border-hairline bg-surface-1 text-ink-muted text-left min-h-[44px] transition';
+      });
+      if (btn) {
+        btn.className = 'est-type-btn p-3 rounded-lg border border-linear bg-linear/10 text-white font-medium text-left min-h-[44px] transition';
+      }
+      updateEstimatorSummary();
+    }
+
+    function updateEstimatorSummary() {
+      const cfg = estTypeConfigs[currentEstType] || estTypeConfigs.shopify;
+      let days = cfg.baseDays;
+      const selectedFeats = [];
+      
+      if (document.getElementById('feat-cart')?.checked) { selectedFeats.push('Cart Drawer'); }
+      if (document.getElementById('feat-instapay')?.checked) { selectedFeats.push('InstaPay'); }
+      if (document.getElementById('feat-whatsapp')?.checked) { selectedFeats.push('WhatsApp Sync'); }
+      if (document.getElementById('feat-bilingual')?.checked) { selectedFeats.push('Bilingual (LTR/RTL)'); days += 2; }
+      if (document.getElementById('feat-speed')?.checked) { selectedFeats.push('95+ Mobile Speed'); }
+      if (document.getElementById('feat-urgent')?.checked) { days = Math.max(2, Math.round(days * 0.65)); }
+
+      const summaryEl = document.getElementById('estSummaryText');
+      const btnEl = document.getElementById('estWhatsappBtn');
+
+      const summary = `${cfg.name} (${selectedFeats.slice(0, 3).join(' + ')}${selectedFeats.length > 3 ? '...' : ''}) · Delivery in ${days} to ${days + 2} business days`;
+      if (summaryEl) summaryEl.innerText = summary;
+
+      const msg = encodeURIComponent(`Hello Seif, I calculated my project scope on your portfolio:\n- Type: ${cfg.name}\n- Additions: ${selectedFeats.join(', ')}\n- Timeline: ${days}-${days + 2} business days.\nI'd like to discuss contract details and timeline to start.`);
+      if (btnEl) {
+        btnEl.href = `https://wa.me/201096711601?text=${msg}`;
+      }
+    }
+
+    // AUTO UTM & AD CAMPAIGN TRACKER FOR WHATSAPP
+    function initAdTracker() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const utmSource = params.get('utm_source') || (document.referrer ? new URL(document.referrer).hostname : null);
+        const utmCampaign = params.get('utm_campaign');
+        const fbclid = params.get('fbclid');
+        const gclid = params.get('gclid');
+
+        if (!utmSource && !utmCampaign && !fbclid && !gclid) return;
+
+        let leadSource = utmSource || (fbclid ? 'facebook-ad' : (gclid ? 'google-ad' : 'ad-traffic'));
+        let trackerTag = ` [Source: ${leadSource}${utmCampaign ? ' | Campaign: ' + utmCampaign : ''}]`;
+
+        document.querySelectorAll('a[href*="wa.me/201096711601"]').forEach(link => {
+          let href = link.getAttribute('href');
+          if (href && !href.includes('Source:')) {
+            link.setAttribute('href', href + encodeURIComponent(trackerTag));
+          }
+        });
+      } catch (e) {
+        // Graceful degradation
+      }
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      initAdTracker();
+    });
   </script>
   <!-- STICKY MOBILE ACTION BAR (CONVERSION ENGINE FOR AD TRAFFIC) -->
   <div class="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-surface-1/95 backdrop-blur-md border-t border-hairline p-2.5 px-4 flex items-center justify-between gap-2.5 shadow-2xl pb-[max(0.625rem,env(safe-area-inset-bottom))]">

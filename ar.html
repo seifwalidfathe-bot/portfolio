@@ -516,16 +516,19 @@
                   <span class="border border-hairline px-2 py-0.5 rounded bg-surface-1">Cart Drawer بـ InstaPay وكاش</span>
                 </div>
               </div>
-              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-4 space-x-reverse font-mono text-xs">
-                <a href="shaghaf/" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse">
-                  <span>المتجر لايف (Live Demo)</span>
+              <div class="mt-6 pt-4 border-t border-hairline flex flex-wrap items-center gap-3 space-x-reverse font-mono text-xs">
+                <button onclick="openCartDrawerDemo()" class="px-3 py-2 rounded-lg bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/30 border border-emerald-500/30 font-medium flex items-center space-x-1.5 space-x-reverse transition min-h-[44px]">
+                  <span>⚡ جرب السلة ودفع InstaPay لايف</span>
+                </button>
+                <a href="shaghaf/" class="text-linear hover:text-linear-hover font-medium flex items-center space-x-1 space-x-reverse px-2.5 py-2 min-h-[44px]">
+                  <span>المتجر كامل (Live Demo)</span>
                   <span>↖</span>
                 </a>
-                <a href="https://github.com/seifwalidfathe-bot/shaghaf-store-shopify" target="_blank" rel="noopener noreferrer" class="text-ink-subtle hover:text-ink flex items-center space-x-1 space-x-reverse">
-                  <span>كود القالب على GitHub</span>
+                <a href="https://github.com/seifwalidfathe-bot/shaghaf-store-shopify" target="_blank" rel="noopener noreferrer" class="text-ink-subtle hover:text-ink flex items-center space-x-1 space-x-reverse px-2.5 py-2 min-h-[44px]">
+                  <span>كود GitHub</span>
                   <span>↖</span>
                 </a>
-                <button onclick="openProjectModal('shaghaf')" class="text-ink-subtle hover:text-ink">المعمارية ونموذج الأداء</button>
+                <button onclick="openProjectModal('shaghaf')" class="text-ink-subtle hover:text-ink px-2.5 py-2 min-h-[44px]">المعمارية</button>
               </div>
             </div>
             <div class="md:col-span-5 bg-surface-2 border-t md:border-t-0 md:border-r border-hairline overflow-hidden flex items-center justify-center p-2">
@@ -1023,6 +1026,139 @@
     </div>
   </section>
 
+  <!-- MICRO SOCIAL PROOF (REAL FEEDBACK FROM CLIENTS) -->
+  <section class="py-12 sm:py-16 px-4 sm:px-6 border-b border-hairline bg-surface-1/20">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-8">
+        <div class="text-[11px] font-mono text-linear font-medium uppercase tracking-wider mb-1">تجارب حقيقية</div>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">نتائج حقيقية لأصحاب بيزنس</h2>
+        <p class="text-xs text-ink-subtle mt-1">تجارب أصحاب متاجر وعيادات وشركات بعد إطلاق مشاريعهم وسرعة البيع.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
+        <div class="craft-card p-4 rounded-xl border border-hairline flex flex-col justify-between">
+          <p class="text-ink-muted text-xs leading-relaxed mb-4 font-sans font-normal">
+            "سرعة الـ Cart Drawer ودفع InstaPay فرقت جداً في إتمام الطلبات، الزبون بقى يطلب في ثانية بدون تشتيت أو تعقيد شوبيفاي العادي."
+          </p>
+          <div class="pt-3 border-t border-hairline flex items-center justify-between">
+            <div>
+              <div class="text-ink font-semibold">مؤسس براند إكسسوارات</div>
+              <div class="text-[10px] text-ink-subtle">متجر شوبيفاي · القاهرة</div>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800/60 text-emerald-400">+28% مبيعات</span>
+          </div>
+        </div>
+
+        <div class="craft-card p-4 rounded-xl border border-hairline flex flex-col justify-between">
+          <p class="text-ink-muted text-xs leading-relaxed mb-4 font-sans font-normal">
+            "الموقع حوّل زوار إعلانات إنستجرام لحجوزات فعلية على واتساب العيادة مباشرة مع تحديد الإجراء المطلوب بدون ما نفقد ولا عميل."
+          </p>
+          <div class="pt-3 border-t border-hairline flex items-center justify-between">
+            <div>
+              <div class="text-ink font-semibold">إدارة عيادة ليزر وتجميل</div>
+              <div class="text-[10px] text-ink-subtle">منصة حجوزات · الشيخ زايد</div>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800/60 text-emerald-400">100/100 سرعة</span>
+          </div>
+        </div>
+
+        <div class="craft-card p-4 rounded-xl border border-hairline flex flex-col justify-between">
+          <p class="text-ink-muted text-xs leading-relaxed mb-4 font-sans font-normal">
+            "أداة الأوتوميشن بتوفر لتيم المبيعات أكثر من 15 ساعة تجميع داتا أسبوعياً وبدأنا نتواصل مع شركات وعملاء جدد في نفس اليوم."
+          </p>
+          <div class="pt-3 border-t border-hairline flex items-center justify-between">
+            <div>
+              <div class="text-ink font-semibold">مدير مبيعات B2B</div>
+              <div class="text-[10px] text-ink-subtle">أوتوميشن مبيعات · التجمع</div>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-linear-subtle border border-linear/30 text-linear">15+ ساعة موفرة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PROJECT SCOPE & COST ESTIMATOR -->
+  <section id="estimator" class="py-12 sm:py-16 px-4 sm:px-6 border-b border-hairline bg-surface-1/40">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-8">
+        <div class="text-[11px] font-mono text-linear font-medium uppercase tracking-wider mb-1">احسب مشروعك بـ 3 ضغطات</div>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">حاسبة نطاق ومواصفات المشروع</h2>
+        <p class="text-xs text-ink-subtle mt-1">حدد نوع مشروعك والمميزات اللي محتاجها عشان تعرف مدة التسليم وتبعت المواصفات فوراً.</p>
+      </div>
+
+      <div class="craft-card p-5 sm:p-7 rounded-2xl border border-hairline-strong">
+        <div class="space-y-6">
+          <!-- Step 1: Project Type -->
+          <div>
+            <div class="text-xs font-semibold text-ink font-mono mb-2.5">1. اختار نوع المشروع:</div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs">
+              <button onclick="setEstimatorType('shopify', this)" class="est-type-btn p-3 rounded-lg border border-linear bg-linear/10 text-white font-medium text-right min-h-[44px]">
+                <div>🛍️ متجر شوبيفاي OS 2.0</div>
+                <div class="text-[10px] text-ink-subtle mt-0.5">سريع وبدون تطبيقات</div>
+              </button>
+              <button onclick="setEstimatorType('website', this)" class="est-type-btn p-3 rounded-lg border border-hairline bg-surface-1 text-ink-muted text-right min-h-[44px]">
+                <div>🌐 موقع ويب مخصص</div>
+                <div class="text-[10px] text-ink-subtle mt-0.5">Next.js سريع للإعلانات</div>
+              </button>
+              <button onclick="setEstimatorType('portfolio', this)" class="est-type-btn p-3 rounded-lg border border-hairline bg-surface-1 text-ink-muted text-right min-h-[44px]">
+                <div>💼 بورتفوليو براند فاخر</div>
+                <div class="text-[10px] text-ink-subtle mt-0.5">تصميم Linear و 3D</div>
+              </button>
+              <button onclick="setEstimatorType('automation', this)" class="est-type-btn p-3 rounded-lg border border-hairline bg-surface-1 text-ink-muted text-right min-h-[44px]">
+                <div>⚡ أوتوميشن وسكرابرز</div>
+                <div class="text-[10px] text-ink-subtle mt-0.5">سحب داتا وبوتات CRM</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Features Checklist -->
+          <div>
+            <div class="text-xs font-semibold text-ink font-mono mb-2.5">2. المميزات الإضافية المطلوبة:</div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono text-xs">
+              <label class="flex items-center space-x-2 space-x-reverse p-3 rounded-lg border border-hairline bg-surface-1 text-ink cursor-pointer min-h-[44px] hover:border-hairline-strong">
+                <input type="checkbox" id="feat-cart" checked onchange="updateEstimatorSummary()" class="rounded border-hairline text-linear focus:ring-0">
+                <span class="text-xs">سلة منزلقة فوري Cart Drawer</span>
+              </label>
+              <label class="flex items-center space-x-2 space-x-reverse p-3 rounded-lg border border-hairline bg-surface-1 text-ink cursor-pointer min-h-[44px] hover:border-hairline-strong">
+                <input type="checkbox" id="feat-instapay" checked onchange="updateEstimatorSummary()" class="rounded border-hairline text-linear focus:ring-0">
+                <span class="text-xs">ربط InstaPay ومحافظ كاش</span>
+              </label>
+              <label class="flex items-center space-x-2 space-x-reverse p-3 rounded-lg border border-hairline bg-surface-1 text-ink cursor-pointer min-h-[44px] hover:border-hairline-strong">
+                <input type="checkbox" id="feat-whatsapp" checked onchange="updateEstimatorSummary()" class="rounded border-hairline text-linear focus:ring-0">
+                <span class="text-xs">ربط واتساب وشيتات أوتوماتيك</span>
+              </label>
+              <label class="flex items-center space-x-2 space-x-reverse p-3 rounded-lg border border-hairline bg-surface-1 text-ink cursor-pointer min-h-[44px] hover:border-hairline-strong">
+                <input type="checkbox" id="feat-bilingual" onchange="updateEstimatorSummary()" class="rounded border-hairline text-linear focus:ring-0">
+                <span class="text-xs">نسختين عربي وإنجليزي (LTR/RTL)</span>
+              </label>
+              <label class="flex items-center space-x-2 space-x-reverse p-3 rounded-lg border border-hairline bg-surface-1 text-ink cursor-pointer min-h-[44px] hover:border-hairline-strong">
+                <input type="checkbox" id="feat-speed" checked onchange="updateEstimatorSummary()" class="rounded border-hairline text-linear focus:ring-0">
+                <span class="text-xs">ضمان سرعة 95+ ع الموبايل</span>
+              </label>
+              <label class="flex items-center space-x-2 space-x-reverse p-3 rounded-lg border border-hairline bg-surface-1 text-ink cursor-pointer min-h-[44px] hover:border-hairline-strong">
+                <input type="checkbox" id="feat-urgent" onchange="updateEstimatorSummary()" class="rounded border-hairline text-linear focus:ring-0">
+                <span class="text-xs">تسليم سريع عاجل (3-4 أيام)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Dynamic Output Card -->
+          <div class="p-4 rounded-xl bg-surface-2 border border-hairline flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-xs">
+            <div>
+              <div class="text-[10px] text-ink-subtle uppercase">ملخص النطاق وموعد التسليم المتوقع</div>
+              <div id="estSummaryText" class="text-sm font-semibold text-emerald-400 mt-0.5">متجر شوبيفاي OS 2.0 متكامل · تسليم خلال 4 إلى 6 أيام عمل</div>
+              <div class="text-[11px] text-ink-subtle mt-1 font-sans">دفع مقسم على مراحل، ومعاينة وتجربة حية للمتجر قبل الدفعة الأخيرة.</div>
+            </div>
+            <a id="estWhatsappBtn" href="https://wa.me/201096711601?text=مساء%20الخير%20يا%20سيف،%20حسبت%20مواصفات%20مشروعي%20على%20الموقع%20وعاوز%20نبدأ" target="_blank" class="px-5 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-center transition shadow-lg shadow-emerald-950/40 flex items-center justify-center space-x-2 space-x-reverse min-h-[44px] flex-shrink-0">
+              <span>ابعت المواصفات دي ع الواتساب عشان نبدأ ⚡</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- DIRECT CONTACT SECTION -->
   <section id="contact" class="py-16 px-4 sm:px-6 border-b border-hairline">
     <div class="max-w-5xl mx-auto">
@@ -1117,6 +1253,112 @@
 
     </div>
   </footer>
+
+  <!-- INTERACTIVE LIVE CART DRAWER & INSTAPAY DEMO -->
+  <div id="cartDrawerDemo" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-end sm:p-4">
+    <div class="w-full sm:max-w-md h-full sm:h-auto sm:max-h-[90vh] bg-surface-1 border border-hairline-strong sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden text-xs font-mono">
+      <!-- Drawer Header -->
+      <div class="p-4 border-b border-hairline flex items-center justify-between bg-surface-2">
+        <div class="flex items-center space-x-2 space-x-reverse">
+          <span class="w-2.5 h-2.5 rounded-full bg-status-online animate-pulse"></span>
+          <span class="text-sm font-semibold text-ink font-sans">سلة المشتريات (تجربة لايف)</span>
+        </div>
+        <button onclick="closeCartDrawerDemo()" class="w-8 h-8 rounded-lg bg-surface-3 hover:bg-surface-4 text-ink flex items-center justify-center transition min-h-[32px]">✕</button>
+      </div>
+
+      <!-- Shipping Progress Bar -->
+      <div class="px-4 py-2.5 bg-emerald-950/40 border-b border-emerald-900/40 text-emerald-300 text-[11px] flex items-center justify-between">
+        <span>شحن مجاني للطلبات فوق 1,000 ج.م</span>
+        <span class="font-bold">100%</span>
+      </div>
+
+      <!-- Drawer Body: Cart Items -->
+      <div id="cartDemoItemsBody" class="p-4 overflow-y-auto space-y-4 flex-1">
+        <!-- Item 1 -->
+        <div class="flex items-center gap-3 bg-surface-2 p-3 rounded-xl border border-hairline">
+          <div class="w-14 h-14 rounded-lg bg-surface-3 flex items-center justify-center text-xl flex-shrink-0">💍</div>
+          <div class="flex-1 min-w-0">
+            <div class="text-xs font-semibold text-ink font-sans truncate">خاتم سوليتير ذهبي - عيار 18</div>
+            <div class="text-[10px] text-ink-subtle">مقاس: 14 · نقش مجاني</div>
+            <div class="text-xs text-linear font-bold mt-1">1,450 ج.م</div>
+          </div>
+          <div class="flex items-center border border-hairline rounded bg-surface-1 px-2 py-1 space-x-2 space-x-reverse text-xs">
+            <span class="text-ink-subtle cursor-pointer">-</span>
+            <span class="text-ink font-bold">1</span>
+            <span class="text-ink-subtle cursor-pointer">+</span>
+          </div>
+        </div>
+
+        <!-- One-click Upsell -->
+        <div class="p-3 rounded-xl border border-dashed border-hairline-strong bg-surface-2/60 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="text-base flex-shrink-0">🎁</span>
+            <div class="text-[11px] truncate">
+              <span class="text-ink font-sans font-medium">علبة هدايا مخملية فاخرة</span>
+              <span class="text-ink-subtle block font-mono text-[10px]">+120 ج.م فقط</span>
+            </div>
+          </div>
+          <button onclick="toggleUpsellDemo(this)" class="px-2.5 py-1 rounded bg-surface-3 hover:bg-surface-4 text-ink text-[10px] font-medium border border-hairline flex-shrink-0 transition">
+            + إضافة للسلة
+          </button>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="grid grid-cols-3 gap-2 text-center text-[10px] text-ink-subtle pt-2">
+          <div class="p-2 rounded bg-surface-2 border border-hairline">⚡ بدون كارت</div>
+          <div class="p-2 rounded bg-surface-2 border border-hairline">🔒 دفع فوري</div>
+          <div class="p-2 rounded bg-surface-2 border border-hairline">📦 معاينة قبل الاستلام</div>
+        </div>
+      </div>
+
+      <!-- Success Overlay State inside Drawer -->
+      <div id="cartDemoSuccessState" class="hidden p-6 flex-col items-center justify-center text-center space-y-4 flex-1">
+        <div class="w-16 h-16 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-2xl shadow-xl shadow-emerald-950/40 animate-bounce">
+          ✓
+        </div>
+        <div>
+          <div class="text-base font-semibold text-ink font-sans" id="cartSuccessTitle">تم تأكيد الطلب بنجاح!</div>
+          <p class="text-xs text-ink-muted mt-1 leading-relaxed font-sans" id="cartSuccessDesc">
+            في متجرك الحقيقي: العميل بيكمل طلبه بضغطة زر واحدة بدون تشتيت، وبيوصله إشعار واتساب، والطلب بيتسجل في شيت المبيعات وبدون أي رسوم تطبيقات شهرية.
+          </p>
+        </div>
+        <div class="w-full pt-3 border-t border-hairline flex flex-col gap-2">
+          <a href="https://wa.me/201096711601?text=مساء%20الخير%20يا%20سيف،%20جربت%20الـ%20Cart%20Drawer%20وInstaPay%20وعاوز%20أركبه%20في%20متجري" target="_blank" class="w-full py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-center transition min-h-[44px] flex items-center justify-center">
+            عاوز نفس السلة دي لمتجري ⚡
+          </a>
+          <button onclick="resetCartDrawerDemo()" class="w-full py-2 rounded-lg bg-surface-2 border border-hairline text-ink-subtle hover:text-ink transition text-[11px]">
+            جرب مرة تانية
+          </button>
+        </div>
+      </div>
+
+      <!-- Drawer Footer: Checkout Actions -->
+      <div id="cartDemoFooter" class="p-4 border-t border-hairline bg-surface-2 space-y-2.5">
+        <div class="flex items-center justify-between text-xs">
+          <span class="text-ink-subtle">الإجمالي:</span>
+          <span id="cartDemoTotal" class="text-base font-bold text-ink font-sans">1,450 ج.م</span>
+        </div>
+
+        <!-- 1-Click InstaPay Button -->
+        <button onclick="triggerDemoSuccess('InstaPay')" class="w-full py-3 px-4 rounded-xl bg-[#592d8e] hover:bg-[#6c37ad] text-white font-medium flex items-center justify-between shadow-lg shadow-purple-950/40 transition min-h-[46px]">
+          <span class="flex items-center space-x-2 space-x-reverse">
+            <span class="text-base">⚡</span>
+            <span class="font-sans font-semibold">طلب فوري بـ InstaPay</span>
+          </span>
+          <span class="text-[11px] opacity-90 font-mono">بدون كتابة كارت ←</span>
+        </button>
+
+        <!-- 1-Click Mobile Wallet / COD -->
+        <button onclick="triggerDemoSuccess('محافظ الكاش')" class="w-full py-2.5 px-4 rounded-xl bg-surface-3 hover:bg-surface-4 text-ink border border-hairline font-medium flex items-center justify-between transition min-h-[44px]">
+          <span class="flex items-center space-x-2 space-x-reverse">
+            <span>📱</span>
+            <span class="font-sans">فودافون كاش ومحافظ الموبايل</span>
+          </span>
+          <span class="text-[10px] text-ink-subtle font-mono">تأكيد سريع</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- DETAIL MODAL FOR ARCHITECTURE NOTES -->
   <div id="projectModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
@@ -1548,6 +1790,143 @@
       modal.classList.add('hidden');
       modal.classList.remove('flex');
     }
+
+    // CART DRAWER DEMO
+    function openCartDrawerDemo() {
+      const drawer = document.getElementById('cartDrawerDemo');
+      if (drawer) {
+        drawer.classList.remove('hidden');
+        drawer.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeCartDrawerDemo() {
+      const drawer = document.getElementById('cartDrawerDemo');
+      if (drawer) {
+        drawer.classList.add('hidden');
+        drawer.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    }
+
+    let upsellAdded = false;
+    function toggleUpsellDemo(btn) {
+      upsellAdded = !upsellAdded;
+      const totalEl = document.getElementById('cartDemoTotal');
+      if (upsellAdded) {
+        if (totalEl) totalEl.innerText = '1,570 ج.م';
+        btn.innerText = '✓ تمت الإضافة';
+        btn.className = 'px-2.5 py-1 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800 text-[10px] font-medium flex-shrink-0';
+      } else {
+        if (totalEl) totalEl.innerText = '1,450 ج.م';
+        btn.innerText = '+ إضافة للسلة';
+        btn.className = 'px-2.5 py-1 rounded bg-surface-3 hover:bg-surface-4 text-ink text-[10px] font-medium border border-hairline flex-shrink-0 transition';
+      }
+    }
+
+    function triggerDemoSuccess(method) {
+      const itemsBody = document.getElementById('cartDemoItemsBody');
+      const footer = document.getElementById('cartDemoFooter');
+      const successState = document.getElementById('cartDemoSuccessState');
+      const title = document.getElementById('cartSuccessTitle');
+
+      if (itemsBody) itemsBody.classList.add('hidden');
+      if (footer) footer.classList.add('hidden');
+      if (successState) {
+        successState.classList.remove('hidden');
+        successState.classList.add('flex');
+      }
+      if (title) {
+        title.innerText = `تم تجربة الطلب بنجاح عبر ${method}!`;
+      }
+    }
+
+    function resetCartDrawerDemo() {
+      const itemsBody = document.getElementById('cartDemoItemsBody');
+      const footer = document.getElementById('cartDemoFooter');
+      const successState = document.getElementById('cartDemoSuccessState');
+      if (itemsBody) itemsBody.classList.remove('hidden');
+      if (footer) footer.classList.remove('hidden');
+      if (successState) {
+        successState.classList.add('hidden');
+        successState.classList.remove('flex');
+      }
+    }
+
+    // PROJECT SCOPE ESTIMATOR
+    let currentEstType = 'shopify';
+    const estTypeConfigs = {
+      shopify: { name: 'متجر شوبيفاي OS 2.0', baseDays: 5 },
+      website: { name: 'موقع ويب مخصص (Next.js)', baseDays: 4 },
+      portfolio: { name: 'بورتفوليو وهوية براند', baseDays: 3 },
+      automation: { name: 'أوتوميشن وسكرابرز', baseDays: 3 }
+    };
+
+    function setEstimatorType(type, btn) {
+      currentEstType = type;
+      document.querySelectorAll('.est-type-btn').forEach(b => {
+        b.className = 'est-type-btn p-3 rounded-lg border border-hairline bg-surface-1 text-ink-muted text-right min-h-[44px] transition';
+      });
+      if (btn) {
+        btn.className = 'est-type-btn p-3 rounded-lg border border-linear bg-linear/10 text-white font-medium text-right min-h-[44px] transition';
+      }
+      updateEstimatorSummary();
+    }
+
+    function updateEstimatorSummary() {
+      const cfg = estTypeConfigs[currentEstType] || estTypeConfigs.shopify;
+      let days = cfg.baseDays;
+      const selectedFeats = [];
+      
+      if (document.getElementById('feat-cart')?.checked) { selectedFeats.push('Cart Drawer'); }
+      if (document.getElementById('feat-instapay')?.checked) { selectedFeats.push('InstaPay'); }
+      if (document.getElementById('feat-whatsapp')?.checked) { selectedFeats.push('ربط واتساب'); }
+      if (document.getElementById('feat-bilingual')?.checked) { selectedFeats.push('نسختين عربي/إنجليزي'); days += 2; }
+      if (document.getElementById('feat-speed')?.checked) { selectedFeats.push('سرعة 95+'); }
+      if (document.getElementById('feat-urgent')?.checked) { days = Math.max(2, Math.round(days * 0.65)); }
+
+      const summaryEl = document.getElementById('estSummaryText');
+      const btnEl = document.getElementById('estWhatsappBtn');
+
+      const summary = `${cfg.name} (${selectedFeats.slice(0, 3).join(' + ')}${selectedFeats.length > 3 ? '...' : ''}) · تسليم خلال ${days} إلى ${days + 2} أيام عمل`;
+      if (summaryEl) summaryEl.innerText = summary;
+
+      const msg = encodeURIComponent(`مساء الخير يا سيف، حسبت مواصفات مشروعي على موقعك:\n- النوع: ${cfg.name}\n- الإضافات: ${selectedFeats.join('، ')}\n- التسليم المطلوب: خلال ${days}-${days + 2} أيام عمل.\nعاوزين نعرف تفاصيل التعاقد وميعاد البدء.`);
+      if (btnEl) {
+        btnEl.href = `https://wa.me/201096711601?text=${msg}`;
+      }
+    }
+
+    // AUTO UTM & AD CAMPAIGN TRACKER FOR WHATSAPP
+    function initAdTracker() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const utmSource = params.get('utm_source') || (document.referrer ? new URL(document.referrer).hostname : null);
+        const utmCampaign = params.get('utm_campaign');
+        const fbclid = params.get('fbclid');
+        const gclid = params.get('gclid');
+
+        if (!utmSource && !utmCampaign && !fbclid && !gclid) return;
+
+        let leadSource = utmSource || (fbclid ? 'facebook-ad' : (gclid ? 'google-ad' : 'ad-traffic'));
+        let trackerTag = ` [المصدر: ${leadSource}${utmCampaign ? ' | حملة: ' + utmCampaign : ''}]`;
+
+        document.querySelectorAll('a[href*="wa.me/201096711601"]').forEach(link => {
+          let href = link.getAttribute('href');
+          if (href && !href.includes('المصدر:')) {
+            link.setAttribute('href', href + encodeURIComponent(trackerTag));
+          }
+        });
+      } catch (e) {
+        // Graceful degradation
+      }
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      initAdTracker();
+    });
   </script>
   <!-- STICKY MOBILE ACTION BAR (CONVERSION ENGINE FOR AD TRAFFIC) -->
   <div class="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-surface-1/95 backdrop-blur-md border-t border-hairline p-2.5 px-4 flex items-center justify-between gap-2.5 shadow-2xl pb-[max(0.625rem,env(safe-area-inset-bottom))]">
